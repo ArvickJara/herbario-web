@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Herbario Amazónico Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Core brand colors - converted to HSL */
+    --primary: 167 52% 22%;
+    /* #1B5E55 - Forest Green */
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 167 52% 32%;
+    /* Lighter version */
+
+    --secondary: 206 58% 38%;
+    /* #2A6F97 - Ocean Blue */
+    --secondary-foreground: 0 0% 98%;
+    --secondary-light: 206 58% 48%;
+
+    --accent: 43 69% 55%;
+    /* #D4B24C - Golden */
+    --accent-foreground: 0 0% 10%;
+    --accent-light: 43 69% 65%;
+
+    --earth: 30 31% 34%;
+    /* #6B4E3D - Earth Brown */
+    --earth-foreground: 0 0% 98%;
+
+    --background: 45 38% 95%;
+    /* #F8F5EF - Warm White */
+    --foreground: 0 0% 10%;
+    /* #1A1A1A - Dark Text */
+
+    --ui-background: 140 17% 96%;
+    /* #F3F6F5 - Soft Green */
+    --ui-foreground: 0 0% 10%;
+
+    --card: 45 38% 97%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 45 38% 97%;
+    --popover-foreground: 0 0% 10%;
+
+    --muted: 140 17% 93%;
+    --muted-foreground: 0 0% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 140 17% 88%;
+    --input: 140 17% 90%;
+    --ring: 167 52% 22%;
+
+    --radius: 0.75rem;
+
+    /* Botanical gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-forest: linear-gradient(180deg, hsl(var(--primary-light)), hsl(var(--primary)));
+    --gradient-earth: linear-gradient(135deg, hsl(var(--earth)), hsl(var(--accent)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--ui-background)), hsl(var(--background)));
+
+    /* Shadows with botanical feel */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
+    --shadow-botanical: 0 10px 25px -5px hsl(var(--primary) / 0.15), 0 4px 6px -2px hsl(var(--primary) / 0.05);
+    --shadow-glow: 0 0 20px hsl(var(--accent) / 0.3);
+
+    /* Typography scale */
+    --font-serif: 'Crimson Text', serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+
+    --sidebar-background: 140 17% 96%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 167 52% 22%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 140 17% 93%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 140 17% 88%;
+    --sidebar-ring: 167 52% 22%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with botanical theme */
+    --primary: 167 52% 32%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 167 52% 42%;
+
+    --secondary: 206 58% 48%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-light: 206 58% 58%;
+
+    --accent: 43 69% 65%;
+    --accent-foreground: 0 0% 10%;
+    --accent-light: 43 69% 75%;
+
+    --earth: 30 31% 44%;
+    --earth-foreground: 0 0% 98%;
+
+    --background: 167 20% 8%;
+    /* Dark forest */
+    --foreground: 0 0% 95%;
+
+    --ui-background: 167 20% 10%;
+    --ui-foreground: 0 0% 95%;
+
+    --card: 167 20% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 167 20% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --muted: 167 20% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 167 20% 18%;
+    --input: 167 20% 15%;
+    --ring: 167 52% 45%;
+
+    --sidebar-background: 167 20% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 167 52% 32%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 167 20% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 167 20% 18%;
+    --sidebar-ring: 167 52% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+  }
+
+  /* Botanical animations */
+  .animate-leaf {
+    animation: gentle-sway 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: gentle-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes gentle-sway {
+
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+
+    50% {
+      transform: rotate(1deg);
+    }
+  }
+
+  @keyframes gentle-glow {
+    0% {
+      box-shadow: var(--shadow-soft);
+    }
+
+    100% {
+      box-shadow: var(--shadow-botanical);
+    }
+  }
+
+  /* Accessibility improvements */
+  .focus-visible:focus {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 2px;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
