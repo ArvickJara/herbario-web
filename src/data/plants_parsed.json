@@ -1,0 +1,1219 @@
+[
+  {
+    "id": "1",
+    "slug": "sauco",
+    "commonName": "Sauco",
+    "scientificName": "Sambucus nigra",
+    "Descripción": "Árbol o arbusto cuyas flores y bayas son utilizadas con fines medicinales.",
+    "Beneficios medicinales y respaldo científico": {
+      "Antioxidante y antiinflamatorio": "Las bayas son ricas en flavonoides y antocianinas, que combaten el estrés oxidativo y la inflamación.",
+      "Antiviral y expectorante": "Se ha demostrado que los suplementos de saúco acortan la duración de enfermedades respiratorias comunes como la gripe y el resfriado."
+    },
+    "Modo de uso": {
+      "Jarabe": "Tomar 2-3 veces al día una cucharada, ya sea solo o diluido en agua o jugo de frutas.",
+      "Infusión": "Las bayas deshidratadas se usan para tés, mermeladas y tinturas. Las bayas nunca deben consumirse crudas."
+    }
+  },
+  {
+    "id": "2",
+    "slug": "cu-rcuma",
+    "commonName": "Cúrcuma",
+    "scientificName": "Curcuma longa",
+    "Descripción": "Especia de color amarillo intenso, cuya raíz contiene curcumina, un compuesto activo con efectos antiinflamatorios y antioxidantes.",
+    "Beneficios medicinales y respaldo científico": {
+      "Antiinflamatorio": "La curcumina ayuda a reducir el dolor de las inflamaciones, incluyendo la artritis, y mejora los síntomas del síndrome del intestino irritable.",
+      "Salud cerebral": "La curcumina puede mejorar la depresión y la ansiedad al inhibir una enzima que destruye neurotransmisores.",
+      "Salud hepática": "Promueve la desintoxicación y mejora la función del hígado."
+    },
+    "Modo de uso": {
+      "Infusión": "Añadir un cuarto de cucharadita de cúrcuma en polvo a una taza de agua caliente con un poco de limón y miel.",
+      "En comidas": "Usar como especia para sazonar alimentos.",
+      "Suplementos": "Para mejorar su absorción, se recomienda consumirla con pimienta negra (bioperina) o aceite de coco, ya que la curcumina es soluble en grasa."
+    }
+  },
+  {
+    "id": "3",
+    "slug": "jengibre",
+    "commonName": "Jengibre",
+    "scientificName": "Zingiber officinale",
+    "Descripción": "Raíz con propiedades antiinflamatorias y antioxidantes, utilizada en la medicina tradicional desde hace miles de años.",
+    "Beneficios medicinales y respaldo científico": {
+      "Digestivo": "Alivia náuseas, vómitos y mejora la digestión al estimular enzimas digestivas.",
+      "Antiinflamatorio": "El gingerol, su compuesto activo, combate la inflamación y reduce el dolor asociado a esta.",
+      "Antiartrítico": "Se ha demostrado que posee efectos analgésicos y antirreumáticos."
+    },
+    "Modo de uso": {
+      "Infusión": "Hervir rodajas de jengibre fresco en agua. Se puede añadir limón y miel.",
+      "En ayunas": "Para facilitar la digestión, se puede tomar una infusión al levantarse.",
+      "Cocina": "Usar la raíz rallada o picada para sazonar comidas y bebidas."
+    }
+  },
+  {
+    "id": "4",
+    "slug": "tarwi",
+    "commonName": "Tarwi",
+    "scientificName": "Lupinus mutabilis",
+    "Descripción": "Leguminosa andina rica en proteínas, fibra y antioxidantes. Requiere un proceso de desamargado para su consumo.",
+    "Beneficios medicinales y respaldo científico": {
+      "Nutricional": "Alto contenido proteico, superior al de la carne y la soya, lo que lo hace un excelente alimento para vegetarianos y veganos.",
+      "Antioxidante": "Contiene taninos, polifenoles y flavonoides que combaten la anemia y refuerzan el sistema inmunológico.",
+      "Regulador de glucosa": "Se ha asociado con la prevención de la diabetes."
+    },
+    "Modo de uso": {
+      "Sopa": "El tarwi pelado y lavado se añade a sopas con verduras.",
+      "Harina": "Se puede usar en la panificación y otros alimentos.",
+      "Guarnición": "Preparado como guiso o ensalada."
+    }
+  },
+  {
+    "id": "5",
+    "slug": "maca",
+    "commonName": "Maca",
+    "scientificName": "Lepidium meyenii",
+    "Descripción": "Raíz andina que crece en elevadas altitudes, valorada por su efecto energizante y nutritivo. Existen diferentes variedades con propiedades distintas.",
+    "Beneficios medicinales y respaldo científico": {
+      "Energizante": "La maca negra mejora el rendimiento físico y el aprendizaje espacial.",
+      "Salud reproductiva": "La maca negra puede mejorar la función reproductiva, mientras que la maca roja protege la próstata.",
+      "Salud ósea": "La maca roja es beneficiosa para combatir la osteoporosis debido a su alto contenido de calcio.",
+      "Regulador hormonal": "Ayuda a regular los niveles de testosterona, beneficiando el deseo sexual."
+    },
+    "Modo de uso": {
+      "Polvo": "La maca en polvo se puede mezclar con bebidas, jugos o alimentos.",
+      "Cápsulas": "Se puede consumir en forma de suplemento."
+    }
+  },
+  {
+    "id": "6",
+    "slug": "can-ihua",
+    "commonName": "Cañihua",
+    "scientificName": "Chenopodium pallidicaule",
+    "Descripción": "Grano andino similar a la quinua, reconocido por su alto valor nutritivo.",
+    "Beneficios medicinales y respaldo científico": {
+      "Nutricional": "Fuente completa de proteínas, con todos los aminoácidos esenciales.",
+      "Antianémico": "Su alto contenido de hierro ayuda a combatir la anemia.",
+      "Digestivo": "Rica en fibra, lo que facilita la digestión y promueve la salud gastrointestinal.",
+      "Antioxidante": "Contiene propiedades antioxidantes que combaten el daño celular."
+    },
+    "Modo de uso": {
+      "Desayuno": "Cocinada como mazamorra o mezclada con leche.",
+      "Graneada": "Preparada como guarnición para platos con pollo o verduras.",
+      "Ensaladas y yogures": "Se puede añadir la cañihua cocida a ensaladas o yogures."
+    }
+  },
+  {
+    "id": "7",
+    "slug": "valeriana",
+    "commonName": "Valeriana",
+    "scientificName": "Valeriana officinalis",
+    "Descripción": "Planta medicinal utilizada tradicionalmente como sedante natural y para tratar trastornos nerviosos.",
+    "Beneficios medicinales y respaldo científico": {
+      "Sedante y relajante": "Actúa sobre el sistema nervioso central para aliviar la tensión, el estrés y la ansiedad.",
+      "Insomnio": "Contribuye a un sueño reparador y reduce el tiempo para conciliar el sueño.",
+      "Dolores de cabeza": "Puede calmar dolores de cabeza y migrañas de origen nervioso."
+    },
+    "Modo de uso": {
+      "Infusión": "Las raíces secas se usan para preparar tés.",
+      "Cápsulas": "Se puede encontrar en forma de suplemento. Se recomienda tomar una dosis de 400-600 mg antes de acostarse para el insomnio.",
+      "Tintura": "Extracto líquido para uso terapéutico.",
+      "Precaución": "Evitar conducir u operar maquinaria pesada después de tomar valeriana debido a su efecto sedante."
+    }
+  },
+  {
+    "id": "8",
+    "slug": "mun-a",
+    "commonName": "Muña",
+    "scientificName": "Minthostachys mollis",
+    "Descripción": "Planta aromática andina con propiedades antiinflamatorias y digestivas.",
+    "Beneficios medicinales y respaldo científico": {
+      "Digestivo": "Ayuda a aliviar gases estomacales, cólicos e indigestión.",
+      "Antiinflamatorio": "Posee propiedades antiinflamatorias y antisépticas que aceleran la curación de heridas, incluyendo las de la boca.",
+      "Respiratorio": "El aceite esencial se usa para aliviar problemas respiratorios."
+    },
+    "Modo de uso": {
+      "Infusión": "Las hojas se usan para preparar mates o infusiones.",
+      "Enjuagues bucales": "Cocinar la planta y usar el líquido para enjuagues bucales en casos de heridas en la boca.",
+      "Masajes": "El aceite esencial se puede usar en masajes para aliviar dolores."
+    }
+  },
+  {
+    "id": "9",
+    "slug": "guayusa",
+    "commonName": "GUAYUSA",
+    "scientificName": "ILEX GUAYUSA",
+    "Descripción": "Árbol perenne de la familia Aquifoliaceae, nativo de la Amazonía, especialmente cultivado en Ecuador y Perú. Sus hojas se recolectan, secan y utilizan en infusión. Es reconocida por su uso tradicional como bebida energética en comunidades amazónicas.",
+    "Beneficios medicinales y respaldo científico": {
+      "General 1": "Actúa como estimulante natural por su alto contenido de cafeína, teobromina y antioxidantes. Mejora la concentración, el estado de alerta y la digestión. También se emplea para combatir la fatiga y como tónico general.",
+      "Respaldo científico": "Investigaciones han demostrado que contiene polifenoles con acción antioxidante y un nivel de cafeína comparable al té verde. Estudios sugieren propiedades energizantes y protectoras frente al estrés oxidativo, aunque faltan ensayos clínicos concluyentes."
+    },
+    "Modo de uso": {
+      "Infusión de hojas secas (2": "3 g por taza de agua caliente, sin hervir). Se consume por la mañana en ayunas o durante la jornada diaria como sustituto del café."
+    }
+  },
+  {
+    "id": "10",
+    "slug": "ajo-sacha",
+    "commonName": "AJO SACHA",
+    "scientificName": "MANSOA ALLIACEA",
+    "Descripción": "Liana amazónica de la familia Bignoniaceae. Su nombre proviene del fuerte olor a ajo de sus hojas y tallos, aunque no está emparentada botánicamente con el ajo común. Crece en bosques húmedos y es usada en medicina tradicional amazónica.",
+    "Beneficios medicinales y respaldo científico": {
+      "General 1": "Tiene acción antiinflamatoria, analgésica y antiparasitaria. Se emplea para aliviar dolores articulares, reumatismo, problemas respiratorios y como depurador del organismo.",
+      "Respaldo científico": "Estudios fitoquímicos han identificado compuestos azufrados similares a los del ajo común, con potencial actividad antimicrobiana, antiinflamatoria y antioxidante."
+    },
+    "Modo de uso": {
+      "General 1": "Infusión de hojas (10 g por litro de agua) para beber en forma de té. Las hojas frescas también se machacan y aplican directamente sobre articulaciones doloridas."
+    }
+  },
+  {
+    "id": "11",
+    "slug": "jergo-n-sacha",
+    "commonName": "JERGÓN SACHA",
+    "scientificName": "DRACONTIUM LORETENSE",
+    "Descripción": "Planta herbácea de gran tamaño, con hojas grandes semejantes a las de la yuca. Crece en la Amazonía peruana y se ha usado tradicionalmente como remedio frente a mordeduras de serpientes y como fortalecedor del sistema inmune.",
+    "Beneficios medicinales y respaldo científico": {
+      "General 1": "Se emplea en medicina popular como inmunoestimulante, tratamiento de infecciones respiratorias y como apoyo en casos de mordeduras de serpientes.",
+      "Respaldo científico": "Investigaciones preliminares sugieren cierta actividad inmunoestimulante. Sin embargo, no existe evidencia científica concluyente que respalde su uso como antídoto frente a venenos de serpiente."
+    },
+    "Modo de uso": {
+      "Decocción de rizomas secos (5": "10 g por litro de agua). También se comercializa en cápsulas y extractos estandarizados."
+    }
+  },
+  {
+    "id": "12",
+    "slug": "ubos",
+    "commonName": "UBOS",
+    "scientificName": "SPONDIAS MOMBIN",
+    "Descripción": "Árbol frutal amazónico de la familia Anacardiaceae, de hasta 20 metros de altura. Produce frutos amarillos de sabor agridulce y es ampliamente consumido y utilizado en medicina tradicional.",
+    "Beneficios medicinales y respaldo científico": {
+      "General 1": "Se le atribuyen propiedades digestivas, antiinflamatorias y cicatrizantes. Se usa en diarreas, infecciones bucales, inflamaciones y como cicatrizante de heridas cutáneas.",
+      "Respaldo científico": "Contiene taninos, flavonoides y vitamina C, que explican su acción astringente y antioxidante. Estudios iniciales confirman su efectividad como apoyo en problemas gastrointestinales."
+    },
+    "Modo de uso": {
+      "General 1": "Decocción de la corteza en agua (20 g por litro) para tratar diarreas y como enjuague bucal. El fruto fresco se consume directamente para mejorar la digestión."
+    }
+  },
+  {
+    "id": "13",
+    "slug": "borraja",
+    "commonName": "BORRAJA",
+    "scientificName": "BORAGO OFFICINALIS",
+    "Descripción": "Planta herbácea anual, originaria de la región mediterránea, pero cultivada en distintas zonas del Perú, incluida la Amazonía. Se caracteriza por sus flores azules estrelladas y hojas pilosas.",
+    "Beneficios medicinales y respaldo científico": {
+      "General 1": "Tiene propiedades antiinflamatorias, expectorantes y diaforéticas. Se emplea en resfriados, tos, procesos febriles, problemas cutáneos y como depurativa.",
+      "Respaldo científico": "Sus hojas y semillas contienen ácido gamma-linolénico, con efectos antiinflamatorios reconocidos. Estudios clínicos han demostrado su utilidad en dermatitis atópica y procesos inflamatorios crónicos."
+    },
+    "Modo de uso": {
+      "General 1": "Infusión de hojas frescas (10 g por taza). También se consume en extractos y cápsulas de aceite de borraja. No recomendable en uso prolongado por presencia de alcaloides hepatotóxicos."
+    }
+  },
+  {
+    "id": "14",
+    "slug": "ortiga",
+    "commonName": "ORTIGA",
+    "scientificName": "URTICA DIOICA",
+    "Descripción": "Hierba perenne de amplia distribución mundial, también cultivada en la Amazonía. Se reconoce por sus tallos con pelos urticantes que producen irritación al contacto.",
+    "Beneficios medicinales y respaldo científico": {
+      "General 1": "Diurética, depurativa y antiinflamatoria. Se emplea en problemas urinarios, artritis, reumatismo, anemia y como estimulante del cuero cabelludo.",
+      "Respaldo científico": "Estudios clínicos confirman su eficacia en casos de hiperplasia prostática benigna y en la reducción del dolor por artritis. Rica en minerales como hierro, calcio y magnesio."
+    },
+    "Modo de uso": {
+      "Infusión de hojas tiernas (5": "10 g por taza). También se consume en cápsulas, extractos líquidos o en jugo fresco. Las hojas cocidas se usan como alimento nutritivo.",
+      "General 1": "CAMU CAMU (MYRCIARIA DUBIA)",
+      "Definición": "Planta amazónica productora de semillas oleaginosas ricas en ácidos grasos omega‑3, omega‑6 y antioxidantes.",
+      "Efectos medicinales": "Efectos hipolipemiantes y antiinflamatorios",
+      "Cómo se puede usar": "Principalmente como aceite alimentario (frío, en cápsulas o culinario)",
+      "General 2": "consulte con un profesional de salud.",
+      "General 3": "GUARANÁ (PAULLINIA CUPANA)",
+      "General 4": "posee también compuestos antioxidantes y puede tener efectos antiinflamatorios y analgésicos leves.",
+      "General 5": "evitar combinaciones con otras fuentes fuertes de cafeína. Precauciones para embarazadas y personas con hipertensión o arritmias.",
+      "General 6": "COPAIBA (COPAIFERA SPP.)",
+      "General 7": "la resina muestra actividad antimicrobiana en estudios preclínicos.",
+      "General 8": "en forma de aceite para masajes o preparación de ungüentos. Internamente se usan preparados tradicionales con precaución",
+      "General 9": "consultar siempre a un profesional por falta de dosis estandarizadas.",
+      "General 10": "SACHA INCHI (PLUKENETIA VOLUBILIS)",
+      "General 11": "puede ayudar a mejorar perfiles lipídicos (aumenta HDL), además de aportar ácidos grasos esenciales y antioxidantes.",
+      "General 12": "también en suplementos nutricionales. Dosis y usos terapéuticos deben ajustarse según preparaciones comerciales y supervisión profesional."
+    }
+  },
+  {
+    "id": "19",
+    "slug": "achiote-annatto",
+    "commonName": "ACHIOTE / ANNATTO",
+    "scientificName": "BIXA ORELLANA",
+    "Descripción": "Definición: Arbusto/árbol tropical cuyas semillas rojizas se usan como colorante natural (urucum/achiote) y en medicina tradicional. Efectos medicinales: Reporta actividades antiinflamatorias, antimicrobianas y antioxidantes; se usa tradicionalmente para problemas cutáneos, digestivos y como analgésico leve. Cómo se puede usar: Aplicación tópica en cataplasmas o tinturas para heridas y piel; ingestion en pequeñas cantidades como condimento o en forma de extractos en suplementos. Evitar dosis altas sin supervisión clínica. COCONA (SOLANUM SESSILIFLORUM) Definición: Fruta amazónica parecida al tomate (también llamada 'tomate de la Amazonía') con uso alimenticio y medicinal tradicional. Efectos medicinales: Propiedades antioxidantes y potencial antihiperlipidémico; tradicionalmente empleada como diurético, para controlar colesterol y como antiinflamatorio tópico. Cómo se puede usar: Consumida fresca en jugos, salsas o mermeladas; uso tópico en cataplasmas para heridas y picaduras. No hay dosis estandarizadas; consulte fuentes locales y profesionales. AYAHUASCA (BANISTERIOPSIS CAAPI) Definición: Liana amazónica usada tradicionalmente en contextos rituales y espirituales por comunidades indígenas. Efectos medicinales: Contiene alcaloides beta-carbolínicos (harmina, harmalina) que actúan como inhibidores de la monoaminooxidasa (IMAO). En combinación con otras plantas, se ha descrito efectos psicoactivos, potencial terapéutico en salud mental (depresión, ansiedad, estrés postraumático), aunque requiere supervisión especializada. Cómo se puede usar: Uso exclusivo en contextos rituales o bajo supervisión médica e investigativa. No recomendado como automedicación por sus interacciones farmacológicas y posibles riesgos.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "22",
+    "slug": "guayusa",
+    "commonName": "GUAYUSA",
+    "scientificName": "ILEX GUAYUSA",
+    "Descripción": "Definición: Árbol nativo de la Amazonía, cuyas hojas se emplean en infusiones energizantes. Efectos medicinales: Rica en cafeína, teobromina y antioxidantes. Promueve el estado de alerta, reduce la fatiga y aporta compuestos polifenólicos con acción antioxidante. Cómo se puede usar: Se consume principalmente en infusión de hojas secas. Puede encontrarse en polvo, cápsulas o mezclas herbales energéticas. 23). Guayaba (Psidium guajava) Definición: Arbusto o árbol pequeño tropical, nativo de América, muy común en la Amazonía peruana. Caracterizada por sus hojas verdes ovaladas y frutos comestibles de pulpa rosada, blanca o amarilla, ricos en vitamina C. Efectos medicinales: Las hojas poseen compuestos como flavonoides, taninos y aceites esenciales con propiedades antimicrobianas, antiinflamatorias y antioxidantes. Se emplean para tratar diarreas, infecciones, inflamaciones bucales, problemas digestivos y como coadyuvante en el control de la glucosa en sangre. Estudios científicos respaldan su acción antimicótica contra hongos como Trichophyton y Microsporum, además de sus efectos antidiarreicos y antioxidantes. Cómo se puede usar: Infusión: Hervir hojas frescas o secas en agua y consumir como té para trastornos digestivos o resfríos. Uso tópico: Decocción de hojas aplicada en enjuagues bucales para aftas o encías inflamadas, o como lavado en heridas leves. Fruto: Consumir fresco, en jugo o extracto, como fuente de vitamina C y antioxidantes. 24). Verbena (Verbena officinalis Definición: Planta herbácea originaria de Europa, pero adaptada y cultivada también en la Amazonía peruana. Caracterizada por tallos delgados y erguidos, hojas lanceoladas y pequeñas flores lilas o moradas. En Tingo María se emplea tradicionalmente en preparaciones medicinales. Efectos medicinales: Contiene principios activos como iridoides, flavonoides y compuestos fenólicos con propiedades antiinflamatorias, digestivas, sedantes suaves y antimicrobianas. Estudios científicos han demostrado su acción antimicótica contra hongos como Trichophyton y Microsporum. Tradicionalmente se usa para aliviar trastornos digestivos, nerviosismo, resfríos, dolores de cabeza y afecciones cutáneas leves. Cómo se puede usar: Infusión: Preparar con hojas y flores secas, consumida para calmar nervios, insomnio leve o problemas digestivos. Uso tópico: Decocción de la planta aplicada en compresas o lavados para heridas leves, inflamaciones o infecciones de piel. Extracto alcohólico: Utilizado en estudios como antimicótico; también puede encontrarse en tinturas y cápsulas herbales. 25). Matico (Piper angustifolium) Definición: Arbusto aromático nativo de la Amazonía, de la familia de las Piperáceas. Presenta hojas grandes, verdes y lanceoladas, con aroma característico. Es muy utilizado en la medicina tradicional amazónica y andina por sus propiedades cicatrizantes y desinfectantes. Efectos medicinales: Sus hojas contienen aceites esenciales, flavonoides y taninos con efectos antimicrobianos, antiinflamatorios, cicatrizantes y analgésicos. Estudios científicos realizados en Tingo María han demostrado su actividad antimicótica frente a hongos dermatofitos como Trichophyton y Microsporum. Tradicionalmente se emplea en el tratamiento de heridas, hemorragias, infecciones cutáneas, afecciones respiratorias y como apoyo en la recuperación postparto. Cómo se puede usar: Infusión: Hojas hervidas en agua, consumidas para aliviar resfríos, bronquitis y molestias digestivas. Uso tópico: Decocción de hojas aplicada como lavado en heridas, hemorroides, zonas inflamadas o de cicatrización lenta. Cataplasma: Hojas frescas machacadas aplicadas directamente sobre cortes o úlceras para acelerar la cicatrización. 26). Chuchuhuasi (Maytenus laevis / Maytenus krukovii) Definición: Árbol nativo de la Amazonía peruana, de gran tamaño, con corteza gruesa y resistente de sabor amargo. Su nombre en quechua significa “árbol fuerte de los huesos”, y es ampliamente utilizado en la medicina tradicional de la selva para tratar dolencias físicas y fortalecer el cuerpo. Efectos medicinales: La corteza contiene compuestos como alcaloides, triterpenos, quinonas, saponinas y polifenoles, con propiedades antiinflamatorias, analgésicas, inmunoestimulantes y antioxidantes. Se utiliza tradicionalmente para tratar reumatismo, artritis, dolores musculares, problemas respiratorios (bronquitis, resfríos), diarreas y hemorroides. Algunos estudios etnobotánicos y farmacológicos han documentado sus efectos antiinflamatorios y su potencial en el alivio de enfermedades articulares y digestivas. Cómo se puede usar: Decocción: Hervir la corteza en agua y beber en forma de té para aliviar dolores articulares, problemas respiratorios o digestivos. Macerado alcohólico: La corteza se deja reposar en aguardiente y se consume en pequeñas dosis como tónico para reumatismo y fatiga. Baños o lavados: Preparación de la corteza hervida usada en baños corporales para aliviar dolores musculares y mejorar la circulación. 27). Chanca Piedra (Phyllanthus niruri) Definición: Hierba pequeña de la familia Phyllanthaceae, ampliamente distribuida en la Amazonía. Caracterizada por sus tallos delgados y verdes, con hojas pequeñas dispuestas de forma alterna que asemejan un helecho. Es conocida popularmente como “rompe piedras” por su uso en problemas renales. Efectos medicinales: Contiene lignanos, flavonoides, alcaloides y compuestos fenólicos con propiedades diuréticas, hepatoprotectoras, antivirales y antioxidantes. Estudios científicos respaldan su eficacia en la prevención y disolución de cálculos renales, además de su acción protectora sobre el hígado y actividad antiviral frente a virus como hepatitis B. Tradicionalmente se emplea también para infecciones urinarias y problemas digestivos. Cómo se puede usar: Infusión: Hervir hojas y tallos frescos o secos en agua, consumir 1–2 tazas al día para problemas renales o digestivos. Decocción: Preparar concentraciones más fuertes para tratamientos cortos en cálculos renales o infecciones urinarias. Extracto o cápsulas: Disponible en presentaciones herbolarias estandarizadas, útil para un consumo más práctico y con dosis controladas. 28). Uña de gato (Uncaria tomentosa) Definición: Planta trepadora amazónica de la familia Rubiaceae, reconocida por las espinas curvas en forma de “uña” en sus tallos, que le permiten sujetarse a los árboles. Es muy valorada en la medicina tradicional de la selva peruana y considerada una de las plantas medicinales más importantes de la Amazonía. Efectos medicinales: Su corteza y raíces contienen alcaloides oxindólicos, flavonoides y esteroles con propiedades inmunoestimulantes, antiinflamatorias, antioxidantes y antivirales. Estudios científicos han demostrado su utilidad en el fortalecimiento del sistema inmunológico, el tratamiento de artritis y enfermedades inflamatorias crónicas, así como en la prevención de procesos degenerativos. También se ha investigado por su potencial en el apoyo al tratamiento de infecciones virales y cáncer. Cómo se puede usar: Decocción: Hervir la corteza interna o las raíces en agua y beber como té para reforzar defensas, aliviar inflamaciones o problemas digestivos. Extracto líquido o cápsulas: Presentaciones estandarizadas disponibles en herbolarios y farmacias naturales, con dosis controladas. Uso tradicional: En comunidades amazónicas se toma en infusiones prolongadas como preventivo y reconstituyente general del organismo. 29). Cascarilla (Cinchona spp.) Definición: Árbol de la familia Rubiaceae, nativo de la región andino-amazónica. Su corteza, conocida como “cascarilla”, es famosa por ser la fuente natural de alcaloides como la quinina, utilizada históricamente en el tratamiento de la malaria. Crece en zonas de selva alta como Tingo María y Huánuco. Efectos medicinales: La corteza contiene quinina y otros alcaloides con propiedades antipiréticas, analgésicas, digestivas y antipalúdicas. Tradicionalmente se emplea para tratar fiebres, diarreas, problemas digestivos y como tónico amargo que estimula el apetito. La quinina ha sido científicamente validada como tratamiento contra la malaria y aún se investiga su acción antioxidante y antiinflamatoria. Cómo se puede usar: Decocción: Hervir la corteza seca en agua, beber en pequeñas dosis para fiebres, problemas digestivos o como reconstituyente. Tintura o extracto: Preparación alcohólica de la corteza, administrada en gotas para estimular el apetito y mejorar la digestión. Uso tradicional: Consumida como tónico amargo en infusiones, sobre todo en comunidades rurales para fortalecer el organismo. 30). Piper aduncum (“cordoncillo blanco”) y Piper peltatum (“santa maría”) Definición: Piper aduncum (“cordoncillo blanco”) y Piper peltatum (“santa maría”) son arbustos/locales de la familia Piperaceae, comunes en la Amazonía peruana, incluyendo el área de Tingo María. Tienen hojas verdes amplias; pertenecen al mismo género que el matico, pero con características botánicas distintas —cómo el tamaño, grosor de la hoja, y el aroma del aceite esencial. Efectos medicinales: Estudios realizados en Tingo María han mostrado que los extractos etanólicos de las hojas de estas especies tienen actividad antifúngica frente al hongo Trichophyton (un dermatófito). Este efecto se asocia principalmente con el contenido de taninos que poseen estas especies, que inhiben el crecimiento del hongo. Cómo se puede usar: Extracto etanólico in vitro: En los estudios se usaron diluciones del extracto al 40% y al 70%. Estas concentraciones mostraron inhibición significativa del hongo en cultivo. Uso tópico tradicional: Aunque el estudio fue in vitro, por analogía con otras plantas antifúngicas locales, las hojas podrían ser maceradas o preparadas en extracto/infusión fuerte para uso externo sobre la piel afectada (rash, micosis, hongos superficiales). Preparación: Se recolectan hojas frescas, se secan o usan frescas; luego se prepara un extracto alcohólico (o en algunos casos fuerte infusión/decocción si no se dispone de alcohol), aplicándolo externamente. 31)  Llantén, llantén mayor, llantén menor. Nombre científico: Plantago major (llantén común) y Plantago lanceolata (llantén de hojas largas). Familia: Plantaginaceae. Partes utilizadas: Hojas, semillas y raíces. Origen: Europa y Asia, distribuida hoy en todo el mundo (considerada “planta cosmopolita”). Características: Hierba perenne, con hojas verdes en roseta basal y nervaduras marcadas, flores pequeñas en espiga. 🔬 Principios activos Mucílagos: suavizantes de mucosas. Iridoides: aucubina (antibacteriana y antiinflamatoria). Flavonoides: luteolina, apigenina. Taninos: astringentes. Minerales y vitaminas: potasio, calcio, vitamina C. 💊 Propiedades medicinales",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "respiratorias-alivia-tos-bronquitis-y-resfriados",
+    "commonName": "Respiratorias: Alivia tos, bronquitis y resfriados.",
+    "scientificName": "",
+    "Descripción": "Suaviza mucosas y actúa como expectorante.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "digestivas-protege-mucosa-ga-strica",
+    "commonName": "Digestivas: Protege mucosa gástrica .",
+    "scientificName": "úlcera, gastritis",
+    "Descripción": "Suaviza inflamación intestinal y diarrea.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "3",
+    "slug": "antiinflamatorias-calma-irritaciones-internas-y-externas",
+    "commonName": "Antiinflamatorias: Calma irritaciones internas y externas.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "4",
+    "slug": "cicatrizantes-y-vulnerarias-acelera-la-curacio-n-de-heridas-quemaduras-leves-picaduras-y-aftas-bucales",
+    "commonName": "Cicatrizantes y vulnerarias: Acelera la curación de heridas, quemaduras leves, picaduras y aftas bucales.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "5",
+    "slug": "diure-ticas-y-depurativas-favorece-la-eliminacio-n-de-li-quidos-y-desintoxicacio-n",
+    "commonName": "Diuréticas y depurativas: Favorece la eliminación de líquidos y desintoxicación.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "6",
+    "slug": "antimicrobianas-su-aucubina-ayuda-contra-bacterias-y-hongos-leves",
+    "commonName": "Antimicrobianas: Su aucubina ayuda contra bacterias y hongos leves.",
+    "scientificName": "",
+    "Descripción": "🍵 Formas de uso Infusión de hojas: Para tos, bronquitis, úlceras y digestión. Jarabe casero: Con miel para aliviar la tos. Gargarismos y enjuagues: Para aftas, encías inflamadas y dolor de garganta. Cataplasmas con hojas frescas machacadas: Sobre heridas, picaduras o quemaduras. Baños de asiento: Para hemorroides e inflamaciones genitales leves. Semillas: Fuente de fibra, se usan como laxante suave (similares al psyllium). ⚠️ Precauciones Generalmente seguro en dosis normales. Puede causar alergia en personas sensibles. Evitar el uso excesivo en embarazo y lactancia sin supervisión médica. Las semillas deben tomarse con suficiente agua para evitar obstrucción intestinal. 🌎 Usos tradicionales América Latina: remedio casero para heridas, tos y resfriados. Europa medieval: considerado “curatodo”, muy valorado por monjes y herbolarios. Andes: infusión para “mal de estómago” y cataplasmas para golpes y cortaduras. Otros usos Alimenticio: hojas tiernas en ensaladas o sopas (sabor ligeramente amargo). Forrajero: usado como pasto para animales. Semillas como suplemento de fibra natural. 32)  Diente de león. Nombre científico: Taraxacum officinale. Familia: Asteraceae. Partes utilizadas: Hojas, flores y raíces. Características: Planta perenne, con hojas dentadas (de ahí su nombre), flores amarillas y frutos con vilanos blancos que vuelan con el viento. 🔬 Principios activos Inulina (fibra prebiótica, sobre todo en raíces). Lactonas sesquiterpénicas: efecto digestivo y amargo. Flavonoides y compuestos fenólicos: antioxidantes. Vitaminas: A, C, K y complejo B. Minerales: Hierro, calcio, potasio, magnesio. Mucílagos y taninos. 💊 Propiedades medicinales",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "digestivas-y-hepa-ticas-estimula-la-secrecio-n-de-bilis",
+    "commonName": "Digestivas y hepáticas: Estimula la secreción de bilis .",
+    "scientificName": "colerético y colagogo",
+    "Descripción": "Favorece la digestión de grasas. Apoya en problemas de hígado graso y congestión hepática.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "diure-ticas-y-depurativas-favorece-la-eliminacio-n-de-li-quidos-retenidos-u-til-en-edemas-e-hipertensio-n-leve",
+    "commonName": "Diuréticas y depurativas: Favorece la eliminación de líquidos retenidos. Útil en edemas e hipertensión leve.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "3",
+    "slug": "prebio-ticas-e-intestinales-su-inulina-nutre-la-microbiota-intestinal-regula-el-tra-nsito-intestinal",
+    "commonName": "Prebióticas e intestinales:  Su inulina nutre la microbiota intestinal. Regula el tránsito intestinal.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "4",
+    "slug": "antiinflamatorias-y-antioxidantes-protege-las-ce-lulas-frente-al-dan-o-oxidativo-apoya-en-enfermedades-cro-nicas-y-metabo-licas",
+    "commonName": "Antiinflamatorias y antioxidantes: Protege las células frente al daño oxidativo. Apoya en enfermedades crónicas y metabólicas.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "5",
+    "slug": "nutritivas-rico-en-vitaminas-y-minerales-u-til-en-estados-de-anemia-y-fatiga",
+    "commonName": "Nutritivas: Rico en vitaminas y minerales, útil en estados de anemia y fatiga.",
+    "scientificName": "",
+    "Descripción": "🍵 Formas de uso Infusión de hojas: Para digestión y depuración (1 cucharadita en una taza de agua caliente). Decocción de raíces: Hervir 5–10 min, indicada para hígado y riñones. Jugo fresco de hojas: Depurativo y remineralizante. Ensaladas: Las hojas tiernas se consumen frescas, con sabor amargo. Extractos y cápsulas: En herbolarios para tratamientos más concentrados. ⚠️ Precauciones Generalmente segura en dosis moderadas. Puede causar molestias digestivas en personas sensibles al amargor. Contraindicada en: Personas con cálculos biliares obstructivos o úlceras gástricas activas. Alergia a plantas de la familia Asteraceae (manzanilla, caléndula, artemisa). El látex blanco puede irritar la piel en personas sensibles. 🌎 Usos tradicionales Europa medieval: “tónico de primavera” para limpiar la sangre y revitalizar el organismo. China: Utilizado en medicina tradicional para problemas hepáticos, inflamaciones y abscesos. América: Popular en infusiones depurativas y como alimento en ensaladas y sopas. ✨ Otros usos Las flores se utilizan en vinos, jarabes y mieles caseras. Raíces tostadas como sustituto del café 33)  Mansoa alliacea Familia: Bignoniaceae Nombres comunes: Ajo sacha, bejuco de ajo, ajo de monte, ají sacha. Origen: Nativa de la Amazonía peruana, también se encuentra en Brasil, Colombia, Ecuador y Bolivia. Forma: Es una liana o enredadera perenne que puede crecer hasta 2–3 m, con flores moradas a violetas en forma de trompeta. Olor: Sus hojas, tallos y raíces desprenden un fuerte olor a ajo al triturarse, de ahí su nombre, aunque no contiene alicina (componente activo del ajo común). 🌱 Propiedades medicinales El ajo sacha es considerado una de las plantas amazónicas más versátiles por sus efectos antiinflamatorios y analgésicos. Principales propiedades: Anti-inflamatorio: Calma dolores musculares, artritis y reumatismo. Analgésico: Reduce dolores de cabeza, musculares y articulares. Antirreumático: Muy utilizado en baños y emplastos contra artritis y artrosis. Antioxidante: Ayuda a fortalecer el sistema inmune. Expectorante y broncodilatador: Facilita la expulsión de flemas, útil en resfriados, bronquitis y asma. Antimicrobiano y antiparasitario suave: Se emplea en infecciones leves y desparasitaciones. Energizante natural: Consumido en infusión, aporta vitalidad y reduce el cansancio. 🍵 Formas de uso tradicional",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "infusio-n-de-hojas-se-usan-hojas-frescas-o-secas-en-agua-caliente",
+    "commonName": "Infusión de hojas: Se usan hojas frescas o secas en agua caliente.",
+    "scientificName": "",
+    "Descripción": "Para resfriados, tos, asma, malestares digestivos y como energizante.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "ban-os-de-inmersio-n-o-emplastos-se-machacan-hojas-y-tallos-aplica-ndose-sobre-articulaciones-y-mu-sculos-para-reumatismo-y-dolores",
+    "commonName": "Baños de inmersión o emplastos: Se machacan hojas y tallos, aplicándose sobre articulaciones y músculos para reumatismo y dolores.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "3",
+    "slug": "macerados-en-aguardiente-se-prepara-un-vino-de-ajo-sacha-o-licor-medicinal",
+    "commonName": "Macerados en aguardiente: Se prepara un “vino de ajo sacha” o licor medicinal.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {
+      "General 1": "Tomado en pequeñas dosis para artritis, reumatismo y como fortificante."
+    }
+  },
+  {
+    "id": "4",
+    "slug": "uso-ritual-y-espiritual-en-la-amazoni-a-tambie-n-se-emplea-en-limpiezas-energe-ticas-y-rituales-para-ahuyentar-malas-energi-as",
+    "commonName": "Uso ritual y espiritual: En la Amazonía también se emplea en limpiezas energéticas y rituales para “ahuyentar malas energías”.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "infusio-n-1-2-cucharaditas-por-taza-en-agua-caliente",
+    "commonName": "Infusión :1–2 cucharaditas por taza, en agua caliente.",
+    "scientificName": "hojas y flores",
+    "Descripción": "Indicada para tos, faringitis, gastritis y estreñimiento.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "gargarismos-o-enjuagues-infusio-n-concentrada-para-dolor-de-garganta-aftas-y-gingivitis",
+    "commonName": "Gargarismos o enjuagues: Infusión concentrada para dolor de garganta, aftas y gingivitis.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "3",
+    "slug": "cataplasmas-o-compresas-hojas-machacadas-o-cocidas-aplicadas-sobre-golpes-eccemas-abscesos-o-picaduras",
+    "commonName": "Cataplasmas o compresas:Hojas machacadas o cocidas aplicadas sobre golpes, eccemas, abscesos o picaduras.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "4",
+    "slug": "ban-os-locales-agua-de-malva-para-hemorroides-o-irritaciones-i-ntimas",
+    "commonName": "Baños locales: Agua de malva para hemorroides o irritaciones íntimas.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "5",
+    "slug": "jarabes-caseros-coccio-n-de-flores-con-miel-usada-como-remedio-natural-contra-la-tos",
+    "commonName": "Jarabes caseros:Cocción de flores con miel, usada como remedio natural contra la tos.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "infusio-n-o-decoccio-n",
+    "commonName": "Infusión o decocción :",
+    "scientificName": "tallos estériles secos",
+    "Descripción": "1–2 cucharaditas por taza, hervidas 5–10 minutos. Para retención de líquidos, infecciones urinarias, cálculos renales, reumatismo.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "compresas-y-ban-os-locales-decoccio-n-aplicada-sobre-heridas-eccemas-u-lceras-o-golpes",
+    "commonName": "Compresas y baños locales: Decocción aplicada sobre heridas, eccemas, úlceras o golpes.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "3",
+    "slug": "polvo-de-tallos-secos-puede-espolvorearse-en-heridas-para-cicatrizar",
+    "commonName": "Polvo de tallos secos: Puede espolvorearse en heridas para cicatrizar",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "4",
+    "slug": "lociones-capilares-infusio-n-concentrada-usada-como-enjuague-para-fortalecer-cabello-y-prevenir-cai-da",
+    "commonName": "Lociones capilares:Infusión concentrada usada como enjuague para fortalecer cabello y prevenir caída.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "5",
+    "slug": "suplementos-ca-psulas-extractos-li-quidos-o-comprimidos-de-uso-fitoterape-utico",
+    "commonName": "Suplementos: Cápsulas, extractos líquidos o comprimidos de uso fitoterapéutico.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "uso-externo",
+    "commonName": "Uso externo :",
+    "scientificName": "más frecuente",
+    "Descripción": "Aplicar directamente sobre la piel para heridas, quemaduras, infecciones, psoriasis, eccemas, acné, hongos en pies y uñas. Masajes con aceite de copaiba para dolores musculares, artritis y reumatismo.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "uso-interno",
+    "commonName": "Uso interno :",
+    "scientificName": "tradicional, con precaución",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {
+      "General 1": "Tomar de 2 a 5 gotas en agua, miel o infusión, como antiinflamatorio, expectorante y protector gástrico.",
+      "General 2": "En la Amazonía, se mezcla con miel para tos y bronquitis."
+    },
+    "Modo de uso": {}
+  },
+  {
+    "id": "3",
+    "slug": "cosme-tica-natural",
+    "commonName": "Cosmética natural:",
+    "scientificName": "",
+    "Descripción": "En jabones, cremas, champús y ungüentos para piel y cabello graso, dermatitis o acné. ⚠️ Precauciones No exceder las dosis internas (máx. 5 gotas, 2 veces al día), ya que en exceso puede ser irritante para el estómago e hígado. Evitar en mujeres embarazadas y lactantes. No usar en niños pequeños sin supervisión. Usar siempre aceite puro, no adulterado (en el mercado a veces se mezcla con aceites comunes). ✅ Beneficios destacados Potente antiinflamatorio natural Cicatrizante de heridas y quemaduras.Eficaz contra **hongos, bacter 36) Huampo, leche de huampo. Nombre científico: Couma macrocarpa (también conocida como “leche caspi”). Familia: Apocynaceae. Origen: Selva amazónica de Perú, Brasil, Bolivia, Ecuador y Colombia. Características: Árbol mediano que puede alcanzar hasta 15–20 m de altura. De su corteza se obtiene un látex blanco lechoso. 🌿 Principios activos Látex lechoso: rico en resinas, gomas y compuestos fenólicos. Alcaloides y triterpenos: responsables de parte de sus efectos medicinales. Vitaminas y minerales en menor proporción. 🌼 Propiedades medicinales En la medicina tradicional amazónica, el látex del huampo se considera un remedio natural con propiedades muy apreciadas: Cicatrizante: ayuda a cerrar y sanar heridas. Antiinflamatorio: calma dolores musculares y articulares. Analgesico: usado en dolores locales. Antiséptico natural: limpia infecciones superficiales de la piel. Expectorante y balsámico: alivia resfriados, bronquitis y tos. Fortificante: en usos internos muy controlados se emplea para fortalecer el organismo. 🍵 Usos tradicionales",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "uso-externo",
+    "commonName": "Uso externo:",
+    "scientificName": "",
+    "Descripción": "El látex fresco aplicado directamente en heridas, úlceras y picaduras para acelerar la cicatrización. Como ungüento para golpes, inflamaciones y dolores musculares.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "uso-interno",
+    "commonName": "Uso interno :",
+    "scientificName": "con precaución",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {
+      "General 1": "En la Amazonía se bebe el látex diluido en agua o infusión como fortificante, para tos, bronquitis y problemas digestivos.",
+      "General 2": "En pequeñas dosis se usa como energizante."
+    }
+  },
+  {
+    "id": "3",
+    "slug": "otros-usos",
+    "commonName": "Otros usos:",
+    "scientificName": "",
+    "Descripción": "El látex del huampo también se emplea para elaborar chicle natural. Su madera es usada en construcción y carpintería. ⚠️ Precauciones El consumo interno debe ser muy moderado y bajo guía tradicional, ya que el exceso puede ser tóxico. Evitar en mujeres embarazadas, lactantes y niños pequeños. No sustituye tratamientos médicos 37) Sacha Inchi (Plukenetia volubilis) 📍 Origen y hábitat Es una planta amazónica originaria de la selva del Perú. Crece como enredadera en climas cálidos y húmedos, sobre todo en la Amazonía de San Martín, Ucayali, Loreto y Madre de Dios. Su fruto es una cápsula estrellada de 4 a 7 puntas, de donde se extraen las semillas. 🌿 Características Nombre común: Maní de los Incas, maní del monte, sacha maní.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "cardiovasculares-regula-el-colesterol-y-triglice-ridos-mejora-la-circulacio-n-sangui-nea-disminuye-el-riesgo-de-hipertensio-n-y-enfermedades-coronarias",
+    "commonName": "Cardiovasculares: Regula el colesterol y triglicéridos Mejora la circulación sanguínea. Disminuye el riesgo de hipertensión y enfermedades coronarias.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "sistema-nervioso-y-cerebro-favorece-la-memoria-y-concentracio-n",
+    "commonName": "Sistema nervioso y cerebro: Favorece la memoria y concentración.",
+    "scientificName": "",
+    "Descripción": "Previene enfermedades neurodegenerativas (Alzheimer, Parkinson).",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "3",
+    "slug": "anti-inflamatorio-natural-u-til-en-artritis-reumatismo-y-dolores-musculares",
+    "commonName": "Anti-inflamatorio natural:Útil en artritis, reumatismo y dolores musculares.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "4",
+    "slug": "digestivo-y-metabo-lico-regula-el-tra-nsito-intestinal",
+    "commonName": "Digestivo y metabólico: Regula el tránsito intestinal.",
+    "scientificName": "",
+    "Descripción": "Ayuda en dietas para bajar de peso, pues sus grasas son saludables.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "5",
+    "slug": "cosme-tico-y-dermatolo-gico-el-aceite-de-sacha-inchi-hidrata-la-piel-y-el-cabello",
+    "commonName": "Cosmético y dermatológico: El aceite de sacha inchi hidrata la piel y el cabello.",
+    "scientificName": "",
+    "Descripción": "Regenera tejidos, útil en quemaduras y cicatrices. 🌍 Usos principales Aceite comestible: Extraído en frío, considerado uno de los más saludables del mundo. Semillas tostadas: Se consumen como snack nutritivo. Harina de sacha inchi: Fuente de proteínas para jugos, batidos y panes. Cosmética: Aceites, cremas y shampoos para piel y cabello. ⚠️ Precauciones Las semillas crudas no deben consumirse, ya que contienen sustancias irritantes. Personas con problemas de coagulación deben consultar antes de consumir en exceso, por su efecto anticoagulante. 📌 El sacha inchi ha sido cultivado y usado desde tiempos preincaicos por su gran valor nutricional y medicinal, hoy en día es considerado un superalimento peruano reconocido a nivel mundial. 38) Cocona (Solanum sessiliflorum) 📍 Origen y hábitat Planta amazónica de la familia Solanaceae (misma familia del tomate y la berenjena). Se cultiva en la Amazonía peruana (Loreto, Ucayali, San Martín, Madre de Dios) y en zonas de Brasil, Colombia y Venezuela. Prefiere climas cálidos, húmedos y suelos ricos en materia orgánica. 🌿 Características Arbusto de 1 a 2 metros de altura. Fruto redondo u ovalado, de piel amarilla, anaranjada o rojiza. Pulpa jugosa, ligeramente ácida y refrescante. Rica en agua, vitamina C, hierro, fósforo y antioxidantes. ⚕️ Propiedades medicinales y beneficios",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "sistema-digestivo",
+    "commonName": "Sistema digestivo",
+    "scientificName": "",
+    "Descripción": "Favorece la digestión. Regula el tránsito intestinal (rica en fibra). Alivia problemas de estreñimiento y colon perezoso",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "metabolismo-y-peso",
+    "commonName": "Metabolismo y peso",
+    "scientificName": "",
+    "Descripción": "Es baja en calorías y grasas. Recomendable en dietas de control de peso. Ayuda a reducir el colesterol malo (LDL).",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "3",
+    "slug": "sistema-urinario",
+    "commonName": "Sistema urinario",
+    "scientificName": "",
+    "Descripción": "Diurética natural, útil para eliminar líquidos. Contribuye a la prevención de cálculos renales.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "4",
+    "slug": "sistema-inmunolo-gico",
+    "commonName": "Sistema inmunológico",
+    "scientificName": "",
+    "Descripción": "Gracias a su alto contenido de vitamina C, fortalece defensas. Antioxidante que combate radicales libres.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "5",
+    "slug": "piel-y-salud-externa",
+    "commonName": "Piel y salud externa",
+    "scientificName": "",
+    "Descripción": "El jugo aplicado sobre la piel ayuda a cicatrizar heridas y aliviar quemaduras leves. Refresca y suaviza la piel. 🌍 Usos tradicionales y actuales Alimenticio: Jugos, refrescos, helados, mermeladas, ensaladas y salsas. Mezclada con ajíes se prepara el famoso “ají de cocona” amazónico. Medicinal: Jugo fresco para bajar colesterol y triglicéridos. Infusiones de hojas para tratar infecciones urinarias. Cosmético: Pulpa usada como mascarilla natural para suavizar y aclarar la piel. ⚠️ Precauciones E consumo en exceso puede causar acidez gástrica en personas sensibles. No recomendable en casos de gastritis severa o reflujo sin supervisión. 📌 La cocona es considerada un superfruto amazónico, no solo por su sabor agradable y versátil en la cocina, sino también por su aporte a la salud y a la economía de las comunidades de la selva. 39) Piñón blanco (Jatropha curcas) 📍 Origen y hábitat Arbusto perenne de 3 a 5 metros. Se cultiva en la selva peruana, en suelos secos y húmedos. Sus semillas tienen alto contenido de aceite. 🌿 Usos medicinales Laxante fuerte (el aceite de las semillas se usa en dosis muy pequeñas). Antiinflamatorio y analgésico: aplicado en cataplasmas para golpes, torceduras y dolores musculares. Cicatrizante: el látex de la planta se aplica en heridas superficiales. Antiparasitario: usado en medicina tradicional para parásitos intestinales. ⚠️ Precaución Las semillas son tóxicas si se consumen crudas o en exceso (pueden causar vómito y diarrea fuerte). El aceite debe usarse en dosis muy controladas. 🌱 Piñón colorado (Jatropha gossypiifolia) 📍 Origen y hábitat Arbusto de 2 a 4 metros de altura, con hojas rojizas o púrpuras. Muy usado en la medicina popular amazónica. 🌿 Usos medicinales Hemostático: el látex se aplica en heridas para detener hemorragias. Antiinflamatorio: cataplasmas con hojas para golpes y contusiones. Antidiabético: infusiones de hojas en la medicina tradicional. Digestivo: pequeñas dosis para combatir estreñimiento. ⚠️ Precaución Su látex y semillas también son tóxicos en exceso. Debe usarse con mucho cuidado y bajo guía tradicional. 🌍 Usos adicionales Energético: el aceite de piñón blanco se estudia como biocombustible. Agrícola: sus hojas y ramas se emplean como insecticida natural. 📌 En resumen: El piñón (blanco y colorado) es una planta muy valorada en la selva peruana por sus usos medicinales, agrícolas y energéticos, pero al mismo tiempo es tóxica si se utiliza incorrectamente. 40) Shihuahuaco (Dipteryx micrantha) 📍 Origen y hábitat Es un árbol amazónico, nativo de Perú, Brasil y Bolivia. En el Perú crece en la Amazonía baja y alta: regiones de Ucayali, Loreto, Madre de Dios, Pasco y Huánuco. Prefiere suelos profundos y bien drenados en climas cálidos y húmedos. 🌿 Características Puede alcanzar entre 40 y 60 metros de altura y más de 1 metro de diámetro. Su madera es extremadamente dura y pesada (una de las más resistentes del mundo). Es de crecimiento muy lento, algunos ejemplares superan los 500 a 1,000 años de edad. Su copa es amplia y da sombra, sirve de refugio para aves e insectos. ⚕️ Usos medicinales y tradicionales Corteza y resina: Infusión para aliviar fiebre y resfriados. Se emplea contra dolores musculares y reumatismo Semillas:Usadas en medicina tradicional como analgésico. Hojas:Cataplasmas para inflamaciones y heridas superficiales. 🌍 Usos adicionales",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "maderero-es-una-de-las-maderas-ma-s-valoradas-del-peru-utilizada-en-pisos-estructuras-durmientes-de-ferrocarril-y-construcciones-de-lujo",
+    "commonName": "Maderero:Es una de las maderas más valoradas del Perú, utilizada en pisos, estructuras, durmientes de ferrocarril y construcciones de lujo.",
+    "scientificName": "",
+    "Descripción": "Por su dureza, resiste a la humedad, plagas y el paso del tiempo.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "ecolo-gico-es-un-a-rbol-centinela-de-la-amazoni-a-y-ha-bitat-del-guacamayo-rojo-y-azul-que-anida-en-sus-cavidades",
+    "commonName": "Ecológico: Es un árbol centinela de la Amazonía y hábitat del guacamayo rojo y azul, que anida en sus cavidades.",
+    "scientificName": "",
+    "Descripción": "Ayuda en la conservación de la biodiversidad. ⚠️ Situación actual y conservación Se encuentra seriamente amenazado por la tala indiscriminada debido a la alta demanda de su madera. En Perú, el shihuahuaco está catalogado como especie vulnerable. Diversas organizaciones y comunidades amazónicas promueven su conservación y reforestación. 📌 En resumen: El shihuahuaco es un árbol milenario, medicinal y de gran valor económico, pero su lento crecimiento lo hace muy vulnerable a la explotación. Hoy en día es símbolo de la lucha por la conservación de la Amazonía peruana. 41) Mucura (Petiveria alliacea) 📌 Nombres comunes, Mucura, Anamú, Ajo del monte, Apacin, Hierba hedionda 📖 Descripción botánica Familia Phytolaccaceae Tipo: Hierba perenne, de olor fuerte (ajo y azufre). Altura: Entre 0,5 y 1,5 m. Hojas: Simples, alargadas, verdes brillantes, con olor penetrante al estrujarlas. Flores: Pequeñas, blancas, en espigas delgadas. Raíz: Carnosa y con fuerte aroma a ajo. 🏞 Distribución Crece en zonas tropicales y subtropicales de América: selva amazónica (Perú, Brasil, Colombia), Centroamérica y el Caribe. Se adapta a suelos húmedos y ricos en materia orgánica. 🌿 Principios activos Sulfóxidos de alilo (responsables del olor a ajo) Flavonoides, Alcaloides, Ácidos fenólicos, Triterpenos, Glucósidos azufrados 💊 Usos medicinales tradicionales La mucura es muy versátil en la medicina amazónica y popular:",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "sistema-respiratorio-asma-bronquitis-tos-persistente-gripes-y-resfriados",
+    "commonName": "Sistema respiratorio Asma, bronquitis, tos persistente, gripes y resfriados.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {
+      "General 1": "Se usa en infusión de hojas o baños de vapor."
+    }
+  },
+  {
+    "id": "2",
+    "slug": "sistema-inmunolo-gico-estimula-las-defensas-prevencio-n-de-infecciones-y-estados-gripales",
+    "commonName": "Sistema inmunológico Estimula las defensas. Prevención de infecciones y estados gripales",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "3",
+    "slug": "dolores-y-reumatismo-macerados-y-ban-os-para-artritis-reumatismo-y-dolores-musculares",
+    "commonName": "Dolores y reumatismo Macerados y baños para artritis, reumatismo y dolores musculares.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "4",
+    "slug": "propiedades-antibacterianas-y-antifu-ngicas",
+    "commonName": "Propiedades antibacterianas y antifúngicas",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {
+      "General 1": "Infusión para infecciones leves y como depurativo."
+    }
+  },
+  {
+    "id": "5",
+    "slug": "sistema-nervioso",
+    "commonName": "Sistema nervioso",
+    "scientificName": "",
+    "Descripción": "Calmante natural para el estrés, el insomnio y los nervios.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "6",
+    "slug": "otros-usos",
+    "commonName": "Otros usos",
+    "scientificName": "",
+    "Descripción": "Afrodisíaco en ciertas comunidades. Planta de uso ritual y protector en la Amazonía (baños energéticos para “limpiar el mal aire” o la mala energía). 🍵 Formas de uso Infusión: Hojas secas o frescas (una taza, 2 veces al día). Macerado en aguardiente: Para dolores musculares y reumatismo. Baños de vapor: Con hojas hervidas, para problemas respiratorios y energéticos. Cataplasma: Hojas machacadas aplicadas sobre articulaciones adoloridas. ⚠️ Precauciones No usar en exceso (puede ser tóxica en altas dosis). No recomendada para mujeres embarazadas o en lactancia. Puede interactuar con medicamentos anticoagulantes. Consultar siempre a un especialista antes de un uso prolongado. ✅ En resumen, la mucura es una planta de gran importancia en la medicina tradicional amazónica, tanto en lo físico (respiratorio, reumatismo, infecciones) como en lo espiritual (limpiezas energéticas y rituales). 42) Caigua (Cyclanthera pedata) 📖 Descripción La caigua es una planta trepadora perteneciente a la familia de las Cucurbitáceas (como el pepino, zapallo o melón). Su fruto es una vaina verde alargada, de textura suave y hueca por dentro, que se consume tanto en la cocina como en la medicina tradicional. Es originaria de la región andina y amazónica, cultivada desde tiempos preincaicos en Perú, Bolivia y Ecuador. 🏺 Usos tradicionales Los pueblos amazónicos y andinos la han usado como: Alimento: en guisos, sopas y rellenos (caigua rellena). Medicina natural: para el control del colesterol, la diabetes y problemas digestivos. Refrescante: en jugos y extractos. 💊 Propiedades medicinales Estudios y tradición le atribuyen propiedades:",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "hipocolesterolemiante-ayuda-a-reducir-el-colesterol-malo-y-los-triglice-ridos",
+    "commonName": "Hipocolesterolemiante → Ayuda a reducir el colesterol “malo”  y los triglicéridos.",
+    "scientificName": "LDL",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "hipoglucemiante-contribuye-a-regular-la-glucosa-en-la-sangre",
+    "commonName": "Hipoglucemiante → Contribuye a regular la glucosa en la sangre.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "3",
+    "slug": "cardioprotector-protege-el-corazo-n-y-mejora-la-circulacio-n",
+    "commonName": "Cardioprotector → Protege el corazón y mejora la circulación",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "4",
+    "slug": "digestivo-favorece-la-digestio-n-y-alivia-gases",
+    "commonName": "Digestivo → Favorece la digestión y alivia gases.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "5",
+    "slug": "antiobesidad-se-usa-en-dietas-para-bajar-de-peso",
+    "commonName": "Antiobesidad → Se usa en dietas para bajar de peso.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "6",
+    "slug": "antiinflamatorio-reduce-inflamaciones-internas",
+    "commonName": "Antiinflamatorio → Reduce inflamaciones internas.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "7",
+    "slug": "depurativo-limpia-la-sangre-y-ayuda-al-buen-funcionamiento-del-hi-gado",
+    "commonName": "Depurativo → Limpia la sangre y ayuda al buen funcionamiento del hígado.",
+    "scientificName": "",
+    "Descripción": "🍲 Formas de consumo Culinario: En guisos o rellena (plato típico peruano). En ensaladas, jugos o sopas. Medicinal: Extracto fresco o jugo de la fruta. Cápsulas o tabletas (procesadas industrialmente). Tés o infusiones de hojas secas. ⚠️ Contraindicaciones No se recomienda su uso excesivo en personas con hipotensión (puede bajar demasiado la presión). Mujeres embarazadas o en lactancia deben consultar antes de consumirla en dosis medicinales. Puede potenciar el efecto de medicamentos para la diabetes o colesterol → se recomienda precaución. 📌 Dato curioso El nombre \"caigua\" proviene del quechua kaywa, que significa “fruto blando”. Fue tan valorada en la época incaica que se cultivaba en terrazas especiales para asegurar la dieta saludable de la élite. 43) Ishanga (Urera spp.) 📖 Descripción La Ishanga es una planta silvestre de la familia Urticaceae. Es un arbusto que puede alcanzar entre 1,5 a 3 metros de altura. Tiene hojas grandes, ásperas, con bordes aserrados y cubiertas de pelillos urticantes que producen picazón intensa al contacto. Se le conoce también como “ortiga amazónica”, debido a sus propiedades irritantes similares a la ortiga común. 🏺 Usos tradicionales en la Amazonía Los pueblos amazónicos la han empleado principalmente como: Purgante natural → para limpiar el estómago y los intestinos. Depurativo → usada en baños para limpiar el “mal aire” o energías negativas. Revitalizante → en frotaciones sobre la piel, provoca calor y activa la circulación. Curativa espiritual → en rituales chamánicos para “destrancar” la mala suerte o el mal de ojo. 💊 Propiedades medicinales",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "purgante-fuerte-limpia-el-tracto-intestinal",
+    "commonName": "Purgante fuerte → limpia el tracto intestinal.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "antiparasitario-ayuda-a-eliminar-lombrices-intestinales",
+    "commonName": "Antiparasitario → ayuda a eliminar lombrices intestinales.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "3",
+    "slug": "estimulante-circulatorio-activa-la-sangre-cuando-se-aplica-sobre-la-piel",
+    "commonName": "Estimulante circulatorio → activa la sangre cuando se aplica sobre la piel.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "4",
+    "slug": "anti-reuma-tico-frotaciones-con-ramas-sobre-articulaciones-adoloridas",
+    "commonName": "Anti reumático → frotaciones con ramas sobre articulaciones adoloridas",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "5",
+    "slug": "depurativo-energe-tico-usada-en-ban-os-de-florecimiento-y-limpiezas",
+    "commonName": "Depurativo energético → usada en baños de florecimiento y limpiezas.",
+    "scientificName": "",
+    "Descripción": "🍵 Formas de uso Baños medicinales: ramas de ishanga hervidas en agua para limpiezas espirituales. Frotaciones directas: se pasa la planta fresca por el cuerpo, produciendo picazón que luego se transforma en sensación de calor y alivio muscular. Infusión o cocción: tomada en dosis pequeñas como purgante. ⚠️ Precauciones El contacto directo con la piel produce ardor, picazón y enrojecimiento. Aunque se considera parte del efecto curativo, en exceso puede ser molesto. No se recomienda en personas con piel muy sensible o con alergias. El consumo oral debe ser controlado por curanderos o especialistas, ya que puede causar diarreas intensas. No apto para mujeres embarazadas ni niños pequeños. 📌 Dato curioso En la selva, cuando alguien está “salado” o con mala suerte, los curanderos recomiendan un “baño de ishanga”: se pasa la planta fresca por el cuerpo y luego se enjuaga con agua hervida con sus hojas, lo que se cree “rompe la mala energía”. 44) Cacao (Theobroma cacao) 🔹 Descripción general Nombre científico: Theobroma cacao Familia: Malvaceae Nombres comunes: Cacao, árbol de cacao, “alimento de los dioses”. Origen: Selva amazónica (Perú, Ecuador, Colombia y Brasil). Parte utilizada: Semillas (granos de cacao), cáscara, mucílago, hojas y corteza. Características: Árbol de 4 a 8 m de altura, de hojas grandes y flores pequeñas; su fruto es una mazorca amarilla, naranja o roja, con pulpa blanca y semillas marrones. 🔹 Composición química Las semillas de cacao son ricas en: Alcaloides: teobromina y cafeína. Flavonoides y polifenoles: antioxidantes naturales. Grasas vegetales: manteca de cacao (30-50%). Vitaminas: A, B1, B2, B3, C y E. Minerales: hierro, magnesio, calcio, potasio, fósforo y zinc. 🔹 Propiedades medicinales El cacao ha sido usado tradicionalmente en la Amazonía y en todo el mundo por sus beneficios:",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "cardiovasculares-mejora-la-circulacio-n-sangui-nea-regula-la-presio-n-arterial",
+    "commonName": "Cardiovasculares: mejora la circulación sanguínea, regula la presión arterial.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "antioxidante-combate-el-envejecimiento-celular",
+    "commonName": "Antioxidante: combate el envejecimiento celular.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "3",
+    "slug": "estimulante-la-teobromina-y-cafei-na-aumentan-la-energi-a-y-reducen-el-cansancio",
+    "commonName": "Estimulante: la teobromina y cafeína aumentan la energía y reducen el cansancio.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "4",
+    "slug": "digestivo-la-ca-scara-del-grano-en-infusio-n-alivia-estren-imiento-y-estimula-la-digestio-n",
+    "commonName": "Digestivo: la cáscara del grano en infusión alivia estreñimiento y estimula la digestión",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "5",
+    "slug": "relajante-y-antidepresivo-natural-estimula-la-liberacio-n-de-serotonina-y-endorfinas",
+    "commonName": "Relajante y antidepresivo natural: estimula la liberación de serotonina y endorfinas.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "6",
+    "slug": "antiinflamatorio-reduce-dolores-musculares-y-articulares",
+    "commonName": "Antiinflamatorio: reduce dolores musculares y articulares.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "7",
+    "slug": "cicatrizante-la-manteca-de-cacao-se-usa-en-quemaduras-heridas-labios-resecos-y-piel-seca",
+    "commonName": "Cicatrizante: la manteca de cacao se usa en quemaduras, heridas, labios resecos y piel seca.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "8",
+    "slug": "estimulante-cerebral-mejora-la-memoria-y-concentracio-n",
+    "commonName": "Estimulante cerebral: mejora la memoria y concentración.",
+    "scientificName": "",
+    "Descripción": "🔹 Usos tradicionales en la selva peruana Semillas: tostadas y molidas para bebidas energéticas y rituales. Mucílago (pulpa blanca): consumida fresca, rica en vitamina C. Cáscara: en infusión contra estreñimiento y como tónico digestivo. Manteca de cacao: aplicada en piel reseca, estrías, labios partidos y quemaduras. Corteza del árbol: en decocciones para fiebres y malestares estomacales. 🔹 Usos actuales Industria alimentaria: chocolate, cacao en polvo, licor de cacao, bebidas. Industria cosmética: jabones, cremas, ungüentos, bálsamos labiales. Industria farmacéutica: en cápsulas antioxidantes y energizantes. 🔹 Contraindicaciones y precauciones Consumido en exceso puede causar nerviosismo, insomnio y taquicardia por la cafeína y teobromina. Personas con hipertensión severa o problemas cardíacos deben moderar su consumo. El chocolate industrial con mucho azúcar puede ser perjudicial para diabéticos y personas con sobrepeso. 45) Chiric Sanango 🔹 Identificación Nombre común: Chiric sanango Nombre científico: Brunfelsia grandiflora (también conocida como Brunfelsia uniflora) Familia: Solanaceae Origen: Selva amazónica del Perú, Ecuador, Colombia y Brasil. Características: Arbusto de 2 a 3 m de altura, con hojas alargadas y flores violetas que cambian a azul y luego a blanco con el tiempo. 🔹 Significado del nombre “Chiric” significa frío o escalofrío en quechua. “Sanango” hace referencia a fuerza o poder. 👉 Se asocia a la sensación de frío interno que produce al consumirlo en infusión, antes de brindar un efecto de fortaleza física y espiritual. 🔹 Composición química Contiene alcaloides tropánicos y glucósidos, responsables de sus efectos medicinales y psicoactivos. 🔹 Propiedades medicinales El chiric sanango es considerado una planta maestra en la medicina tradicional amazónica. Sus usos más conocidos son:",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "1",
+    "slug": "reumatismo-y-artritis-alivia-dolores-articulares-y-musculares",
+    "commonName": "Reumatismo y artritis – alivia dolores articulares y musculares.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "2",
+    "slug": "problemas-respiratorios-ayuda-en-resfri-os-bronquitis-y-asma",
+    "commonName": "Problemas respiratorios – ayuda en resfríos, bronquitis y asma.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "3",
+    "slug": "sistema-nervioso-calma-la-ansiedad-estre-s-y-depresio-n-leve",
+    "commonName": "Sistema nervioso – calma la ansiedad, estrés y depresión leve.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "4",
+    "slug": "fortalecedor-general-aumenta-la-resistencia-fi-sica-y-la-energi-a",
+    "commonName": "Fortalecedor general – aumenta la resistencia física y la energía.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "5",
+    "slug": "circulacio-n-sangui-nea-mejora-la-oxigenacio-n-y-la-temperatura-corporal",
+    "commonName": "Circulación sanguínea – mejora la oxigenación y la temperatura corporal.",
+    "scientificName": "",
+    "Descripción": "",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "6",
+    "slug": "limpieza-espiritual-se-usa-en-dietas-amazo-nicas-para-liberar-bloqueos-emocionales",
+    "commonName": "Limpieza espiritual – se usa en dietas amazónicas para liberar bloqueos emocionales.",
+    "scientificName": "",
+    "Descripción": "🔹 Usos tradicionales en la selva Infusión o decocción de la raíz: para reumatismo, resfríos y debilidad corporal. Baños con la corteza o raíz: contra dolores musculares, “mal aire” y energías negativas. Dieta amazónica (shamanismo): se toma en aislamiento, en pequeñas dosis, para fortalecer cuerpo y espíritu. Cataplasmas de hojas: sobre articulaciones inflamadas. 🔹 Usos actuales En la medicina natural amazónica, sigue empleándose como planta depurativa, analgésica y fortalecedora. Investigada por su potencial en tratamientos de enfermedades reumáticas y neurológicas. 🔹 Contraindicaciones ⚠️ El chiric sanango es una planta muy fuerte y tóxica si se consume en exceso, por lo que solo debe usarse bajo la guía de un curandero o especialista. Puede causar vómitos, mareos, escalofríos intensos, visión borrosa y desorientación. No debe usarse en embarazadas, niños ni personas con problemas cardíacos graves. ✅ Conclusión: El chiric sanango es una de las plantas maestras más respetadas de la Amazonía peruana, usada tanto para curar enfermedades físicas (reumatismo, resfríos, dolores) como para la sanación espiritual y energética. Su uso requiere cuidado y conocimiento, ya que es una planta poderosa. 46) Toe (Brugmansia suaveolens) 🔹 Nombre común Toe, Floripondio, Campana, Maikoa. 🔹 Nombre científico Brugmansia suaveolens (también existen especies afines como Brugmansia arborea, Brugmansia sanguinea). 🔹 Familia Solanaceae (misma familia que el tabaco, papa, tomate y la mandrágora). 🌱 Descripción botánica Árbol o arbusto que puede alcanzar entre 2 y 5 metros de altura. Sus hojas son grandes, ovaladas y de textura aterciopelada. Sus flores son muy llamativas, en forma de campana colgante, blancas, amarillas, rosadas o anaranjadas. Toda la planta (hojas, flores, semillas, raíces) es tóxica. 🌿 Usos tradicionales en la Amazonía El toe se usa desde tiempos ancestrales en rituales y curaciones chamánicas. 🔸 Medicina tradicional Baños de florecimiento: las hojas se usan en infusiones para baños que buscan \"limpiar energías negativas\" y atraer buena suerte. Dolores musculares y reumatismo: cataplasmas de hojas hervidas aplicadas externamente. Problemas respiratorios: inhalación de vapores de hojas hervidas (en dosis muy controladas). Calmante: en uso externo, aplicado sobre zonas inflamadas. 🔸 Uso ritual y chamánico En dosis muy bajas, el toe es empleado por curanderos amazónicos para inducir visiones, viajes espirituales y comunicación con los espíritus. Se le considera una planta maestra, pero peligrosa, porque puede abrir percepciones al mundo espiritual y también causar delirios intensos. Algunos chamanes lo combinan con la ayahuasca, aunque esto requiere gran conocimiento debido a la toxicidad. ⚠️ Toxicidad y riesgos El toe contiene alcaloides tropánicos: escopolamina, hiosciamina y atropina. fectos principales: Alucinaciones intensas. Desorientación y pérdida de memoria. Midriasis (pupilas dilatadas). Sequedad extrema en boca y garganta. Taquicardia y arritmias. Convulsiones, coma e incluso la muerte en dosis elevadas. ➡️ IMPORTANTE: El toe no debe ingerirse por personas sin conocimiento chamánico profundo, ya que una mínima variación de dosis puede ser fatal. ➡️ Su uso seguro en comunidades amazónicas es casi siempre externo (baños, emplastos). 🌺 Formas de preparación (uso tradicional seguro) Baños de florecimiento: hojas hervidas en agua, se mezclan con otras plantas (albahaca, ruda, muña) y se usa el agua para baños energéticos. Emplastos: hojas hervidas y colocadas sobre articulaciones inflamadas. Inhalación de vapor: hojas en agua caliente para abrir vías respiratorias (nunca beber la infusión). ✨ Aspectos culturales En la cosmovisión amazónica, el toe es una planta sagrada y temida. Se cree que “abre puertas al mundo de los espíritus” y permite recibir mensajes de los ancestros. También se le asocia con brujería y prácticas oscuras cuando se usa con malas intenciones. ✅ En resumen: El toe es una planta de la selva peruana con fuerte tradición chamánica. Se utiliza principalmente en rituales, baños de florecimiento y aplicaciones externas. Sus usos internos son muy peligrosos debido a su toxicidad, por lo que solo chamanes experimentados la emplean en contextos rituales. 47) Bolaina (Guazuma crinita) 🔹 Nombre común Bolaina, bolaina blanca. 🔹 Nombre científico Guazuma crinita. 🔹 Familia Malvaceae (misma familia del cacao y la mal 🌱 Descripción botánica Árbol que puede alcanzar entre 8 y 20 metros de altura. Crece rápido, es una especie pionera que se desarrolla en suelos degradados, lo que la hace muy útil en reforestación. Hojas simples, ovaladas y con pequeñas pelusas en la superficie. Produce flores pequeñas y frutos en cápsula, que sirven de alimento a la fauna silvestre. 🌿 Usos medicinales tradicionales En la medicina popular amazónica, la bolaina se emplea de varias formas: 🌸 Corteza y hojas Infusión para tratar resfriados, tos y bronquitis. Cocción como depurativo de la sangre. Aplicación en cataplasmas para inflamaciones y heridas. 🌸 Raíz Decocción como diurético suave. Útil en problemas de los riñones y vías urinarias. 🌸 Frutos Usados en algunas comunidades como remedio para la diarrea. 🪵 Otros usos importantes Madera: ligera, fácil de trabajar, usada en tablas, techos, cajonería, embarcaciones, muebles rústicos. Reforestación: crece rápido (se tala entre 8 y 12 años), muy usada en proyectos de restauración forestal. Combustible: su madera se utiliza como leña y carbón. Agroforestería: se siembra junto a cultivos como cacao y café, porque mejora el suelo y brinda sombra. ⚠️ Precauciones Su uso medicinal debe hacerse en dosis moderadas (infusiones suaves). No se recomienda en embarazadas ni niños pequeños sin supervisión. No se reportan toxicidades graves, pero un exceso de consumo puede causar malestares digestivos. 🌺 Aspectos culturales y económicos Considerada una de las especies forestales más importantes de la Amazonía peruana por su doble valor: medicinal y maderable. Es parte de los programas de reforestación en regiones como Ucayali, San Martín y Huánuco. En la cosmovisión amazónica, se le reconoce como “árbol que limpia”, tanto en lo físico (desintoxicante) como en lo simbólico (protección y purificación). ✅ En resumen: La bolaina (Guazuma crinita) es un árbol amazónico de gran valor medicinal (para tos, inflamaciones, riñones y heridas), económico (madera liviana) y ecológico (reforestación y recuperación de suelos). Es una planta que une la salud, la economía y la conservación ambiental en la selva peruana 48) Pashaco 🔹 Nombre común Pashaco, Palo pashaco, Shihuahuaco pashaco (según la zona). 🔹 Nombre científico Schizolobium amazonicum (también conocido como Schizolobium parahyba var. amazonicum). 🔹 Familia Fabaceae (leguminosas, misma familia del algarrobo y frijol). 🌱 Descripción botánica Árbol de gran porte, puede alcanzar 25 a 40 metros de altura. Tronco recto, cilíndrico, con corteza grisácea y ramas en lo alto. Sus hojas son grandes, bipinnadas, de aspecto plumoso. Produce flores amarillas muy vistosas en racimos, especialmente en época de floración. Crecimiento rápido, considerado una especie pionera útil para reforestación. 🌿 Usos medicinales tradicionales En comunidades amazónicas, el pashaco se emplea principalmente con su corteza y hojas: Antiinflamatorio → decocción de la corteza para aliviar reumatismo, artritis y dolores musculares. Problemas respiratorios → infusión suave de hojas para tos y resfriados. Cicatrizante → emplastos de corteza machacada para heridas superficiales. Depurativo → en algunos lugares, se usa como té para “limpiar la sangre” y eliminar toxinas. 🪵 Otros usos importantes Madera: ligera y fácil de trabajar, usada en tableros, contrachapados, embalajes, carpintería ligera, muebles rústicos y construcción temporal. Reforestación: gracias a su rápido crecimiento, es sembrado en proyectos forestales de Ucayali, Huánuco, Junín y San Martín. Sombra y agroforestería: se cultiva junto a cacao y café porque crece rápido y da buena cobertura.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {
+      "culturales": "algunas comunidades lo utilizan en rituales de limpieza junto a otras cortezas",
+      "General 1": "⚠️ Precauciones",
+      "General 2": "Los preparados medicinales de pashaco deben tomarse en dosis suaves.",
+      "General 3": "No se recomienda el uso interno en embarazadas o niños pequeños.",
+      "General 4": "Un exceso de decocciones puede causar malestar estomacal.",
+      "General 5": "🌺 Aspectos culturales y ecológicos",
+      "General 6": "Se considera un árbol noble de la Amazonía porque ofrece madera útil y medicina natural al mismo tiempo.",
+      "General 7": "Asociado a la resiliencia de los bosques, porque es de crecimiento rápido y ayuda a recuperar áreas degradadas.",
+      "General 8": "En cosmovisión amazónica, se le reconoce como árbol de fuerza y protección.",
+      "✅ En resumen": "",
+      "General 9": "El pashaco (Schizolobium amazonicum) es un árbol amazónico de gran altura, rápido crecimiento y múltiple utilidad. Sus hojas y corteza se emplean en la medicina tradicional como antiinflamatorio, depurativo y remedio para problemas respiratorios. Además, su madera ligera lo hace valioso en carpintería y reforestación, convirtiéndolo en un recurso clave para la selva peruana.",
+      "General 10": "49) Piri Piri",
+      "General 11": "🔹 Nombre común",
+      "General 12": "Piri piri, piripiri, curi curi.",
+      "General 13": "🔹 Nombre científico",
+      "General 14": "Generalmente corresponde a especies del género Cyperus (como Cyperus articulatus, Cyperus prolixus, entre otros).",
+      "General 15": "Pertenece a la familia Cyperaceae (ciperáceas).",
+      "General 16": "🌿 Descripción botánica",
+      "General 17": "Planta herbácea perenne, parecida al junco.",
+      "General 18": "Tallos delgados, triangulares, de hasta 1 metro de altura.",
+      "General 19": "Hojas angostas y largas.",
+      "General 20": "Crece en lugares húmedos, riberas de ríos y chacras amazónicas.",
+      "General 21": "Produce rizomas y bulbos subterráneos muy aromáticos, que son la parte más usada.",
+      "General 22": "🌺 Usos medicinales tradicionales",
+      "General 23": "El piri piri es muy variado en su aplicación. Cada tipo (según la forma de su bulbo o rizoma) recibe un nombre y un uso diferente en la medicina amazónica.",
+      "🌿 Principales aplicaciones": "",
+      "Digestivo y estomacal": "decocción de los rizomas para cólicos, diarrea e indigestión.",
+      "Problemas respiratorios": "infusión contra la tos y resfríos.",
+      "Dolores menstruales": "usado como regulador del ciclo menstrual.",
+      "Sedante": "calma nervios y ayuda a dormir.",
+      "Antiinflamatorio": "cataplasmas de bulbos machacados sobre golpes o heridas.",
+      "General 24": "✨ Usos mágicos y rituales",
+      "General 25": "En la cosmovisión amazónica, el piri piri es considerado una planta de poder.",
+      "General 26": "Se cree que existen decenas de variedades (algunas comunidades mencionan más de 30 tipos, cada uno con un efecto distinto).",
+      "tradicionales espirituales": "",
+      "General 27": "En baños para atraer buena suerte y protección.",
+      "General 28": "Como amuleto para el amor, la caza o la pesca.",
+      "General 29": "En gotas para los ojos, para “agudizar la visión” o recibir “clarividencia” durante rituales.",
+      "General 30": "Usado por chamanes para “abrir la intuición” y fortalecer el aprendizaje en dietas de plantas.",
+      "General 31": "🧉 Formas de preparación",
+      "Infusión": "bulbos o raíces hervidos en agua (para problemas digestivos y resfríos).",
+      "Baños": "rizomas machacados y hervidos en agua, usados en baños de florecimiento.",
+      "Cataplasmas": "bulbos triturados aplicados directamente sobre golpes, inflamaciones o heridas.",
+      "Gotas oculares": "en usos rituales, se maceran bulbos en agua (⚠️ muy delicado, no recomendable sin guía chamánica).",
+      "General 32": "⚠️ Precauciones",
+      "General 33": "Su uso en ojos es exclusivamente ritual y bajo supervisión chamánica",
+      "General 34": "puede ser peligroso si no se prepara correctamente.",
+      "General 35": "El consumo excesivo puede causar malestar estomacal o mareos.",
+      "General 36": "No se recomienda en embarazadas ni niños pequeños sin orientación experta.",
+      "General 37": "🌍 Aspectos culturales",
+      "General 38": "El piri piri es una de las plantas más misteriosas y polivalentes de la Amazonía.",
+      "General 39": "Se le considera “planta maestra”, porque enseña, guía y protege a quienes la usan en el contexto adecuado.",
+      "General 40": "Está profundamente ligada a rituales de curanderismo, cacería, amor y visión espiritual.",
+      "General 41": "El piri piri (Cyperus spp.) es una planta amazónica de rizomas aromáticos, muy valorada por su versatilidad. Tiene aplicaciones medicinales (digestivo, antiinflamatorio, sedante, regulador menstrual), pero también un rol espiritual como planta de poder en rituales, baños y gotas oculares. Es considerada una planta sagrada y multifuncional en la selva peruana.",
+      "General 42": "50) Sacha Mango",
+      "General 43": "🔹 Nombre común Sacha mango, “mango silvestre”.",
+      "General 44": "🔹 Nombre científico",
+      "General 45": "Grias neuberthii (en algunas zonas también se le relaciona con Grias peruviana y Grias cauliflora).",
+      "General 46": "🔹 Familia",
+      "General 47": "Lecythidaceae (misma familia del “sapucaia” y la “castaña amazónica”).",
+      "General 48": "🌱 Descripción botánica",
+      "General 49": "Árbol de mediano a gran porte, que puede alcanzar 20 a 30 metros de altura.",
+      "General 50": "Tronco recto y hojas grandes, alargadas, que se concentran en la parte superior de las ramas.",
+      "General 51": "Produce flores amarillentas o blanquecinas, fragantes.",
+      "General 52": "Fruto ovoide, parecido al mango, de cáscara gruesa y pulpa jugosa de color amarillento o anaranjado.",
+      "General 53": "🍈 Usos alimenticios",
+      "General 54": "El fruto se consume fresco en comunidades amazónicas.",
+      "General 55": "La pulpa es jugosa y nutritiva, de sabor ácido-dulce.",
+      "General 56": "Se usa en jugos, refrescos y en la preparación de postres caseros.",
+      "General 57": "En algunas zonas se fermenta para elaborar bebidas tradicionales.",
+      "General 58": "🌿 Usos medicinales tradicionales",
+      "General 59": "Fruto → rico en vitaminas y minerales, recomendado como reforzador del sistema inmunológico.",
+      "General 60": "Corteza → decocción usada como antidiarreico y antiinflamatorio.",
+      "General 61": "Hojas → preparadas en infusión para aliviar resfriados, fiebre y malestares estomacales.",
+      "General 62": "Semillas → a veces molidas para cataplasmas contra infecciones cutáneas.",
+      "General 63": "🪵 Otros usos",
+      "Madera": "liviana, usada en construcción rural y carpintería ligera.",
+      "Sombra y agroforestería": "cultivado cerca de chacras porque mejora el microclima.",
+      "Atracción de fauna": "sus frutos sirven de alimento a aves y mamíferos amazónicos.",
+      "General 64": "🌺 Aspectos culturales",
+      "General 65": "En comunidades amazónicas, el sacha mango es considerado un árbol de abundancia y alimento.",
+      "General 66": "Asociado con la fertilidad y la prosperidad, pues sus frutos crecen en abundancia durante la temporada.",
+      "General 67": "A veces es incluido en baños de florecimiento, donde se usan sus hojas junto a otras plantas para atraer buena suerte.",
+      "General 68": "⚠️ Precauciones",
+      "General 69": "No se reportan toxicidades graves.",
+      "General 70": "Como en muchos frutos amazónicos, un consumo excesivo de semillas sin preparación adecuada no se recomienda (pueden ser amargas o indigestas).",
+      "General 71": "El sacha mango (Grias neuberthii) es un árbol amazónico que ofrece frutos nutritivos y refrescantes, corteza con propiedades medicinales, hojas útiles contra resfriados y madera liviana para carpintería. Es una planta de gran valor cultural y alimenticio en la selva peruana, considerada símbolo de abundancia y alimento natural."
+    }
+  },
+  {
+    "id": "51",
+    "slug": "oje",
+    "commonName": "Ojé",
+    "scientificName": "Ficus insipida",
+    "Descripción": "Árbol de gran tamaño (hasta 25 m), tronco recto, hojas grandes,Produce látex blanco lechoso al cortar su corteza, Crece en zonas húmedas de la Amazonía. 🌿 Beneficios medicinales (usos tradicionales) Antiparasitario (elimina lombrices intestinales). Purgante y depurativo (limpia el sistema digestivo y la sangre). Antiinflamatorio y antipirético (baja fiebre, reduce inflamación). Cicatrizante y analgésico (para heridas, picaduras, dolor de muela). Afrodisíaco y estimulante en algunas culturas.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {
+      "General 1": "tradicional",
+      "Látex fresco": "Tomado en gotas con agua/jugo para parásitos",
+      "General 2": "aplicado en la piel para heridas, picaduras.",
+      "Hojas cocidas": "Infusión contra fiebre o para “limpiar la sangre”.",
+      "Fruto": "A veces consumido para mejorar memoria.",
+      "⚠️ Precaución": "Nunca tomar en exceso. No usar en embarazo o en niños sin orientación."
+    }
+  },
+  {
+    "id": "52",
+    "slug": "la-menta",
+    "commonName": "La menta",
+    "scientificName": "Mentha spp., como Mentha piperita o Mentha spicata",
+    "Descripción": "Tiene hojas opuestas, de forma lanceolada, bordes dentados. Tallos ramificados, Produce flores pequeñas agrupadas (según especie, colores pueden variar: rosado, púrpura), Prefiere climas templados a cálidos, suelos húmedos o bien drenados, lugares con algo de sombra o semisombra, buena materia orgánica. ✅ Beneficios medicinales Mejora digestiva: ayuda contra gases, indigestión, cólicos estomacales. Antiespasmódica: calma espasmos intestinales o molestias abdominales. Alivio de síntomas respiratorios: descongestiona, ayuda en resfríos, gripe, tos; uso en vapores o inhalaciones. Analgésica ligera: para dolores de cabeza, muscular, también puede usarse topicamente. Refrescante, antiséptica y ayuda con aliento, higiene bucal. Puede ayudar a reducir el estrés, mejorar concentración por su aroma (efecto estimulante suave). 🛠️ Modo de uso Infusión (té): hojas frescas o secas, dejar reposar en agua caliente, luego beber. Ideal después de comidas para digestión o cuando hay malestar estomacal. Vapores / inhalaciones: colocar hojas de menta en agua caliente, inhalar los vapores para aliviar congestión nasal, gripe. Uso tópico: aceite esencial diluido sobre sienes para dolor de cabeza; compresas con infusión fría para aliviar irritaciones de piel, picaduras leves. Masticar hojas: para aliento fresco, higiene bucal.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {}
+  },
+  {
+    "id": "53",
+    "slug": "sachaculantro",
+    "commonName": "Sachaculantro",
+    "scientificName": "Eryngium foetidum L",
+    "Descripción": "🌿 Descripción: Planta herbácea, hasta alrededor de 3040 cm de altura, usualmente en roseta basal de hojas, Hojas lanceoladas u oblanceoladas, bordes dentados o espinados, olor fuerte (más intenso que el cilantro común), crece bien en zonas tropicales, húmedas, con sombra parcial; suelos con buen drenaje; tolera alta humedad. ✅ Beneficios medicinales del Sachaculantro 🌿 Usos tradicionales: Digestivo natural Alivia gases, cólicos, indigestión y malestar estomacal. Antidiarreico Infusión de hojas para tratar la diarrea leve. Antiinflamatorio Reduce inflamaciones internas y externas. Antifebril Ayuda a bajar la fiebre (tomado o aplicado en compresas). Calmante / relajante Favorece el sueño y reduce el estrés (fruto y hojas). Dolores de cabeza Aplicación de hojas frescas en la frente. Estimulante del parto En infusión caliente, tradicionalmente usado para facilitar el parto. 🔬 Respaldo científico: Tiene actividad antioxidante (protege células del daño oxidativo). Contiene flavonoides y aceites esenciales (como αpineno) con posibles efectos antimicrobianos y antiinflamatorios. Estudios indican que puede ayudar a conservar la salud digestiva y reducir procesos inflamatorios. ⚠️ Contraindicaciones del sachaculantro Embarazo (primeros meses): Aunque se usa tradicionalmente como estimulante del parto, no debe usarse durante el embarazo temprano, ya que podría provocar contracciones y riesgo de aborto. Personas con alergia a plantas aromáticas (Apiáceas): Puede causar reacciones alérgicas cutáneas o digestivas (como otras de la familia del cilantro, perejil o apio). En exceso puede irritar el estómago: Tomado en grandes cantidades, puede causar náuseas, acidez o diarrea. Lactancia: No hay evidencia clara sobre su seguridad en madres lactantes, por lo que se recomienda evitar su uso medicinal durante este periodo. Niños menores de 2 años: No se recomienda administrar sin supervisión, especialmente en forma de infusión concentrada o aceites. ABUTA: Motelo sanango, trompetero sacha Abuta grandifolia (Martius) Sandwith: Menispennaceae (Dicotiledónea) • Descripción botánica Liana robusta, aplanada; ramas glabras. Hojas glabras, ovado-blongas u oblanceoladas, acuminada o cuspidada, limbo verde pálido; 10-20 cm de longitud, 6-12 cm de ancho; nervaduras palmeadas. Inflorescencia 2-8 cm de longitud. Fruto drupa elipsoide, glabra, amarillenta; de 2 a 2.5 cm de longitud. • Usos Raíz Anemia: la decocción de 30 g en un litro de agua; se toma una taza dos veces al día. Hemorragias post-operatorias: se cocina 50 g en un litro y medio de agua hasta que se reduzca a un litro. Se toma una taza de cada tres horas. Reumatismo: en maceración alcohólica; 50' g en un litro de aguardiente durante ocho días. Se toma una copita tres veces al día. Corteza:  Diabetes: maceración de 20 g de corteza raspada en un litro de agua. Se toma medio vaso después de las comidas durante 30 días. Dismenorrea: la infusión de 30 gr en un litro de agua hervida; se toma una taza tres veces al día. Hojas: Afrodisíaco, esterilidad femenina y hemorragias: a una decocción de la raíz y el tallo se 'agrega igual cantidad de miel de abeja; dejar macerar por siete días. Tomar una copita tres veces al día. • Compuestos presentes Alcaloides (Benzil-isoquinolínico), flavones y taninos. • Observación La decocción de la corteza disminuye el colesterol en la sangre. La preparación en decocción es muy amarga. ACHIRA : Platanillo Canna indica L. Cannaceae (Monocotiledónea) botánica:  Hierba de hasta 1.5 m de alto. Hojas elípticas, oblongas, verde oscuro, lámina 10-70 cm de largo y 20 cm de ancho. Inflorescencia en racimos, al final de un vástago, entre la base envolvente de las hojas. Fruto: cápsula de tres celdas. Semillas esféricas. botánica: Arbusto o lianescente de 2 a 3 m. Hojas oblongas, acuminadas, de 20 cm de largo. botánica: Arbusto de uno a tres metros de alto. Tallo glabro o pubescente con tricomas largos. De tres a cinco hojas lobadas, lóbulos acuminados, algo estrecho en la base, nervadura palmada. Flores solitarias, corola amarilla con una mancha rojiza en la parte interna de la base de los pétalos. Fruto: cápsula ovoide, lisa. Semillas redondeadas con fibras cortas adheridas a la epidermis, usualmente 5-8 por celda. • Usos Semillas Cefaleas: se trituran las semillas y se forma una pasta que se aplica sobre la zona adolorida. Hojas: Fiebres, antidiarreico: infusión de las hojas. Tornar caliente, una taza dos veces al día. Gases: infusión de tres hojas en una taza con agua hirviendo. Se torna tres veces al día. Hemorroides: se prepara un emplasto con las hojas y se aplica. Heridas: se hace un emplasto con las hojas y semillas trituradas. Se aplica directamente en la lesión (heridas, rozaduras, escaldaduras). Estimulante del parto: beber una infusión de las hojas ayuda a dilatar el útero en la parturienta. Raíz Diurético: preparar un cocimiento de 5 g de raíz. Tornar una taza dos veces al día. Flores Hepatitis: 10 g de flores en decocción. Se torna una taza tres veces al día. • Compuestos presentes Gossypol, furfutol, acetovanilona, betaína, fitosterol, serotonina, oleína, ácidos palmítico, esteárico, aráquico y peptínico. ATADIJO: Trema micrantha (L) Blume Umaceae (Dicotiledónea) botánica:  Árbol de hasta 20 m de alto, de 20-30 cm de diámetro. Hojas simples, alternas; comúnmente lanceoladas, acuminadas, borde aserrado, base oblícua, trinervada. Inflorescencia axilar en una panícula. Flores uni o bisexuales; blanco-verdosas, hasta rojizas. Fruto: drupa, ovoide, anaranjada, 2-3 mm de largo. botánica: Árbol de hasta 30 m. de alto. Hojas alternas, glabras, agrupadas en el ápice de las ramitas, oblanceoladas a oblongo lanceoladas, de 7.5-26 x 2.3-7.5 cm, ápice redondeado base cuneada. Inflorescencias en racimos caulinares, de 7-18 cm de longitud. Flores de 2-3 cm de diámetro, cáliz con 6 sépalos triangulares, corola con 6 pétalos oblongos, blanco amarillentos. Androceo zigomorfo con capucha estaminal plana, amarilla. Fruto baya leñosa, globosa, indehiscente, de 10-13 x 9-13 con mesocarpo de olor desagradable, amarillento cuando fresco, se oxida a verde azulado cuando es expuesto al ambiente. Semillas numerosas, embebidas en la pulpa.",
+    "Beneficios medicinales y respaldo científico": {},
+    "Modo de uso": {
+      "Tallos Mastitis": "el tallo envuelto en una hoja de plátano se calienta al fuego",
+      "aún tibio, se exprime el jugo sobre la zona afectada. Tos seca": "tomar una cucharadita del jugo de los tallos frescos.",
+      "General 1": "Hojas",
+      "Infecciones de la piel": "igual que el anterior. Tos: infusión de las hojas. Flor Ojos inflamados e irritados: se cocinan 30 g de flores y hojas en un litro de agua",
+      "General 2": "Raíz",
+      "Antigonorreico y diurético": "tomar la decocción de las raíces y hojas.",
+      "AJO SACHA": "Sacha ajo Mansoa alliacea (Lam.) Gentry Bignoniaceae (Dicotiledónea)",
+      "Raíz Reumatismo": "se maceran cinco raíces en una botella con aguardiente por dos días. Tomar una copita en ayunas y luego bañarse.",
+      "Hojas Reumatismo": "cocimiento de tres hojas del macho y tres de hembra más cuatro hojas de achiote rojo",
+      "General 3": "bañarse con el líquido, y con las hojas hacer emplastos sobre la zona adolorida.",
+      "General 4": "Compuestos presentes Estigmasterol, alcaloides, saponinas, f1avones, pigmentos f1avónicos",
+      "ALGODÓN": "Gossypium barbadense L. Malvaceae (Dicotiledónea)",
+      "Corteza Tos seca": "el cocimiento de la corteza y hojas se usa para hacer gárgaras. También se usa la corteza como masticatorio.",
+      "Descongestionante nasal": "en inhalaciones del vapor del cocimiento de la corteza y hojas. Hojas Tos seca: se toman unas siete hojas y se estrujan en agua",
+      "General 5": "al líquido resultante se añade el jugo de un limón. Se toma tres veces al día.",
+      "AYAHUMA": "couropita guianensis aublet lecythidaceae (dicotiledónea)",
+      "Frutos Anticonceptivo": "el cocimiento de un fruto verde en 2 litros de agua se utiliza en lavados vaginales, luego de la menstruación durante 5 días. Se toman 2 gotitas del jugo extraído del fruto maduro por las mañanas durante 7 días, luego del periodo de menstruación.",
+      "Yemas foliares Analgésico dental": "Las yemas, trituradas, se aplican localmente en la pieza adolorida",
+      "General 6": "Compuestos presentes Los frutos contienen esteroides libres, hidróxido benzoico, quinonas y antroquinona",
+      "General 7": "Observaciones Las hojas se utilizan como ingrediente del brebaje alucinógeno ayahuasca",
+      "General 8": "la cantidad de hojas varía según las formulaciones de cada \"ayahuasquero\". Los frutos se utilizan para prevenir y curar el \"moquillo de las gallinas\" (cólera aviar). . Los frutos se colocan detrás de la puerta de las casas, contra hechizos y para ahuyentar los malos espíritus.",
+      "BOLSA MULLACA": "Mullaca Capuli cimarrón Physalis angulata L. Solaceae (Dicotiledónea)",
+      "General 9": "Descripción botánica Hierba anual, de varios decímetros hasta un metro de alto. Tallo angular, glabro. Hojas ovadas hasta linear-lanceoladas, cuneadas en la base, a veces agudamente sinuado-dentadas. Flores pequeñas de color crema, sin manchas pero con centro oscuro",
+      "General 10": "cáliz subangulado, 2-3 cm de largo, el pedúnculo recurvado comúnmente corto. Fruto baya esférica, lisa, amarillo-anaranjada. Semillas rojizas.",
+      "Raíz Diabetes": "macerar tres raíces, en trozos menudos, en una botella de aguardiente (un cuarto de litro) durante siete días. Agregar media botella de miel de abeja. Se toma medio vaso, dos veces al día durante 60 días.",
+      "Hepatitis": "tomar la infusión de las raíces como agua de tiempo. Hojas Diurético: infusión de las hojas",
+      "tomar una taza 3 veces al día. Inflamaciones y desinfectante": "con el cocimiento de hojas y frutos se fricciona la zona afectada. Se aplican también directamente las hojas frescas y trituradas.",
+      "Asma": "infusión de la parte aérea de la planta",
+      "General 11": "tomar una taza tres veces al día, caliente o como agua de tiempo.",
+      "Paludismo": "preparar un cocimiento de las partes aéreas de la planta en 5 litros de agua. Se toma como agua de tiempo.",
+      "Fruto Sarna": "el fruto verde se tritura",
+      "General 12": "la masa obtenida se aplica directamente sobre la herida durante siete días.",
+      "General 13": "Compuestos presentes Fisalina, higrina, tropeína, vitaminas A y C",
+      "CACAO": "Theobroma cacao L. Sterculiaceae (Dicotiledónea)",
+      "Descripción botánica Árbol ramos o de 8": "10 m de alto. Hojas enteras, obovado-oblongas, acuminadas o cuspidadas en el ápice, obtusas en la base",
+      "General 14": "30 cm de largo por 10 cm de ancho. Inflorescencia caulinar, aglomerada. Flores con sépalos y pétalos amarillo pálido. Fruto ovoide u oblongo-ovoide, obtuso o agudo, acostillado, usualmente pentagonal, amarillo o rojo cuando maduro, hasta 40 cm de largo.",
+      "Usos Fruto Tos seca": "se cocina la cáscara de la semilla, obteniéndose un chocolate espeso",
+      "General 15": "tomar una taza tres veces al día.",
+      "General 16": "Compuestos presentes Teobromina, sales minerales, vitaminas y mucílagos.",
+      "General 17": "Observaciones El cacao tiene acción estimulante debido a la teobromina, alcaloide relacionado con la cafeína. En los granos secados al aire existe un 1,2 % de esta sustancia",
+      "General 18": "en el cacao en polvo un 2,3 %",
+      "General 19": "CASHO Cashu, Marañón Anacardium occidentale L. Anacardiaceae (Dicotiledónea)",
+      "General 20": "Descripción botánica Árbol pequeño de hasta 15 m de altura. Hoja entera, subcoriácea, glabra, obovada-oblonga, redondeada en el ápice y corta en el tallo. Inflorescencia en cimas terminales grandes. Flores hermafroditas o estaminadas, blanco-amarillentas",
+      "rosadas a la antesis, flagrantes. Fruto": "nuez reniforme grande y parduzca producida en el ápice de un hipocarpo ensanchado, jugoso, amarillo o rojo.",
+      "General 21": "Usos",
+      "Corteza Antiséptico vaginal": "el cocimiento de 100 gramos de corteza, tibio",
+      "General 22": "en lavados vaginales, por las noches.",
+      "Hojas tiernas Antidiarreico": "se bebe la infusión de los brotes, así como el jugo del fruto. Para preparar la infusión se toman cuatro cogollos (ramita terminal) de casho",
+      "General 23": "se trituran, junto con otros tantos de guayaba y se ponen a hervir durante 10 minutos en un litro de agua. Se toma tibio.Se recomienda administrar a los niños una cucharadita tres veces al día y una cucharada para los adultos.",
+      "Semillas Infecciones de la piel": "se trituran las semillas y se hace una masa, que se aplica en la zona afectada.",
+      "General 24": "Compuestos presentes Cardol, ácidos anacárdico, gálico, oxálico y tartárico, fitosterina, proteínas, sales minerales y vitaminas A, B, B2 y C.",
+      "General 25": "Observaciones El aceite del fruto es caústico.",
+      "Coco Cocotero Cocos nucifera L": "Arecaceae (Monocotiledónea)",
+      "General 26": "Descripción botánica Palmera solitaria, hasta de 20 m de alto",
+      "General 27": "estípite erecto o arqueado, hinchado en la base. Hojas pinnadas, hasta 3,5 m de largo, foliolos hasta de 90 x 6 cm. Frutos de hasta 30 cm de diámetro, verdes o amarillos.",
+      "General 28": "Usos",
+      "Fruto Galactógeno": "comer el endosperma del fruto ayuda a la producción de leche materna en las madres que dan de lactar.",
+      "General 29": "Compuestos presentes Glucosa, levulosa, inulina, proteínas, sales minerales, celulosa, vitamina C, rivofIavina y niacina.",
+      "General 30": "Coconilla Ucsha coconilla Solanun americanun Mill Solanaceae (Dicotiledónea)",
+      "General 31": "Descripción botánica Hierba de hasta 2 m de alto. Hojas angostamente ovadas, borde sinuado, angulado, ápice agudo, base cortamente sagitada, 18-22 cm de largo, con espinas punzantes en las nervaduras del haz y el envés. Inflorescencia en umbela lateral. Flores pequeñas",
+      "General 32": "cáliz 5 dentado",
+      "General 33": "corola blanca, los lóbulos reflexos. Fruto baya esférica, 5 mm de diámetro",
+      "General 34": "anaranjada en la madurez.",
+      "Hojas Infecciones de la piel (Riwi)": "Las hojas estrujadas se aplican directamente, en forma de emplasto sobre la región afectada por el riwi (Herpes zoster).",
+      "GUANÁBANA Annona muricata L": "Annonaceae (Dicotiledónea)",
+      "General 35": "Descripción botánica Árbol pequeño, de hasta 8 m de alto, ramitas rojizas-sericeas. Hojas oblongo-elípticas a angostamente obovadas, de 18 x 7 cm, glabras con excepción de las venas mayores. Flores solitarias, verdes, en pedicelos rojizos-sericeos. Fruto sincarpo carnoso, ovoide y oblongo-ovoide, de 15-20 cm de largo",
+      "General 36": "epicarpio verde, espinoso.",
+      "General 37": "Usos Hojas",
+      "Parasitosis intestinal": "infusión de las hojas y tallos tiernos. Tomar un vaso tres a cuatro veces al día. Tener extrema precaución al preparar la infusión: una infusión demasiado concentrada puede tener efectos tóxicos.",
+      "Corteza Cólicos": "se prepara una infusión o cocimiento con corteza, raíz y hojas, las tres juntas o bien por separado",
+      "General 38": "se toma una taza del preparado caliente.",
+      "General 39": "Compuestos presentes Proteínas, lípidos, carbohidratos, calcio, fósforo, hierro, retinol, vitamina A, B, B2' B5', ácido ascórbico.",
+      "General 40": "Observaciones Los frutos son comestibles.",
+      "General 41": "LIMÓN Citrus limon (L.) Burm. Rutaceae (Dicotiledónea)",
+      "General 42": "Descripción botánica Árbol pequeño, espinoso. Hojas jóvenes y la yema de las flores rojizas",
+      "General 43": "peciolo estrechamente alado o marginado. Hojas ovadas, acuminadas, aserradas. Flores blanco-purpúreas. Fruto oval con 8-10 segmentos, amarillo cuando maduros.",
+      "General 44": "Usos",
+      "Fruto Afecciones de la garganta": "hacer gárgaras, cada cuatro horas, con el jugo de un limón diluído en medio vaso de agua con una pizca de sal.",
+      "Hemorragia nasal": "se ponen dos gotas del jugo en la fosa nasal que sangra. Caracha: se cocina el jugo del limón hasta que quede espeso y oscuro. Aplicar el jugo cocinado con un algodón sobre la «caracha», limpiada previamente con agua y jabón",
+      "General 45": "se realiza la operación una vez al día hasta que sane.",
+      "Resfríos": "al líquido que se obtiene de hervir la mitad de un limón con cáscara, se añade «Vic-vaporub»",
+      "recibir el vapor (inhalaciones) durante 10 minutos, cubriéndose con una toalla. Heridas": "exprimir limones asados sobre la herida. Disminuye el dolor y la inflamación. El jugo de limón fresco aplicado directamente sobre las heridas es un desinfectante efectivo.",
+      "General 46": "Compuestos presentes Citral, linalol, pectina, ácidos cítrico y málico, candineno, felandreno, d-limoneno, citronelal, narcotina, quinolina, estaquidrina, carbohidratos, proteínas, sales de potasio, calcio, fósforo, sodio, hierro, magnesio, manganeso, vitaminas A, B1’, B2 y C.",
+      "MALVA Malachra ruderalis L": "Malvaceae (Dicotiledónea)",
+      "General 47": "Descripción botánica Hierba o arbusto canescente, planta entera con un fino indumento en su mayor parte de tricomas estrellados y simples. Las hojas bajas subrotundas, usualmente 5-lobadas, las de arriba 3-lobadas o enteras, todas redondeadas u obtusas en la base, desigualmente aserradas, 6-10 cm de largo y 4-7 cm de ancho. Cabezuelas solitarias, 2-3 en las axilas superiores o terminales. Flores con cáliz de 6-8 mm de largo, los lóbulos ovado-obtuso",
+      "General 48": "pétalos 1 cm de largo",
+      "General 49": "carpelos 3 mm de largo.",
+      "General 50": "Usos",
+      "Raíz Resfrío común": "tomar una taza de la infusión de la raíz antes de acostarse.",
+      "Hojas Cefaleas, fiebres, cólicos, antiinflamatorios": "se estrujan las hojas obteniéndose un jugo flemoso",
+      "General 51": "se diluye en un vaso con agua agregándose unas gotitas dé limón. Se da de beber al paciente cuatro veces al día.",
+      "Quemaduras": "se trituran las hojas y se aplica en la zona afectada en forma de compresas u hojas soasadas.",
+      "General 52": "con el líquido se hacen lavados externos.",
+      "Estreñimiento": "las flores y hojas trituradas se dejan «serenar», diluidas en agua",
+      "General 53": "tomar como agua de tiempo.",
+      "PAICO Cashua Chenopoium ambrosioides L": "Chenopodiaceae (Dicotiledónea)",
+      "General 54": "Descripción botánica Planta herbácea, erecta, de 50-60 cm de alto. Hojas alternas, ovoides y lanceoladas, de bordes dentados o profundamente sinuosos, 5-8 cm de largo y 1-3 cm de ancho, pecíolo corto, verde claro. Flores diminutas, agrupadas en pequeños racimos",
+      "General 55": "cáliz de 5 sépalos, apétalas, verdeamarillentas, generalmente hermafroditas. Fruto maduro, envuelto en los restos del cáliz. Semilla lenticular.",
+      "General 56": "Usos",
+      "Tallos Cólicos": "infusión de las hojas y tallos tiernos",
+      "General 57": "un vaso tres o cuatro veces al día en el caso de adultos y tres o cuatro cucharadas, en el caso de niños.",
+      "Infecciones urinarias": "beber una taza caliente del cocimiento de «paico» con «pampa orégano» tres a cuatro veces cada día.",
+      "Hojas Heridas": "estrujadas las hojas frescas, se aplican sobre la lesión. Mastitis: las hojas trituradas ayudan a la cicatrización de las grietas de los pezones.",
+      "General 58": "las hojas machacadas se aplican como emplasto sobre ellas.",
+      "Antidiarreico": "infusión de las hojas flores: 20 g en un litro de agua. Tomar tres a cuatro tazas al día.",
+      "Digestivo": "tomar una taza de la infusión preparada (20 g de hojas en un litro de agua) después de las comidas.",
+      "Hemorroides": "en baños de asiento con la infusión de las hojas.",
+      "General 59": "Compuestos presentes Aceite esencial, ascaridol, taninos, terpenos, cimenol, carvenol, Pcimol, limoneno, alcanfor, santonina, salicilato de metilo, quenopodina, glicol, histemina, ácido butírico, peptinas y sales minerales.",
+      "General 60": "PALTA Persea americana Miller Lauraceae (Dicotiledónea)",
+      "Descripción botánica Árbol de 10": "15 m de alto. Hojas extensamente elípticas, alternas, ovadas a obovado-oblongas, agudas a obtusas en el ápice, la base cuneiforme a obtusa. Inflorescencia compuesta de pequeñas panículas axilares muy florecidas. Flores pequeñas, amarillo verdosas",
+      "General 61": "pétalos 6 mm de largo. Fruto globoso de 20 x 10 cm en forma de pera. Semilla grande.",
+      "General 62": "Usos",
+      "Corteza Infecciones urinarias": "beber una taza cada ocho horas de un cocimiento de 10-15 gramos en un litro de agua.",
+      "Odontalgias": "se hace un cocimiento de las hojas. Se bebe el líquido y las hojas se colocan en la zona adolorida.",
+      "Hojas Reumatismo, catarro, ronquera y asma": "una infusión de 100 g de hojas en un litro de agua.",
+      "Tónico, anemia": "la infusión de 40 g de hojas frescas o 10 g de hojas secas tienen reputación como tónico. < Fruto Semilla Quemaduras: aplicar el aceite de pulpa del fruto.",
+      "Descensos": "(Flujo blanco). Las semillas secas se reducen a polvo. Se prepara una decocción de las hojas de llantén, mezclada con una cucharadita de este polvo. Tomar una vez al día. Disenteria, antidiarreico: la semilla en infusión o cocción, combinada con pan y azúcar quemados, se usa para combatir la diarrea amebiana.",
+      "Mordedura de serpiente": "lavar la herida con el cocimiento de la semilla.",
+      "Anticonceptivos": "secar la semilla y molerla",
+      "General 63": "el polvo obtenido se mezcla con los alimentos.",
+      "General 64": "Compuestos presentes Carbohidratos, proteínas, grasas, taninos, perseitol, metil-chavicol, metilengenol, dopamina, esparagina, ácidos málico y acético.",
+      "General 65": "PAN DEL ÁRBOL Árbol del pan Artocarpus altilis (park.) Fosb. Moraceae (Dicotiledónea)",
+      "General 66": "Descripción botánica Árbol de 20 m de alto, con savia lechosa. Hojas 30-80 cm de largo, profundamente lobada pinnadamente. Inflorescencia masculina densamente espigada",
+      "General 67": "inflorescencia pistilada subglobosa, largopedunculada. Frutos subglobosos de 30 cm de diámetro.",
+      "General 68": "Usos",
+      "Raíz Odontalgias": "enjuagues bucales con el cocimiento de la raíz.",
+      "Resinas Hernias": "un algodón, empapado con la resina, se aplica directamente en la zona afectada durante 15 días o más.",
+      "General 69": "Compuestos presentes Esteroides, fenoles, flavones, bases cuaternarias, resinas, triterpenos.",
+      "PAPAYA Carica papaya L": "Caricaceae (Dicotiledónea)",
+      "General 70": "Descripción botánica Planta de rápido crecimiento. Tallo erecto, columna, hasta 20 cm de diámetro. Hojas simples, profundamente lobadas, de un metro de largo. Fruto oblongo-obovoide, de 15 cm de largo, lomados longitudinalmente, amarillos al madurar",
+      "General 71": "numerosas semillas negras y ásperas. Flores masculinas pedunculadas, verdes",
+      "General 72": "flores femeninas sésiles, de ocho cm de largo, flores intermedias perfectas.",
+      "General 73": "Usos",
+      "Raíz Hojas Infecciones urinarias": "tomar como agua de tiempo el cocimiento de la raíz y las hojas jóvenes.",
+      "Frutos Parasitosis intestinal": "el consumo frecuente de los frutos de la papaya, con tres a cuatro semillas cada vez, ayuda a que los parásitos (gusanos) no se instalen en el intestino. Estreñimiento: el látex del fruto verde, diluido con agua, es purgante fuerte.",
+      "General 74": "Compuestos presentes Papaína, carica-xantina, papaiotina, capaina, ácido málico, proteínas, grasas, sales de calcio, fósforo, hierro, vitaminas A, B1, B2, y C, taninos y pancreatina.",
+      "General 75": "Observaciones El masaje de los frutos verdes sobre las mamas ayuda a la producción de leche. Los baños de vapor de una decocción de los frutos y beber ésta, cuando está fría, tienen el mismo efecto.",
+      "General 76": "PUSPO POROTO Cajanus cajan (L.) Millspaugh Fabaceae (Dicotiledónea)",
+      "General 77": "Descripción botánica Arbusto de uno a dos metros de alto. Hojas trifolioladas",
+      "General 78": "foliolos angostamente elíptico-lanceolados, agudos, 4-9 cm de largo, densamente puberulentos en ambos lados. Inflorescencia en racimo axilar o terminal. Flores amarillas con rayas rojas. Frutos, vainas erectas, planas 5-10 cm de largo con constricciones marcadas",
+      "General 79": "3-5 semillas lenticulares.",
+      "General 80": "Usos",
+      "Hojas Anemia, hepatitis, diabetes y fiebre amarilla": "se hierve un puñado de hojas durante 15 minutos. Tomar una taza del cocimiento tres veces al día.",
+      "Flores Amenorrea": "tomar un cocimiento de las flores y yemas foliares. Disentería: igual que el anterior. Fruto Diurético: tomar la infusión de las semillas.",
+      "General 81": "Compuestos presentes Citisina, carbohidratos, proteínas, sales minerales y vitaminas.",
+      "SANTA MARÍA Piper peltatum L": "Piperaceae (Dicotiledónea)",
+      "General 82": "Descripción botánica Hierba erecta, de 2 m de alto. Tallos y pecíolos glabros. Hojas cordado redondeadas, peltadas, de 16 x 18 cm",
+      "General 83": "pecíolos 9-20 cm de largo, alados en un cuarto a un medio de su largo. Inflorescencia en espigas blancas, arregladas umbeladamente, de 4 mm de grosor y 5-10 cm de largo.",
+      "General 84": "Usos",
+      "Hojas Dolor y fiebres": "se baña todo el cuerpo con las hojas maceradas en agua.",
+      "Cefaleas": "las hojas se maceran en agua, se agrega el jugo de un limón y se deja serenar. Se toman baños con este líquido, mojándose bien la cabeza inicialmente.",
+      "Expulsión de la placenta": "las hojas calentadas se aplican sobre el cordón umbilical. Ayuda a expulsar la placenta.",
+      "Raíz Vómitos": "se toma el cocimiento de la raíz. Una taza al día. Diurético: igual que el anterior.",
+      "General 85": "Compuestos presentes Chavicina pariparobina, jaborandina, piperatina y peperina."
+    }
+  }
+]

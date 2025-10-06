@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { SearchBar } from "@/components/SearchBar";
 import { PlantCard } from "@/components/PlantCard";
 import { EvidenceBadge } from "@/components/EvidenceBadge";
@@ -7,7 +7,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Filter, SlidersHorizontal, X, Search } from "lucide-react";
+import { Filter, SlidersHorizontal, X, Search, ChevronLeft, ChevronRight } from "lucide-react";
+import plantsData from "@/data/plants_parsed.json";
+
+const ITEMS_PER_PAGE = 6;
 
 const Buscar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -15,17 +18,33 @@ const Buscar = () => {
   const [selectedEvidence, setSelectedEvidence] = useState("");
   const [selectedPart, setSelectedPart] = useState("");
   const [showFilters, setShowFilters] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  // Mock data
-  const ailments = [
-    "Digestivo", "Respiratorio", "Cardiovascular", "Nervioso", 
-    "Inmunológico", "Dermatológico", "Musculoesquelético", "Reproductivo"
-  ];
+  // Extraer categorías únicas de los beneficios medicinales
+  const ailments = useMemo(() => {
+    const ailmentsSet = new Set<string>();
+    plantsData.forEach(plant => {
+      if (plant["Beneficios medicinales y respaldo científico"]) {
+        Object.keys(plant["Beneficios medicinales y respaldo científico"]).forEach(key => {
+          ailmentsSet.add(key);
+        });
+      }
+    });
+    return Array.from(ailmentsSet).sort();
+  }, []);
 
-  const partsUsed = [
-    "Hojas", "Corteza", "Raíz", "Flores", "Frutos", 
-    "Semillas", "Resina", "Látex", "Toda la planta"
-  ];
+  // Extraer partes usadas de los modos de uso
+  const partsUsed = useMemo(() => {
+    const partsSet = new Set<string>();
+    plantsData.forEach(plant => {
+      if (plant["Modo de uso"]) {
+        Object.keys(plant["Modo de uso"]).forEach(key => {
+          partsSet.add(key);
+        });
+      }
+    });
+    return Array.from(partsSet).sort();
+  }, []);
 
   const evidenceLevels = [
     { value: "alta", label: "Evidencia Alta" },
@@ -34,53 +53,77 @@ const Buscar = () => {
     { value: "sin-evidencia", label: "Sin Evidencia" }
   ];
 
-  // Mock plant results
-  const plants = [
-    {
-      id: "1",
-      slug: "uña-de-gato",
-      commonName: "Uña de Gato",
-      scientificName: "Uncaria tomentosa",
-      family: "Rubiaceae",
-      summary: "Planta trepadora reconocida por sus propiedades inmunomoduladoras y antiinflamatorias, utilizada tradicionalmente para fortalecer el sistema inmune.",
-      evidenceLevel: "alta" as const,
-      hasInteractions: true,
-      traditionalUses: ["Inmunidad", "Artritis", "Digestivo"]
-    },
-    {
-      id: "2", 
-      slug: "sangre-de-drago",
-      commonName: "Sangre de Drago",
-      scientificName: "Croton lechleri",
-      family: "Euphorbiaceae", 
-      summary: "Árbol que produce una resina rojiza con propiedades cicatrizantes y antimicrobianas, tradicionalmente usada para heridas y problemas digestivos.",
-      evidenceLevel: "moderada" as const,
-      hasInteractions: false,
-      traditionalUses: ["Cicatrización", "Diarrea", "Heridas"]
-    },
-    {
-      id: "3",
-      slug: "copaiba",
-      commonName: "Copaiba",
-      scientificName: "Copaifera officinalis", 
-      family: "Fabaceae",
-      summary: "Árbol productor de oleorresina con propiedades antiinflamatorias y analgésicas, usado en medicina tradicional para dolores y inflamaciones.",
-      evidenceLevel: "baja" as const,
-      hasInteractions: false,
-      traditionalUses: ["Antiinflamatorio", "Dolor", "Heridas"]
-    },
-    {
-      id: "4",
-      slug: "boldo",
-      commonName: "Boldo",
-      scientificName: "Peumus boldus",
-      family: "Monimiaceae",
-      summary: "Árbol nativo con hojas utilizadas tradicionalmente para problemas digestivos y hepáticos, con estudios que respaldan sus propiedades hepatoprotectoras.",
-      evidenceLevel: "moderada" as const,
-      hasInteractions: true,
-      traditionalUses: ["Digestivo", "Hepático", "Digestión"]
-    }
-  ];
+  // Transformar y filtrar plantas del JSON
+  const plants = useMemo(() => {
+    return plantsData
+      .filter(plant => {
+        // Filtro de búsqueda
+        if (searchQuery) {
+          const query = searchQuery.toLowerCase();
+          const matchesName = plant.commonName?.toLowerCase().includes(query);
+          const matchesScientific = plant.scientificName?.toLowerCase().includes(query);
+          const matchesDescription = plant.Descripción?.toLowerCase().includes(query);
+          const matchesBenefits = Object.values(plant["Beneficios medicinales y respaldo científico"] || {})
+            .some(benefit => benefit.toLowerCase().includes(query));
+
+          if (!matchesName && !matchesScientific && !matchesDescription && !matchesBenefits) {
+            return false;
+          }
+        }
+
+        // Filtro por dolencia
+        if (selectedAilment) {
+          const hasBenefit = plant["Beneficios medicinales y respaldo científico"] &&
+            Object.keys(plant["Beneficios medicinales y respaldo científico"])
+              .some(key => key.toLowerCase().includes(selectedAilment.toLowerCase()));
+          if (!hasBenefit) return false;
+        }
+
+        // Filtro por parte usada
+        if (selectedPart) {
+          const hasPart = plant["Modo de uso"] &&
+            Object.keys(plant["Modo de uso"])
+              .some(key => key.toLowerCase().includes(selectedPart.toLowerCase()));
+          if (!hasPart) return false;
+        }
+
+        return true;
+      })
+      .map(plant => {
+        // Extraer usos tradicionales de los beneficios
+        const traditionalUses = plant["Beneficios medicinales y respaldo científico"]
+          ? Object.keys(plant["Beneficios medicinales y respaldo científico"]).slice(0, 3)
+          : [];
+
+        return {
+          id: plant.id,
+          slug: plant.slug,
+          commonName: plant.commonName,
+          scientificName: plant.scientificName,
+          family: "",
+          summary: plant.Descripción || "",
+          evidenceLevel: "moderada" as const,
+          hasInteractions: false,
+          traditionalUses
+        };
+      });
+  }, [searchQuery, selectedAilment, selectedPart]);
+
+  // Resetear a la primera página cuando cambien los filtros
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedAilment, selectedPart]);
+
+  // Calcular paginación
+  const totalPages = Math.ceil(plants.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const paginatedPlants = plants.slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const activeFilters = [
     searchQuery && { type: "query", value: searchQuery, label: `"${searchQuery}"` },
@@ -120,7 +163,7 @@ const Buscar = () => {
           </div>
 
           <div className="max-w-2xl mx-auto mb-6">
-            <SearchBar 
+            <SearchBar
               placeholder="Buscar plantas por nombre o dolencia..."
               onSearch={setSearchQuery}
             />
@@ -184,7 +227,7 @@ const Buscar = () => {
                       {evidenceLevels.map((level) => (
                         <SelectItem key={level.value} value={level.value}>
                           <div className="flex items-center gap-2">
-                            <EvidenceBadge level={level.value as any} showIcon={false} size="sm" />
+                            <EvidenceBadge level={level.value as "alta" | "moderada" | "baja" | "sin-evidencia"} showIcon={false} size="sm" />
                           </div>
                         </SelectItem>
                       ))}
@@ -213,9 +256,9 @@ const Buscar = () => {
 
                 {/* Clear Filters */}
                 {activeFilters.length > 0 && (
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
+                  <Button
+                    variant="outline"
+                    size="sm"
                     onClick={clearAllFilters}
                     className="w-full"
                   >
@@ -260,10 +303,10 @@ const Buscar = () => {
                   Resultados ({plants.length})
                 </h2>
                 <p className="text-sm text-muted-foreground">
-                  Plantas medicinales amazónicas documentadas
+                  Mostrando {startIndex + 1}-{Math.min(endIndex, plants.length)} de {plants.length} plantas
                 </p>
               </div>
-              
+
               <Select defaultValue="relevance">
                 <SelectTrigger className="w-48">
                   <SelectValue />
@@ -278,12 +321,65 @@ const Buscar = () => {
             </div>
 
             {/* Results Grid */}
-            {plants.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {plants.map((plant) => (
-                  <PlantCard key={plant.id} {...plant} />
-                ))}
-              </div>
+            {paginatedPlants.length > 0 ? (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {paginatedPlants.map((plant) => (
+                    <PlantCard key={plant.id} {...plant} />
+                  ))}
+                </div>
+
+                {/* Paginación */}
+                {totalPages > 1 && (
+                  <div className="mt-8 flex items-center justify-center gap-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      disabled={currentPage === 1}
+                    >
+                      <ChevronLeft className="h-4 w-4 mr-1" />
+                      Anterior
+                    </Button>
+
+                    <div className="flex items-center gap-1">
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
+                        // Mostrar solo algunas páginas alrededor de la actual
+                        if (
+                          page === 1 ||
+                          page === totalPages ||
+                          (page >= currentPage - 1 && page <= currentPage + 1)
+                        ) {
+                          return (
+                            <Button
+                              key={page}
+                              variant={currentPage === page ? "default" : "outline"}
+                              size="sm"
+                              onClick={() => handlePageChange(page)}
+                              className="min-w-[40px]"
+                            >
+                              {page}
+                            </Button>
+                          );
+                        } else if (page === currentPage - 2 || page === currentPage + 2) {
+                          return <span key={page} className="px-2">...</span>;
+                        }
+                        return null;
+                      })}
+                    </div>
+
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      disabled={currentPage === totalPages}
+                    >
+                      Siguiente
+                      <ChevronRight className="h-4 w-4 ml-1" />
+                    </Button>
+                  </div>
+                )}
+              </>
             ) : (
               <Card className="p-12 text-center">
                 <CardContent className="p-0">

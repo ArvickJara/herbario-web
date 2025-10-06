@@ -6,108 +6,89 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
-  ArrowLeft, 
-  Leaf, 
-  AlertTriangle, 
-  BookOpen, 
+import {
+  ArrowLeft,
+  Leaf,
+  AlertTriangle,
+  BookOpen,
   Microscope,
   Shield,
   Pill,
   ExternalLink
 } from "lucide-react";
 import samplePlantImage from "@/assets/sample-plant.jpg";
+import plantsData from "@/data/plants_parsed.json";
 
 const PlantaDetalle = () => {
   const { slug } = useParams();
 
-  // Mock data - en una app real vendría de API
-  const plant = {
-    id: "1",
-    slug: "uña-de-gato",
-    commonName: "Uña de Gato", 
-    scientificName: "Uncaria tomentosa",
-    family: "Rubiaceae",
-    summary: "Planta trepadora reconocida por sus propiedades inmunomoduladoras y antiinflamatorias, utilizada tradicionalmente para fortalecer el sistema inmune y tratar diversos procesos inflamatorios.",
-    description: "La Uña de Gato es una liana trepadora nativa de la selva amazónica que puede alcanzar hasta 30 metros de altura. Debe su nombre a las espinas curvadas que utiliza para trepar por los árboles. Ha sido utilizada durante siglos por las comunidades indígenas amazónicas, especialmente los Asháninka y Shipibo, quienes la consideran una planta sagrada y la llaman 'Samento'.",
-    imageUrl: samplePlantImage,
-    evidenceLevel: "alta" as const,
-    hasInteractions: true,
-    
-    traditionalUses: [
-      {
-        ailment: "Fortalecimiento del sistema inmune",
-        partUsed: "Corteza interna",
-        preparation: "Decocción o tintura",
-        dosage: "2-3 tazas de té al día o 20-30 gotas de tintura 3 veces al día",
-        notes: "Uso tradicional por comunidades Asháninka para prevenir enfermedades"
-      },
-      {
-        ailment: "Artritis y dolores articulares",
-        partUsed: "Corteza y raíz",
-        preparation: "Decocción concentrada",
-        dosage: "1 taza 2 veces al día por 2-3 semanas",
-        notes: "Aplicación tópica en combinación con uso interno"
-      },
-      {
-        ailment: "Problemas digestivos",
-        partUsed: "Corteza",
-        preparation: "Infusión suave",
-        dosage: "1 taza después de las comidas",
-        notes: "Tradicionalmente usado para gastritis y úlceras"
-      }
-    ],
+  // Buscar la planta en el JSON
+  const plantData = plantsData.find(plant => plant.slug === slug);
 
-    scientificEvidence: [
-      {
-        claim: "Actividad inmunomoduladora",
-        evidenceLevel: "alta" as const,
-        citation: "Sheng Y, et al. Treatment of chemotherapy-induced leukopenia in a rat model with aqueous extract from Uncaria tomentosa. Phytomedicine. 2000;7(2):137-43.",
-        summary: "Estudios clínicos muestran mejora significativa en marcadores inmunológicos en pacientes con cáncer."
-      },
-      {
-        claim: "Efectos antiinflamatorios",
-        evidenceLevel: "alta" as const,
-        citation: "Piscoya J, et al. Efficacy and safety of freeze-dried cat's claw in osteoarthritis of the knee. Inflammopharmacology. 2001;9(1-2):75-81.",
-        summary: "Ensayo controlado aleatorio demostró reducción del dolor articular y mejora de la movilidad."
-      },
-      {
-        claim: "Actividad antioxidante",
-        evidenceLevel: "moderada" as const,
-        citation: "Gonçalves C, et al. Antioxidant properties of proanthocyanidins of Uncaria tomentosa bark decoction. Phytochemistry. 2005;66(1):89-98.",
-        summary: "Estudios in vitro confirman potente actividad antioxidante de los compuestos fenólicos."
-      }
-    ],
+  // Si no se encuentra la planta, mostrar mensaje
+  if (!plantData) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Card className="max-w-md">
+          <CardContent className="pt-6">
+            <h2 className="text-2xl font-serif font-bold mb-4">Planta no encontrada</h2>
+            <p className="text-muted-foreground mb-6">
+              No se encontró información sobre la planta solicitada.
+            </p>
+            <Button asChild>
+              <Link to="/buscar">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Volver a Explorar
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  // Transformar datos del JSON al formato de la vista
+  const plant = {
+    id: plantData.id,
+    slug: plantData.slug,
+    commonName: plantData.commonName,
+    scientificName: plantData.scientificName,
+    family: "",
+    summary: plantData.Descripción || "",
+    description: plantData.Descripción || "",
+    imageUrl: samplePlantImage,
+    evidenceLevel: "moderada" as const,
+    hasInteractions: false,
+
+    traditionalUses: Object.entries(plantData["Beneficios medicinales y respaldo científico"] || {}).map(([ailment, description]) => {
+      const modoUso = Object.entries(plantData["Modo de uso"] || {}).find(([key]) =>
+        ailment.toLowerCase().includes(key.toLowerCase()) || key.toLowerCase().includes(ailment.toLowerCase())
+      );
+
+      return {
+        ailment,
+        partUsed: modoUso ? modoUso[0] : "No especificado",
+        preparation: modoUso ? modoUso[1] : "No especificado",
+        dosage: "Consultar con profesional de la salud",
+        notes: description
+      };
+    }),
+
+    scientificEvidence: Object.entries(plantData["Beneficios medicinales y respaldo científico"] || {}).map(([claim, summary]) => ({
+      claim,
+      evidenceLevel: "moderada" as const,
+      citation: "Ver referencias científicas",
+      summary
+    })),
 
     precautions: [
-      "No usar durante el embarazo y lactancia",
-      "Evitar en pacientes con trasplantes de órganos",
-      "Suspender 2 semanas antes de cirugías",
-      "Puede causar mareos o náuseas en dosis altas",
-      "No recomendado en niños menores de 3 años",
-      "Supervisión médica necesaria en tratamientos prolongados"
+      "Consultar con un profesional de la salud antes de usar",
+      "No usar durante el embarazo sin supervisión médica",
+      "Suspender si presenta reacciones adversas",
+      "Mantener fuera del alcance de los niños"
     ],
 
-    interactions: [
-      {
-        drugName: "Inmunosupresores (ciclosporina, tacrolimus)",
-        severity: "alta" as const,
-        mechanism: "Potenciación de efectos inmunomoduladores",
-        recommendation: "Contraindicado. Evitar uso conjunto."
-      },
-      {
-        drugName: "Anticoagulantes (warfarina)",
-        severity: "moderada" as const,
-        mechanism: "Posible potenciación del efecto anticoagulante",
-        recommendation: "Monitoreo estrecho de INR. Consultar con médico."
-      },
-      {
-        drugName: "Antihipertensivos",
-        severity: "baja" as const,
-        mechanism: "Posible efecto hipotensor aditivo",
-        recommendation: "Monitoreo de presión arterial. Ajustar dosis si es necesario."
-      }
-    ]
+    interactions: []
   };
 
   const highSeverityInteractions = plant.interactions.filter(i => i.severity === "alta");
@@ -166,15 +147,15 @@ const PlantaDetalle = () => {
               {(highSeverityInteractions.length > 0 || moderateSeverityInteractions.length > 0) && (
                 <div className="space-y-4">
                   {highSeverityInteractions.length > 0 && (
-                    <InteractionAlert 
-                      severity="alta" 
-                      interactions={highSeverityInteractions} 
+                    <InteractionAlert
+                      severity="alta"
+                      interactions={highSeverityInteractions}
                     />
                   )}
                   {moderateSeverityInteractions.length > 0 && (
-                    <InteractionAlert 
-                      severity="moderada" 
-                      interactions={moderateSeverityInteractions} 
+                    <InteractionAlert
+                      severity="moderada"
+                      interactions={moderateSeverityInteractions}
                     />
                   )}
                 </div>
@@ -358,11 +339,11 @@ const PlantaDetalle = () => {
                       </div>
                     ))}
                   </div>
-                  
+
                   <div className="mt-6 p-4 bg-destructive/5 border border-destructive/20 rounded-lg">
                     <p className="text-sm text-foreground/80">
-                      <strong>Importante:</strong> Esta información no sustituye el consejo médico profesional. 
-                      Siempre consulte con un profesional de la salud antes de usar plantas medicinales, 
+                      <strong>Importante:</strong> Esta información no sustituye el consejo médico profesional.
+                      Siempre consulte con un profesional de la salud antes de usar plantas medicinales,
                       especialmente si tiene condiciones médicas preexistentes o está tomando medicamentos.
                     </p>
                   </div>
@@ -382,22 +363,22 @@ const PlantaDetalle = () => {
                   {highSeverityInteractions.length > 0 && (
                     <InteractionAlert severity="alta" interactions={highSeverityInteractions} />
                   )}
-                  
+
                   {moderateSeverityInteractions.length > 0 && (
                     <InteractionAlert severity="moderada" interactions={moderateSeverityInteractions} />
                   )}
 
                   {plant.interactions.filter(i => i.severity === "baja").length > 0 && (
-                    <InteractionAlert 
-                      severity="baja" 
-                      interactions={plant.interactions.filter(i => i.severity === "baja")} 
+                    <InteractionAlert
+                      severity="baja"
+                      interactions={plant.interactions.filter(i => i.severity === "baja")}
                     />
                   )}
 
                   <div className="p-4 bg-ui border border-border rounded-lg">
                     <p className="text-sm text-foreground/80">
-                      <strong>Recomendación general:</strong> Informe siempre a su médico y farmacéutico 
-                      sobre el uso de plantas medicinales cuando le prescriban o dispensen medicamentos. 
+                      <strong>Recomendación general:</strong> Informe siempre a su médico y farmacéutico
+                      sobre el uso de plantas medicinales cuando le prescriban o dispensen medicamentos.
                       Mantenga una lista actualizada de todos los productos naturales que consume.
                     </p>
                   </div>
