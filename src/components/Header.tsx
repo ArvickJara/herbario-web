@@ -1,11 +1,22 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Leaf, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import logo from "@/assets/logo.svg";
 
 export function Header() {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navigation = [
     { name: "Inicio", href: "/" },
@@ -19,70 +30,70 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 font-serif font-semibold text-xl">
-          <div className="flex items-center justify-center w-10 h-10 bg-gradient-hero rounded-lg shadow-soft">
-            <Leaf className="h-5 w-5 text-primary-foreground animate-leaf" />
+    <nav className={`bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b border-border transition-all duration-500 ${isScrolled ? 'mx-4 md:mx-12 lg:mx-24 mt-4 md:mt-8 rounded-xl shadow-lg' : ''
+      }`}>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 font-serif font-bold text-xl text-foreground hover:text-primary transition-colors">
+            <img
+              src={logo}
+              alt="Herbario Amazónico Logo"
+              className="h-16 w-auto object-contain"
+            />
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            {navigation.map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                className={`font-medium transition-colors ${isActive(item.href)
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                  }`}
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
-          <span className="text-primary">Herbario Amazónico</span>
-        </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              to={item.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive(item.href) 
-                  ? "text-primary border-b-2 border-primary pb-1" 
-                  : "text-muted-foreground"
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Mobile menu button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? (
-            <X className="h-5 w-5" />
-          ) : (
-            <Menu className="h-5 w-5" />
-          )}
-        </Button>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+        </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="absolute top-16 left-0 right-0 bg-background border-b shadow-soft md:hidden">
-            <nav className="container py-4 space-y-2">
+          <div className="md:hidden pb-4 animate-fade-in">
+            <div className="flex flex-col gap-4">
               {navigation.map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.href}
                   to={item.href}
-                  className={`block px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-accent ${
-                    isActive(item.href) 
-                      ? "text-primary bg-accent/50" 
-                      : "text-muted-foreground"
-                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
+                  className={`font-medium transition-colors ${isActive(item.href)
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   {item.name}
                 </Link>
               ))}
-            </nav>
+            </div>
           </div>
         )}
       </div>
-    </header>
+    </nav>
   );
 }
