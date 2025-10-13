@@ -180,4 +180,26 @@ if (process.env.VERCEL_ENV !== 'production') {
     });
 }
 
+app.get("/api/test", (req, res) => {
+    try {
+        const envCheck = {
+            hasCloudinaryName: !!process.env.CLOUDINARY_CLOUD_NAME,
+            hasTursoUrl: !!process.env.TURSO_DATABASE_URL,
+            hasTursoToken: !!process.env.TURSO_AUTH_TOKEN,
+            nodeEnv: process.env.NODE_ENV,
+            vercelEnv: process.env.VERCEL_ENV
+        };
+        res.json({
+            status: "API funcionando correctamente",
+            timestamp: new Date().toISOString(),
+            environment: envCheck
+        });
+    } catch (error) {
+        res.status(500).json({
+            error: "Error en el endpoint de prueba",
+            message: error.message
+        });
+    }
+});
+
 export default app;
