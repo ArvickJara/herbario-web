@@ -9,7 +9,71 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { PlusCircle, Edit, Trash2, Loader2 } from "lucide-react";
 
-const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api`;
+// --- IMPORTACIONES PARA CONEXIÓN DIRECTA A LA DB ---
+import { drizzle } from "drizzle-orm/libsql";
+import { createClient } from "@libsql/client";
+import { text, sqliteTable } from "drizzle-orm/sqlite-core";
+import { relations } from "drizzle-orm";
+import { eq } from "drizzle-orm";
+import { randomUUID } from "crypto";
+
+// --- DEFINICIÓN DE ESQUEMAS (directamente en el frontend) ---
+export const plantsTable = sqliteTable("plants", {
+    id: text("id").primaryKey(),
+    slug: text("slug").notNull().unique(),
+    commonName: text("common_name").notNull(),
+    scientificName: text("scientific_name"),
+    description: text("description"),
+    imageUrl: text("image_url"),
+});
+
+export const benefitsTable = sqliteTable("benefits", {
+    id: text("id").primaryKey(),
+    description: text("description").notNull(),
+    plantId: text("plant_id").notNull().references(() => plantsTable.id, { onDelete: "cascade" }),
+});
+
+export const usageMethodsTable = sqliteTable("usage_methods", {
+    id: text("id").primaryKey(),
+    description: text("description").notNull(),
+    plantId: text("plant_id").notNull().references(() => plantsTable.id, { onDelete: "cascade" }),
+});
+
+export const plantsRelations = relations(plantsTable, ({ many }) => ({
+    benefits: many(benefitsTable),
+    usageMethods: many(usageMethodsTable),
+}));
+
+export const benefitsRelations = relations(benefitsTable, ({ one }) => ({
+    plant: one(plantsTable, {
+        fields: [benefitsTable.plantId],
+        references: [plantsTable.id],
+    }),
+}));
+
+export const usageMethodsRelations = relations(usageMethodsTable, ({ one }) => ({
+    plant: one(plantsTable, {
+        fields: [usageMethodsTable.plantId],
+        references: [plantsTable.id],
+    }),
+}));
+
+// --- CONEXIÓN DIRECTA A LA BASE DE DATOS DESDE EL FRONTEND ---
+const client = createClient({
+    url: import.meta.env.VITE_TURSO_DATABASE_URL!,
+    authToken: import.meta.env.VITE_TURSO_AUTH_TOKEN!,
+});
+
+const db = drizzle(client, {
+    schema: {
+        plants: plantsTable,
+        benefits: benefitsTable,
+        usageMethods: usageMethodsTable,
+        plantsRelations,
+        benefitsRelations,
+        usageMethodsRelations,
+    },
+});
 
 // --- TIPOS DE DATOS ---
 type Benefit = { id: string; description: string; };
@@ -23,7 +87,30 @@ type FormValues = Omit<Plant, 'benefits' | 'usageMethods'> & {
     imageFile?: FileList;
 };
 
-// --- COMPONENTE DEL FORMULARIO REUTILIZABLE ---
+// --- FUNCIÓN PARA SUBIR IMÁGENES A CLOUDINARY ---
+const uploadImageToCloudinary = async (file: File): Promise<string> => {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'herbario'); // Necesitas crear este preset en Cloudinary
+    formData.append('folder', 'herbario');
+
+    const response = await fetch(
+        `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`,
+        {
+            method: 'POST',
+            body: formData,
+        }
+    );
+
+    if (!response.ok) {
+        throw new Error('Error al subir la imagen a Cloudinary');
+    }
+
+    const data = await response.json();
+    return data.secure_url;
+};
+
+// --- COMPONENTE DEL FORMULARIO ---
 function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; onSave: () => void; onCancel: () => void; }) {
     const isEditing = !!plant?.id;
     const [imagePreview, setImagePreview] = useState<string | null>(plant?.imageUrl || null);
@@ -43,34 +130,83 @@ function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; 
     };
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
-        let imageUrl = plant?.imageUrl || null;
-
-        if (data.imageFile && data.imageFile.length > 0) {
-            const formData = new FormData();
-            formData.append('image', data.imageFile[0]);
-            try {
-                const uploadResponse = await fetch(`${API_URL}/upload`, { method: 'POST', body: formData });
-                if (!uploadResponse.ok) throw new Error('Error al subir la imagen');
-                const { imageUrl: newImageUrl } = await uploadResponse.json();
-                imageUrl = newImageUrl;
-            } catch (error) {
-                console.error(error);
-                alert('No se pudo subir la imagen.');
-                return;
-            }
-        }
-
-        const payload = { ...data, imageUrl, benefits: data.benefits.map(b => b.description).filter(Boolean), usageMethods: data.usageMethods.map(u => u.description).filter(Boolean) };
-        const url = isEditing ? `${API_URL}/plants/${plant!.id}` : `${API_URL}/plants`;
-        const method = isEditing ? "PUT" : "POST";
-
         try {
-            const response = await fetch(url, { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
-            if (!response.ok) throw new Error("Error al guardar la planta");
+            let imageUrl = plant?.imageUrl || null;
+
+            // Subir imagen si hay una nueva
+            if (data.imageFile && data.imageFile.length > 0) {
+                imageUrl = await uploadImageToCloudinary(data.imageFile[0]);
+            }
+
+            const plantData = {
+                id: plant?.id || randomUUID(),
+                slug: data.slug,
+                commonName: data.commonName,
+                scientificName: data.scientificName || null,
+                description: data.description || null,
+                imageUrl,
+            };
+
+            if (isEditing) {
+                // Actualizar planta existente
+                await db.transaction(async (tx) => {
+                    await tx.update(plantsTable).set(plantData).where(eq(plantsTable.id, plant!.id!));
+
+                    // Eliminar beneficios y métodos de uso existentes
+                    await tx.delete(benefitsTable).where(eq(benefitsTable.plantId, plant!.id!));
+                    await tx.delete(usageMethodsTable).where(eq(usageMethodsTable.plantId, plant!.id!));
+
+                    // Insertar nuevos beneficios
+                    const benefits = data.benefits.map(b => b.description).filter(Boolean);
+                    for (const desc of benefits) {
+                        await tx.insert(benefitsTable).values({
+                            id: randomUUID(),
+                            description: desc,
+                            plantId: plant!.id!
+                        });
+                    }
+
+                    // Insertar nuevos métodos de uso
+                    const usageMethods = data.usageMethods.map(u => u.description).filter(Boolean);
+                    for (const desc of usageMethods) {
+                        await tx.insert(usageMethodsTable).values({
+                            id: randomUUID(),
+                            description: desc,
+                            plantId: plant!.id!
+                        });
+                    }
+                });
+            } else {
+                // Crear nueva planta
+                await db.transaction(async (tx) => {
+                    await tx.insert(plantsTable).values(plantData);
+
+                    // Insertar beneficios
+                    const benefits = data.benefits.map(b => b.description).filter(Boolean);
+                    for (const desc of benefits) {
+                        await tx.insert(benefitsTable).values({
+                            id: randomUUID(),
+                            description: desc,
+                            plantId: plantData.id
+                        });
+                    }
+
+                    // Insertar métodos de uso
+                    const usageMethods = data.usageMethods.map(u => u.description).filter(Boolean);
+                    for (const desc of usageMethods) {
+                        await tx.insert(usageMethodsTable).values({
+                            id: randomUUID(),
+                            description: desc,
+                            plantId: plantData.id
+                        });
+                    }
+                });
+            }
+
             onSave();
         } catch (error) {
             console.error(error);
-            alert("No se pudo guardar la planta. Revisa la consola.");
+            alert("Error al guardar la planta. Revisa la consola.");
         }
     };
 
@@ -126,10 +262,14 @@ const Admin = () => {
         setIsLoading(true);
         setError(null);
         try {
-            const response = await fetch(`${API_URL}/plants`);
-            if (!response.ok) throw new Error("Error al conectar con la API.");
-            const data = await response.json();
-            setPlants(data);
+            // Conexión directa a la base de datos
+            const result = await db.query.plants.findMany({
+                with: {
+                    benefits: true,
+                    usageMethods: true,
+                },
+            });
+            setPlants(result);
         } catch (err) {
             setError(err instanceof Error ? err.message : "Un error desconocido ocurrió.");
         } finally {
@@ -141,8 +281,7 @@ const Admin = () => {
 
     const handleDelete = async (id: string) => {
         try {
-            const response = await fetch(`${API_URL}/plants/${id}`, { method: "DELETE" });
-            if (!response.ok) throw new Error("No se pudo eliminar la planta.");
+            await db.delete(plantsTable).where(eq(plantsTable.id, id));
             fetchPlants();
         } catch (err) {
             setError(err instanceof Error ? err.message : "No se pudo eliminar la planta.");
