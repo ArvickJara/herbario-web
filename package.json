@@ -4,15 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev:frontend": "vite",
-    "dev:backend": "nodemon --exec ts-node api/server.ts",
-    "dev": "concurrently \"npm:dev:frontend\" \"npm:dev:backend\"",
-    "build": "vite build",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "db:generate": "drizzle-kit generate",
-    "db:migrate": "tsx api/migrate.ts",
-    "db:studio": "drizzle-kit studio"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

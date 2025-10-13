@@ -29,8 +29,8 @@ function generateUUID(): string {
 export const plantsTable = sqliteTable("plants", {
     id: text("id").primaryKey(),
     slug: text("slug").notNull().unique(),
-    commonName: text("common_name").notNull(),
-    scientificName: text("scientific_name"),
+    commonName: text("commonName").notNull(),
+    scientificName: text("scientificName"),
     description: text("description"),
     imageUrl: text("image_url"),
 });
@@ -90,11 +90,14 @@ function initDatabase() {
         authToken: authToken,
     });
 
+    // CORRECCIÓN: Configurar el esquema correctamente
     return drizzle(client, {
         schema: {
+            // Nombres de las tablas (deben coincidir con los nombres que usas en las queries)
             plants: plantsTable,
             benefits: benefitsTable,
             usageMethods: usageMethodsTable,
+            // Relaciones
             plantsRelations,
             benefitsRelations,
             usageMethodsRelations,
@@ -304,13 +307,18 @@ const Admin = () => {
                 db = initDatabase();
             }
 
-            // Conexión directa a la base de datos
-            const result = await db.query.plants.findMany({
-                with: {
-                    benefits: true,
-                    usageMethods: true,
-                },
-            });
+            // CORRECCIÓN: Usar consultas directas en lugar de db.query
+            const plantsResult = await db.select().from(plantsTable);
+            const benefitsResult = await db.select().from(benefitsTable);
+            const usageMethodsResult = await db.select().from(usageMethodsTable);
+
+            // Combinar los datos manualmente
+            const result = plantsResult.map(plant => ({
+                ...plant,
+                benefits: benefitsResult.filter(b => b.plantId === plant.id),
+                usageMethods: usageMethodsResult.filter(u => u.plantId === plant.id),
+            }));
+
             setPlants(result);
         } catch (err) {
             console.error('Error completo al cargar plantas:', err);
