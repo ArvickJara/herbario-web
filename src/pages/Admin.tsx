@@ -15,7 +15,15 @@ import { createClient } from "@libsql/client";
 import { text, sqliteTable } from "drizzle-orm/sqlite-core";
 import { relations } from "drizzle-orm";
 import { eq } from "drizzle-orm";
-import { randomUUID } from "crypto";
+
+// --- FUNCIÓN PARA GENERAR UUID QUE FUNCIONA EN EL NAVEGADOR ---
+function generateUUID(): string {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        const r = Math.random() * 16 | 0;
+        const v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
 
 // --- DEFINICIÓN DE ESQUEMAS (directamente en el frontend) ---
 export const plantsTable = sqliteTable("plants", {
@@ -58,22 +66,41 @@ export const usageMethodsRelations = relations(usageMethodsTable, ({ one }) => (
     }),
 }));
 
-// --- CONEXIÓN DIRECTA A LA BASE DE DATOS DESDE EL FRONTEND ---
-const client = createClient({
-    url: import.meta.env.VITE_TURSO_DATABASE_URL!,
-    authToken: import.meta.env.VITE_TURSO_AUTH_TOKEN!,
-});
+// --- VERIFICACIÓN Y CONEXIÓN A LA BASE DE DATOS ---
+let db: ReturnType<typeof drizzle> | null = null;
 
-const db = drizzle(client, {
-    schema: {
-        plants: plantsTable,
-        benefits: benefitsTable,
-        usageMethods: usageMethodsTable,
-        plantsRelations,
-        benefitsRelations,
-        usageMethodsRelations,
-    },
-});
+function initDatabase() {
+    const dbUrl = import.meta.env.VITE_TURSO_DATABASE_URL;
+    const authToken = import.meta.env.VITE_TURSO_AUTH_TOKEN;
+
+    console.log('Verificando variables de entorno:', {
+        hasDbUrl: !!dbUrl,
+        hasAuthToken: !!authToken,
+        dbUrl: dbUrl ? dbUrl.substring(0, 30) + '...' : 'undefined'
+    });
+
+    if (!dbUrl || !authToken) {
+        throw new Error(`Faltan variables de entorno: 
+        VITE_TURSO_DATABASE_URL: ${!!dbUrl}
+        VITE_TURSO_AUTH_TOKEN: ${!!authToken}`);
+    }
+
+    const client = createClient({
+        url: dbUrl,
+        authToken: authToken,
+    });
+
+    return drizzle(client, {
+        schema: {
+            plants: plantsTable,
+            benefits: benefitsTable,
+            usageMethods: usageMethodsTable,
+            plantsRelations,
+            benefitsRelations,
+            usageMethodsRelations,
+        },
+    });
+}
 
 // --- TIPOS DE DATOS ---
 type Benefit = { id: string; description: string; };
@@ -89,13 +116,19 @@ type FormValues = Omit<Plant, 'benefits' | 'usageMethods'> & {
 
 // --- FUNCIÓN PARA SUBIR IMÁGENES A CLOUDINARY ---
 const uploadImageToCloudinary = async (file: File): Promise<string> => {
+    const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+
+    if (!cloudName) {
+        throw new Error('Falta la variable VITE_CLOUDINARY_CLOUD_NAME');
+    }
+
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('upload_preset', 'herbario'); // Necesitas crear este preset en Cloudinary
+    formData.append('upload_preset', 'herbario');
     formData.append('folder', 'herbario');
 
     const response = await fetch(
-        `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`,
+        `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
         {
             method: 'POST',
             body: formData,
@@ -131,6 +164,10 @@ function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; 
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
         try {
+            if (!db) {
+                throw new Error('La base de datos no está inicializada');
+            }
+
             let imageUrl = plant?.imageUrl || null;
 
             // Subir imagen si hay una nueva
@@ -139,7 +176,7 @@ function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; 
             }
 
             const plantData = {
-                id: plant?.id || randomUUID(),
+                id: plant?.id || generateUUID(),
                 slug: data.slug,
                 commonName: data.commonName,
                 scientificName: data.scientificName || null,
@@ -160,7 +197,7 @@ function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; 
                     const benefits = data.benefits.map(b => b.description).filter(Boolean);
                     for (const desc of benefits) {
                         await tx.insert(benefitsTable).values({
-                            id: randomUUID(),
+                            id: generateUUID(),
                             description: desc,
                             plantId: plant!.id!
                         });
@@ -170,7 +207,7 @@ function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; 
                     const usageMethods = data.usageMethods.map(u => u.description).filter(Boolean);
                     for (const desc of usageMethods) {
                         await tx.insert(usageMethodsTable).values({
-                            id: randomUUID(),
+                            id: generateUUID(),
                             description: desc,
                             plantId: plant!.id!
                         });
@@ -185,7 +222,7 @@ function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; 
                     const benefits = data.benefits.map(b => b.description).filter(Boolean);
                     for (const desc of benefits) {
                         await tx.insert(benefitsTable).values({
-                            id: randomUUID(),
+                            id: generateUUID(),
                             description: desc,
                             plantId: plantData.id
                         });
@@ -195,7 +232,7 @@ function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; 
                     const usageMethods = data.usageMethods.map(u => u.description).filter(Boolean);
                     for (const desc of usageMethods) {
                         await tx.insert(usageMethodsTable).values({
-                            id: randomUUID(),
+                            id: generateUUID(),
                             description: desc,
                             plantId: plantData.id
                         });
@@ -205,8 +242,8 @@ function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; 
 
             onSave();
         } catch (error) {
-            console.error(error);
-            alert("Error al guardar la planta. Revisa la consola.");
+            console.error('Error completo:', error);
+            alert(`Error al guardar la planta: ${error instanceof Error ? error.message : 'Error desconocido'}`);
         }
     };
 
@@ -262,6 +299,11 @@ const Admin = () => {
         setIsLoading(true);
         setError(null);
         try {
+            // Inicializar la base de datos si no está inicializada
+            if (!db) {
+                db = initDatabase();
+            }
+
             // Conexión directa a la base de datos
             const result = await db.query.plants.findMany({
                 with: {
@@ -271,6 +313,7 @@ const Admin = () => {
             });
             setPlants(result);
         } catch (err) {
+            console.error('Error completo al cargar plantas:', err);
             setError(err instanceof Error ? err.message : "Un error desconocido ocurrió.");
         } finally {
             setIsLoading(false);
@@ -281,9 +324,13 @@ const Admin = () => {
 
     const handleDelete = async (id: string) => {
         try {
+            if (!db) {
+                db = initDatabase();
+            }
             await db.delete(plantsTable).where(eq(plantsTable.id, id));
             fetchPlants();
         } catch (err) {
+            console.error('Error al eliminar planta:', err);
             setError(err instanceof Error ? err.message : "No se pudo eliminar la planta.");
         }
     };
