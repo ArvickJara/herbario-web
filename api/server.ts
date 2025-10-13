@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import multer from "multer";
 import { v2 as cloudinary } from 'cloudinary';
-import { db, plantsTable, benefitsTable, usageMethodsTable } from "./db.ts";
+import { db, plantsTable, benefitsTable, usageMethodsTable } from "./db";
 import { eq } from "drizzle-orm";
 import { randomUUID } from "crypto";
 
