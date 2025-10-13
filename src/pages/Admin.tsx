@@ -1,5 +1,16 @@
 import { useState, useEffect } from "react";
+import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogFooter,
+} from "@/components/ui/dialog";
 import {
     Table,
     TableBody,
@@ -8,14 +19,6 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import {
-    Dialog,
-    DialogContent,
-    DialogHeader,
-    DialogTitle,
-    DialogFooter,
-    DialogClose,
-} from "@/components/ui/dialog";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -27,46 +30,179 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { PlusCircle, Edit, Trash2, Loader2 } from "lucide-react";
 
-// URL de tu API corriendo en localhost
 const API_URL = "http://localhost:3001/api";
 
-// El tipo Plant ahora refleja que los campos complejos son strings JSON
+// --- TIPOS DE DATOS QUE COINCIDEN CON LA NUEVA API Y BASE DE DATOS ---
+type Benefit = {
+    id: string;
+    description: string;
+};
+
+type UsageMethod = {
+    id: string;
+    description: string;
+};
+
 type Plant = {
     id: string;
     slug: string;
     commonName: string;
-    scientificName: string;
-    Descripción: string;
-    beneficios: string; // JSON string
-    modoDeUso: string;  // JSON string
+    scientificName: string | null;
+    description: string | null;
+    imageUrl: string | null;
+    benefits: Benefit[];
+    usageMethods: UsageMethod[];
 };
 
+// --- TIPO PARA EL FORMULARIO (Permite campos dinámicos) ---
+type FormValues = Omit<Plant, 'benefits' | 'usageMethods'> & {
+    benefits: { description: string }[];
+    usageMethods: { description: string }[];
+};
+
+
+// --- COMPONENTE DEL FORMULARIO REUTILIZABLE ---
+function PlantForm({
+    plant,
+    onSave,
+    onCancel,
+}: {
+    plant: Partial<Plant> | null;
+    onSave: () => void;
+    onCancel: () => void;
+}) {
+    const isEditing = !!plant?.id;
+    const {
+        register,
+        handleSubmit,
+        control,
+        formState: { isSubmitting },
+    } = useForm<FormValues>({
+        defaultValues: {
+            ...plant,
+            benefits: plant?.benefits?.length ? plant.benefits : [{ description: "" }],
+            usageMethods: plant?.usageMethods?.length ? plant.usageMethods : [{ description: "" }],
+        },
+    });
+
+    const { fields: benefitFields, append: appendBenefit, remove: removeBenefit } = useFieldArray({ control, name: "benefits" });
+    const { fields: usageMethodFields, append: appendUsageMethod, remove: removeUsageMethod } = useFieldArray({ control, name: "usageMethods" });
+
+    const onSubmit: SubmitHandler<FormValues> = async (data) => {
+        const payload = {
+            ...data,
+            benefits: data.benefits.map(b => b.description).filter(Boolean),
+            usageMethods: data.usageMethods.map(u => u.description).filter(Boolean),
+        };
+
+        const url = isEditing ? `${API_URL}/plants/${plant!.id}` : `${API_URL}/plants`;
+        const method = isEditing ? "PUT" : "POST";
+
+        try {
+            const response = await fetch(url, {
+                method,
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+            if (!response.ok) throw new Error("Error al guardar la planta");
+            onSave();
+        } catch (error) {
+            console.error(error);
+            alert("No se pudo guardar la planta. Revisa la consola.");
+        }
+    };
+
+    return (
+        <Dialog open={true} onOpenChange={onCancel}>
+            <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+                <DialogHeader>
+                    <DialogTitle>{isEditing ? "Editar Planta" : "Agregar Nueva Planta"}</DialogTitle>
+                </DialogHeader>
+                <form onSubmit={handleSubmit(onSubmit)} className="grid gap-6 py-4">
+                    <Input type="hidden" {...register("id")} />
+                    <div>
+                        <Label htmlFor="commonName">Nombre Común</Label>
+                        <Input id="commonName" {...register("commonName", { required: true })} />
+                    </div>
+                    <div>
+                        <Label htmlFor="slug">Slug</Label>
+                        <Input id="slug" {...register("slug", { required: true })} placeholder="ej: uña-de-gato" />
+                    </div>
+                    <div>
+                        <Label htmlFor="scientificName">Nombre Científico</Label>
+                        <Input id="scientificName" {...register("scientificName")} />
+                    </div>
+                    <div>
+                        <Label htmlFor="imageUrl">URL de la Imagen</Label>
+                        <Input id="imageUrl" {...register("imageUrl")} placeholder="https://ejemplo.com/imagen.jpg" />
+                    </div>
+                    <div>
+                        <Label htmlFor="description">Descripción</Label>
+                        <Textarea id="description" {...register("description")} />
+                    </div>
+
+                    {/* --- SECCIÓN DINÁMICA PARA BENEFICIOS --- */}
+                    <div className="space-y-2 p-3 border rounded-md">
+                        <Label>Beneficios</Label>
+                        {benefitFields.map((field, index) => (
+                            <div key={field.id} className="flex items-center gap-2">
+                                <Input {...register(`benefits.${index}.description`)} placeholder={`Beneficio #${index + 1}`} />
+                                <Button type="button" variant="destructive" size="icon" onClick={() => removeBenefit(index)}><Trash2 className="h-4 w-4" /></Button>
+                            </div>
+                        ))}
+                        <Button type="button" variant="outline" size="sm" onClick={() => appendBenefit({ description: "" })}>
+                            <PlusCircle className="mr-2 h-4 w-4" /> Añadir Beneficio
+                        </Button>
+                    </div>
+
+                    {/* --- SECCIÓN DINÁMICA PARA MODOS DE USO --- */}
+                    <div className="space-y-2 p-3 border rounded-md">
+                        <Label>Modos de Uso</Label>
+                        {usageMethodFields.map((field, index) => (
+                            <div key={field.id} className="flex items-center gap-2">
+                                <Input {...register(`usageMethods.${index}.description`)} placeholder={`Modo de Uso #${index + 1}`} />
+                                <Button type="button" variant="destructive" size="icon" onClick={() => removeUsageMethod(index)}><Trash2 className="h-4 w-4" /></Button>
+                            </div>
+                        ))}
+                        <Button type="button" variant="outline" size="sm" onClick={() => appendUsageMethod({ description: "" })}>
+                            <PlusCircle className="mr-2 h-4 w-4" /> Añadir Modo de Uso
+                        </Button>
+                    </div>
+
+                    <DialogFooter>
+                        <Button type="button" variant="secondary" onClick={onCancel}>Cancelar</Button>
+                        <Button type="submit" disabled={isSubmitting}>
+                            {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                            Guardar Cambios
+                        </Button>
+                    </DialogFooter>
+                </form>
+            </DialogContent>
+        </Dialog>
+    );
+}
+
+
+// --- COMPONENTE PRINCIPAL DE LA PÁGINA DE ADMIN ---
 const Admin = () => {
     const [plants, setPlants] = useState<Plant[]>([]);
     const [selectedPlant, setSelectedPlant] = useState<Partial<Plant> | null>(null);
-    const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const [isFormOpen, setIsFormOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    // 1. OBTENER PLANTAS DESDE LA API
     const fetchPlants = async () => {
         setIsLoading(true);
         setError(null);
         try {
             const response = await fetch(`${API_URL}/plants`);
-            if (!response.ok) {
-                throw new Error('Error al conectar con la API.');
-            }
+            if (!response.ok) throw new Error("Error al conectar con la API.");
             const data = await response.json();
             setPlants(data);
         } catch (err) {
             setError(err instanceof Error ? err.message : "Un error desconocido ocurrió.");
-            console.error("Error fetching plants:", err);
         } finally {
             setIsLoading(false);
         }
@@ -76,78 +212,29 @@ const Admin = () => {
         fetchPlants();
     }, []);
 
-    // 2. ELIMINAR PLANTA
     const handleDelete = async (id: string) => {
         try {
             const response = await fetch(`${API_URL}/plants/${id}`, { method: "DELETE" });
-            if (!response.ok) {
-                throw new Error('No se pudo eliminar la planta.');
-            }
-            await fetchPlants(); // Recargar la lista de plantas
-        } catch (error) {
-            console.error("Error deleting plant:", error);
-            setError("No se pudo eliminar la planta.");
+            if (!response.ok) throw new Error("No se pudo eliminar la planta.");
+            fetchPlants();
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "No se pudo eliminar la planta.");
         }
     };
 
-    // 3. GUARDAR (CREAR O EDITAR) PLANTA
-    const handleSave = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-
-        let beneficiosParsed, modoDeUsoParsed;
-        try {
-            beneficiosParsed = JSON.parse(formData.get("beneficios") as string || '{}');
-            modoDeUsoParsed = JSON.parse(formData.get("modoDeUso") as string || '{}');
-        } catch {
-            alert("Error: El formato de 'Beneficios' o 'Modo de Uso' no es un JSON válido.");
-            return;
-        }
-
-        const plantData = {
-            id: formData.get("id") as string,
-            slug: (formData.get("commonName") as string).toLowerCase().trim().replace(/\s+/g, '-'),
-            commonName: formData.get("commonName") as string,
-            scientificName: formData.get("scientificName") as string,
-            Descripción: formData.get("Descripción") as string,
-            beneficios: beneficiosParsed,
-            modoDeUso: modoDeUsoParsed,
-        };
-
-        const url = selectedPlant?.id ? `${API_URL}/plants/${selectedPlant.id}` : `${API_URL}/plants`;
-        const method = selectedPlant?.id ? "PUT" : "POST";
-
-        try {
-            const response = await fetch(url, {
-                method,
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(plantData),
-            });
-
-            if (!response.ok) {
-                throw new Error('No se pudo guardar la planta.');
-            }
-
-            await fetchPlants(); // Recargar datos
-            setIsDialogOpen(false);
-            setSelectedPlant(null);
-        } catch (error) {
-            console.error("Error saving plant:", error);
-            setError("No se pudo guardar la planta.");
-        }
+    const handleSaveSuccess = () => {
+        setIsFormOpen(false);
+        setSelectedPlant(null);
+        fetchPlants();
     };
 
-    const openDialog = (plant: Partial<Plant> | null = null) => {
+    const openForm = (plant: Partial<Plant> | null = null) => {
         setSelectedPlant(plant);
-        setIsDialogOpen(true);
+        setIsFormOpen(true);
     };
 
     if (isLoading) {
-        return (
-            <div className="flex justify-center items-center h-64">
-                <Loader2 className="h-8 w-8 animate-spin text-primary" />
-            </div>
-        );
+        return <div className="flex justify-center items-center h-64"><Loader2 className="h-8 w-8 animate-spin text-primary" /></div>;
     }
 
     if (error) {
@@ -157,19 +244,14 @@ const Admin = () => {
                 <p>{error}</p>
                 <Button onClick={fetchPlants} className="mt-4">Reintentar</Button>
             </div>
-        )
+        );
     }
 
     return (
         <div className="container py-12">
             <div className="flex justify-between items-center mb-8">
-                <h1 className="text-3xl font-serif font-bold">
-                    Administración del Herbario
-                </h1>
-                <Button onClick={() => openDialog()}>
-                    <PlusCircle className="mr-2 h-4 w-4" />
-                    Agregar Planta
-                </Button>
+                <h1 className="text-3xl font-serif font-bold">Administración del Herbario</h1>
+                <Button onClick={() => openForm()}><PlusCircle className="mr-2 h-4 w-4" /> Agregar Planta</Button>
             </div>
 
             <div className="border rounded-lg">
@@ -187,21 +269,15 @@ const Admin = () => {
                                 <TableCell className="font-medium">{plant.commonName}</TableCell>
                                 <TableCell className="hidden md:table-cell italic">{plant.scientificName}</TableCell>
                                 <TableCell className="text-right">
-                                    <Button variant="ghost" size="icon" onClick={() => openDialog(plant)}>
-                                        <Edit className="h-4 w-4" />
-                                    </Button>
+                                    <Button variant="ghost" size="icon" onClick={() => openForm(plant)}><Edit className="h-4 w-4" /></Button>
                                     <AlertDialog>
                                         <AlertDialogTrigger asChild>
-                                            <Button variant="ghost" size="icon" className="text-destructive hover:text-destructive">
-                                                <Trash2 className="h-4 w-4" />
-                                            </Button>
+                                            <Button variant="ghost" size="icon" className="text-destructive hover:text-destructive"><Trash2 className="h-4 w-4" /></Button>
                                         </AlertDialogTrigger>
                                         <AlertDialogContent>
                                             <AlertDialogHeader>
                                                 <AlertDialogTitle>¿Estás seguro?</AlertDialogTitle>
-                                                <AlertDialogDescription>
-                                                    Esta acción no se puede deshacer. Se eliminará permanentemente la planta "{plant.commonName}".
-                                                </AlertDialogDescription>
+                                                <AlertDialogDescription>Esta acción no se puede deshacer. Se eliminará permanentemente la planta "{plant.commonName}".</AlertDialogDescription>
                                             </AlertDialogHeader>
                                             <AlertDialogFooter>
                                                 <AlertDialogCancel>Cancelar</AlertDialogCancel>
@@ -216,52 +292,13 @@ const Admin = () => {
                 </Table>
             </div>
 
-            <Dialog open={isDialogOpen} onOpenChange={(isOpen) => { setIsDialogOpen(isOpen); if (!isOpen) setSelectedPlant(null); }}>
-                <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
-                    <DialogHeader>
-                        <DialogTitle>{selectedPlant?.id ? "Editar Planta" : "Agregar Nueva Planta"}</DialogTitle>
-                    </DialogHeader>
-                    <form onSubmit={handleSave} className="grid gap-6 py-4">
-                        <input type="hidden" name="id" defaultValue={selectedPlant?.id || ''} />
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="commonName" className="text-right">Nombre Común</Label>
-                            <Input id="commonName" name="commonName" defaultValue={selectedPlant?.commonName} className="col-span-3" required />
-                        </div>
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="scientificName" className="text-right">Nombre Científico</Label>
-                            <Input id="scientificName" name="scientificName" defaultValue={selectedPlant?.scientificName} className="col-span-3" required />
-                        </div>
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="Descripción" className="text-right">Descripción</Label>
-                            <Textarea id="Descripción" name="Descripción" defaultValue={selectedPlant?.Descripción} className="col-span-3" required />
-                        </div>
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="beneficios" className="text-right">Beneficios (JSON)</Label>
-                            <Textarea
-                                id="beneficios"
-                                name="beneficios"
-                                defaultValue={JSON.stringify(selectedPlant?.id ? JSON.parse(selectedPlant.beneficios || '{}') : {}, null, 2)}
-                                className="col-span-3 font-mono"
-                                rows={6}
-                            />
-                        </div>
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="modoDeUso" className="text-right">Modo de Uso (JSON)</Label>
-                            <Textarea
-                                id="modoDeUso"
-                                name="modoDeUso"
-                                defaultValue={JSON.stringify(selectedPlant?.id ? JSON.parse(selectedPlant.modoDeUso || '{}') : {}, null, 2)}
-                                className="col-span-3 font-mono"
-                                rows={6}
-                            />
-                        </div>
-                        <DialogFooter>
-                            <DialogClose asChild><Button type="button" variant="secondary">Cancelar</Button></DialogClose>
-                            <Button type="submit">Guardar Cambios</Button>
-                        </DialogFooter>
-                    </form>
-                </DialogContent>
-            </Dialog>
+            {isFormOpen && (
+                <PlantForm
+                    plant={selectedPlant}
+                    onSave={handleSaveSuccess}
+                    onCancel={() => setIsFormOpen(false)}
+                />
+            )}
         </div>
     );
 };
