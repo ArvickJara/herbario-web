@@ -23,20 +23,35 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           light: "hsl(var(--primary-light))",
+          soft: "hsl(var(--primary-soft))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
           light: "hsl(var(--secondary-light))",
+          soft: "hsl(var(--secondary-soft))",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
           light: "hsl(var(--accent-light))",
+          soft: "hsl(var(--accent-soft))",
+        },
+        // Colores temáticos del herbario
+        forest: {
+          DEFAULT: "hsl(var(--primary))",
+          light: "hsl(var(--primary-light))",
+          soft: "hsl(var(--primary-soft))",
         },
         earth: {
-          DEFAULT: "hsl(var(--earth))",
-          foreground: "hsl(var(--earth-foreground))",
+          DEFAULT: "hsl(var(--secondary))",
+          light: "hsl(var(--secondary-light))",
+          soft: "hsl(var(--secondary-soft))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--accent))",
+          light: "hsl(var(--accent-light))",
+          soft: "hsl(var(--accent-soft))",
         },
         ui: {
           DEFAULT: "hsl(var(--ui-background))",
@@ -103,6 +118,11 @@ export default {
         'gradient-forest': 'var(--gradient-forest)',
         'gradient-earth': 'var(--gradient-earth)',
         'gradient-subtle': 'var(--gradient-subtle)',
+        // Gradientes adicionales para variedad
+        'gradient-leaf': 'linear-gradient(135deg, hsl(var(--primary-soft)), hsl(var(--primary)))',
+        'gradient-sunset': 'linear-gradient(135deg, hsl(var(--accent-soft)), hsl(var(--accent)))',
+        'gradient-moss': 'linear-gradient(180deg, hsl(var(--primary-light)), hsl(var(--secondary)))',
+        'shimmer': 'linear-gradient(90deg, transparent 30%, hsl(var(--accent) / 0.1) 50%, transparent 70%)',
       },
       fontFamily: {
         'serif': 'var(--font-serif)',
@@ -112,6 +132,11 @@ export default {
         'soft': 'var(--shadow-soft)',
         'botanical': 'var(--shadow-botanical)',
         'glow': 'var(--shadow-glow)',
+        'earth': 'var(--shadow-earth)',
+        // Sombras específicas para componentes
+        'card-hover': '0 8px 25px hsl(var(--primary) / 0.08), 0 3px 10px hsl(var(--primary) / 0.04)',
+        'button-hover': '0 6px 20px hsl(var(--accent) / 0.15), 0 2px 8px hsl(var(--accent) / 0.08)',
+        'nature': '0 4px 15px hsl(var(--primary) / 0.12), 0 2px 6px hsl(var(--secondary) / 0.08)',
       },
     },
   },

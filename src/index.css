@@ -8,170 +8,227 @@
 
 @layer base {
   :root {
-    /* Core brand colors - converted to HSL */
-    --primary: 167 52% 22%;
-    /* #1B5E55 - Forest Green */
+    /* 🌿 HERBARIO AMAZÓNICO - Paleta de colores inspirada en la naturaleza */
+
+    /* Verdes principales - Tonos de la selva amazónica */
+    --primary: 158 64% 28%;
+    /* #1B7A5A - Verde bosque profundo */
     --primary-foreground: 0 0% 98%;
-    --primary-light: 167 52% 32%;
-    /* Lighter version */
+    /* #FAFAFA - Texto sobre verde */
+    --primary-light: 158 50% 40%;
+    /* Verde bosque claro */
+    --primary-soft: 158 30% 85%;
+    /* Verde muy suave para fondos */
 
-    --secondary: 206 58% 38%;
-    /* #2A6F97 - Ocean Blue */
+    /* Tierra y corteza - Tonos orgánicos */
+    --secondary: 25 35% 45%;
+    /* #8B6B47 - Marrón corteza */
     --secondary-foreground: 0 0% 98%;
-    --secondary-light: 206 58% 48%;
+    /* Texto sobre marrón */
+    --secondary-light: 25 25% 65%;
+    /* Marrón claro */
+    --secondary-soft: 25 20% 92%;
+    /* Beige muy suave */
 
-    --accent: 43 69% 55%;
-    /* #D4B24C - Golden */
-    --accent-foreground: 0 0% 10%;
-    --accent-light: 43 69% 65%;
+    /* Acentos dorados - Luz del sol entre las hojas */
+    --accent: 45 75% 58%;
+    /* #E6C068 - Oro natural */
+    --accent-foreground: 25 35% 15%;
+    /* Texto oscuro sobre oro */
+    --accent-light: 45 60% 75%;
+    /* Oro claro */
+    --accent-soft: 45 40% 95%;
+    /* Crema dorada */
 
-    --earth: 30 31% 34%;
-    /* #6B4E3D - Earth Brown */
-    --earth-foreground: 0 0% 98%;
+    /* Fondos naturales */
+    --background: 45 25% 97%;
+    /* #F9F7F3 - Blanco cálido */
+    --foreground: 25 15% 15%;
+    /* #2A2622 - Texto principal */
 
-    --background: 45 38% 95%;
-    /* #F8F5EF - Warm White */
-    --foreground: 0 0% 10%;
-    /* #1A1A1A - Dark Text */
+    /* Interfaz y componentes */
+    --card: 45 30% 98%;
+    /* #FAFAF8 - Tarjetas */
+    --card-foreground: 25 15% 15%;
 
-    --ui-background: 140 17% 96%;
-    /* #F3F6F5 - Soft Green */
-    --ui-foreground: 0 0% 10%;
+    --popover: 45 30% 98%;
+    --popover-foreground: 25 15% 15%;
 
-    --card: 45 38% 97%;
-    --card-foreground: 0 0% 10%;
+    --muted: 158 15% 92%;
+    /* #EAEFEC - Gris verdoso suave */
+    --muted-foreground: 25 8% 45%;
+    /* #6B6A67 - Texto secundario */
 
-    --popover: 45 38% 97%;
-    --popover-foreground: 0 0% 10%;
+    --border: 158 20% 88%;
+    /* #DDE5E1 - Bordes suaves */
+    --input: 158 15% 95%;
+    /* #F2F6F4 - Campos de entrada */
+    --ring: 158 64% 28%;
+    /* Anillo de foco igual al primary */
 
-    --muted: 140 17% 93%;
-    --muted-foreground: 0 0% 45%;
-
-    --destructive: 0 84% 60%;
+    /* Estados de error */
+    --destructive: 0 75% 55%;
+    /* #DC5A47 - Rojo natural */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 140 17% 88%;
-    --input: 140 17% 90%;
-    --ring: 167 52% 22%;
+    /* Sidebar - Tonos tierra */
+    --sidebar-background: 25 20% 96%;
+    /* #F6F4F1 - Fondo sidebar tierra */
+    --sidebar-foreground: 25 15% 15%;
+    --sidebar-primary: 158 64% 28%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 25 15% 90%;
+    /* #E8E4DF - Acento sidebar */
+    --sidebar-accent-foreground: 25 15% 15%;
+    --sidebar-border: 25 20% 85%;
+    /* #DDD7D0 - Borde sidebar */
+    --sidebar-ring: 158 64% 28%;
 
     --radius: 0.75rem;
 
-    /* Botanical gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-    --gradient-forest: linear-gradient(180deg, hsl(var(--primary-light)), hsl(var(--primary)));
-    --gradient-earth: linear-gradient(135deg, hsl(var(--earth)), hsl(var(--accent)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--ui-background)), hsl(var(--background)));
+    /* Gradientes botánicos mejorados */
+    --gradient-hero: linear-gradient(135deg,
+        hsl(158 64% 28%) 0%,
+        /* Verde profundo */
+        hsl(158 50% 35%) 50%,
+        /* Verde medio */
+        hsl(45 75% 58%) 100%
+        /* Toque dorado */
+      );
+    --gradient-forest: linear-gradient(180deg,
+        hsl(158 30% 85%) 0%,
+        /* Verde muy suave */
+        hsl(158 64% 28%) 100%
+        /* Verde profundo */
+      );
+    --gradient-earth: linear-gradient(135deg,
+        hsl(25 35% 45%) 0%,
+        /* Marrón corteza */
+        hsl(45 75% 58%) 100%
+        /* Oro natural */
+      );
+    --gradient-subtle: linear-gradient(180deg,
+        hsl(45 25% 97%) 0%,
+        /* Blanco cálido */
+        hsl(158 15% 92%) 100%
+        /* Gris verdoso */
+      );
 
-    /* Shadows with botanical feel */
-    --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
-    --shadow-botanical: 0 10px 25px -5px hsl(var(--primary) / 0.15), 0 4px 6px -2px hsl(var(--primary) / 0.05);
-    --shadow-glow: 0 0 20px hsl(var(--accent) / 0.3);
+    /* Sombras orgánicas */
+    --shadow-soft: 0 2px 8px hsl(158 64% 28% / 0.08), 0 1px 4px hsl(158 64% 28% / 0.04);
+    --shadow-botanical: 0 8px 24px hsl(158 64% 28% / 0.12), 0 4px 8px hsl(158 64% 28% / 0.06);
+    --shadow-glow: 0 0 20px hsl(45 75% 58% / 0.25);
+    --shadow-earth: 0 4px 12px hsl(25 35% 45% / 0.15);
 
-    /* Typography scale */
+    /* Tipografía */
     --font-serif: 'Crimson Text', serif;
     --font-sans: 'Inter', system-ui, sans-serif;
-
-    --sidebar-background: 140 17% 96%;
-    --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 167 52% 22%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 140 17% 93%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 140 17% 88%;
-    --sidebar-ring: 167 52% 22%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    /* Dark mode with botanical theme */
-    --primary: 167 52% 32%;
+    /* 🌙 MODO NOCTURNO - Selva bajo la luna */
+
+    /* Verdes nocturnos - Más saturados y luminosos */
+    --primary: 158 55% 45%;
+    /* #3A9B6F - Verde bosque nocturno */
     --primary-foreground: 0 0% 98%;
-    --primary-light: 167 52% 42%;
+    --primary-light: 158 45% 55%;
+    --primary-soft: 158 25% 18%;
+    /* Verde muy oscuro para fondos */
 
-    --secondary: 206 58% 48%;
-    --secondary-foreground: 0 0% 98%;
-    --secondary-light: 206 58% 58%;
+    /* Tierra nocturna */
+    --secondary: 25 30% 55%;
+    /* #A68B6B - Marrón claro nocturno */
+    --secondary-foreground: 25 15% 8%;
+    --secondary-light: 25 25% 65%;
+    --secondary-soft: 25 20% 12%;
+    /* Marrón muy oscuro */
 
-    --accent: 43 69% 65%;
-    --accent-foreground: 0 0% 10%;
-    --accent-light: 43 69% 75%;
+    /* Oro lunar - Más brillante en la oscuridad */
+    --accent: 45 70% 68%;
+    /* #E8C878 - Oro lunar */
+    --accent-foreground: 25 25% 8%;
+    --accent-light: 45 60% 75%;
+    --accent-soft: 45 25% 15%;
+    /* Oro muy oscuro */
 
-    --earth: 30 31% 44%;
-    --earth-foreground: 0 0% 98%;
+    /* Fondos nocturnos */
+    --background: 158 25% 8%;
+    /* #0F1A15 - Verde muy oscuro */
+    --foreground: 45 15% 92%;
+    /* #EAE8E4 - Texto claro cálido */
 
-    --background: 167 20% 8%;
-    /* Dark forest */
-    --foreground: 0 0% 95%;
+    /* Interfaz nocturna */
+    --card: 158 20% 12%;
+    /* #15241A - Tarjetas oscuras */
+    --card-foreground: 45 15% 92%;
 
-    --ui-background: 167 20% 10%;
-    --ui-foreground: 0 0% 95%;
+    --popover: 158 20% 12%;
+    --popover-foreground: 45 15% 92%;
 
-    --card: 167 20% 10%;
-    --card-foreground: 0 0% 95%;
+    --muted: 158 15% 18%;
+    /* #252B28 - Gris verdoso oscuro */
+    --muted-foreground: 45 8% 65%;
+    /* #9A9891 - Texto secundario */
 
-    --popover: 167 20% 10%;
-    --popover-foreground: 0 0% 95%;
+    --border: 158 20% 22%;
+    /* #2D3B32 - Bordes visibles */
+    --input: 158 15% 15%;
+    /* #1F2822 - Campos oscuros */
+    --ring: 158 55% 45%;
+    /* Anillo de foco verde brillante */
 
-    --muted: 167 20% 15%;
-    --muted-foreground: 0 0% 65%;
-
-    --destructive: 0 62% 45%;
+    /* Estados de error nocturnos */
+    --destructive: 0 70% 60%;
+    /* #E85A5A - Rojo más suave */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 167 20% 18%;
-    --input: 167 20% 15%;
-    --ring: 167 52% 45%;
-
-    --sidebar-background: 167 20% 8%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 167 52% 32%;
+    /* Sidebar nocturno */
+    --sidebar-background: 25 25% 10%;
+    /* #1C1612 - Fondo tierra oscuro */
+    --sidebar-foreground: 45 15% 88%;
+    --sidebar-primary: 158 55% 45%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 167 20% 15%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 167 20% 18%;
-    --sidebar-ring: 167 52% 45%;
+    --sidebar-accent: 25 15% 18%;
+    /* #2A251F - Acento tierra oscuro */
+    --sidebar-accent-foreground: 45 15% 88%;
+    --sidebar-border: 25 20% 25%;
+    /* #3D342A - Borde visible */
+    --sidebar-ring: 158 55% 45%;
+
+    /* Gradientes nocturnos mejorados */
+    --gradient-hero: linear-gradient(135deg,
+        hsl(158 25% 8%) 0%,
+        /* Verde muy oscuro */
+        hsl(158 35% 15%) 50%,
+        /* Verde medio oscuro */
+        hsl(45 70% 35%) 100%
+        /* Oro oscuro */
+      );
+    --gradient-forest: linear-gradient(180deg,
+        hsl(158 20% 18%) 0%,
+        /* Verde gris oscuro */
+        hsl(158 25% 8%) 100%
+        /* Verde muy oscuro */
+      );
+    --gradient-earth: linear-gradient(135deg,
+        hsl(25 25% 25%) 0%,
+        /* Marrón medio oscuro */
+        hsl(45 70% 35%) 100%
+        /* Oro oscuro */
+      );
+    --gradient-subtle: linear-gradient(180deg,
+        hsl(158 25% 8%) 0%,
+        /* Verde muy oscuro */
+        hsl(158 15% 12%) 100%
+        /* Verde gris muy oscuro */
+      );
+
+    /* Sombras nocturnas más intensas */
+    --shadow-soft: 0 4px 12px hsl(0 0% 0% / 0.25), 0 2px 6px hsl(0 0% 0% / 0.15);
+    --shadow-botanical: 0 12px 32px hsl(0 0% 0% / 0.35), 0 6px 12px hsl(0 0% 0% / 0.20);
+    --shadow-glow: 0 0 24px hsl(45 70% 68% / 0.35);
+    --shadow-earth: 0 6px 16px hsl(25 25% 5% / 0.40);
   }
 }
 
@@ -194,35 +251,109 @@
     font-family: var(--font-serif);
   }
 
-  /* Botanical animations */
+  /* 🌿 Animaciones botánicas mejoradas */
   .animate-leaf {
-    animation: gentle-sway 3s ease-in-out infinite;
+    animation: gentle-sway 4s ease-in-out infinite;
   }
 
   .animate-glow {
-    animation: gentle-glow 2s ease-in-out infinite alternate;
+    animation: gentle-glow 3s ease-in-out infinite alternate;
   }
 
+  .animate-breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  .animate-grow {
+    animation: grow 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2.5s ease-in-out infinite;
+  }
+
+  /* Keyframes para movimientos naturales */
   @keyframes gentle-sway {
 
     0%,
     100% {
-      transform: rotate(0deg);
+      transform: rotate(0deg) scale(1);
     }
 
-    50% {
-      transform: rotate(1deg);
+    25% {
+      transform: rotate(0.8deg) scale(1.01);
+    }
+
+    75% {
+      transform: rotate(-0.8deg) scale(1.01);
     }
   }
 
   @keyframes gentle-glow {
     0% {
       box-shadow: var(--shadow-soft);
+      filter: brightness(1);
     }
 
     100% {
       box-shadow: var(--shadow-botanical);
+      filter: brightness(1.05);
     }
+  }
+
+  @keyframes breathe {
+
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.02);
+      opacity: 0.95;
+    }
+  }
+
+  @keyframes grow {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.8;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  /* Efectos de hover mejorados */
+  .hover-grow:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-botanical);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Efectos de enfoque mejorados */
+  .focus-nature:focus-visible {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px hsl(var(--accent) / 0.2);
   }
 
   /* Accessibility improvements */

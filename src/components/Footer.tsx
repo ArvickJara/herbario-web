@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Leaf, Mail, AlertTriangle } from "lucide-react";
+import { Leaf, Mail, AlertTriangle, Phone } from "lucide-react";
 
 export function Footer() {
   return (
@@ -14,8 +14,8 @@ export function Footer() {
                 Descargo de Responsabilidad Médica
               </p>
               <p className="text-muted-foreground">
-                La información en este sitio es solo educativa. No reemplaza el consejo médico profesional. 
-                Consulte siempre a su médico antes de usar plantas medicinales, especialmente si toma medicamentos 
+                La información en este sitio es solo educativa. No reemplaza el consejo médico profesional.
+                Consulte siempre a su médico antes de usar plantas medicinales, especialmente si toma medicamentos
                 o tiene condiciones médicas.
               </p>
             </div>
@@ -34,7 +34,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Documentando y validando el conocimiento tradicional de plantas medicinales 
+              Documentando y validando el conocimiento tradicional de plantas medicinales
               amazónicas con respaldo científico para educar y prevenir riesgos.
             </p>
           </div>
@@ -43,20 +43,20 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-serif font-semibold text-foreground">Enlaces</h4>
             <nav className="space-y-2">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className="block text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 Inicio
               </Link>
-              <Link 
-                to="/buscar" 
+              <Link
+                to="/buscar"
                 className="block text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 Explorar Plantas
               </Link>
-              <Link 
-                to="/acerca" 
+              <Link
+                to="/acerca"
                 className="block text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 Acerca del Proyecto
@@ -71,6 +71,11 @@ export function Footer() {
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
                 <span>info@herbarioamazonico.org</span>
+
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Phone className="h-4 w-4" />
+                <span>+51 927 459 843 </span>
               </div>
               <p className="text-xs text-muted-foreground">
                 Para sugerencias, correcciones o colaboraciones académicas
@@ -82,7 +87,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
           <p>
-            © 2024 Herbario Amazónico. Contenido educativo bajo licencia Creative Commons.
+            © 2024 Herbario Amazónico. Proyecto universitario de investigación.
           </p>
         </div>
       </div>
