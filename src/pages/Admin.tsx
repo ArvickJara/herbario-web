@@ -9,7 +9,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { PlusCircle, Edit, Trash2, Loader2 } from "lucide-react";
 
-const API_URL = "http://localhost:3001/api";
+const API_URL = `${import.meta.env.VITE_API_BASE_URL}/api`;
 
 // --- TIPOS DE DATOS ---
 type Benefit = { id: string; description: string; };
