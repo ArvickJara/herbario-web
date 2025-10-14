@@ -3,7 +3,7 @@ import { Leaf, Mail, AlertTriangle, Phone } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-ui border-t">
+    <footer className="bg-ui border-t-2">
       <div className="container py-12">
         {/* Disclaimer destacado */}
         <div className="mb-8 p-4 bg-accent/10 border border-accent/20 rounded-lg">
@@ -26,9 +26,7 @@ export function Footer() {
           {/* Branding */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="flex items-center justify-center w-8 h-8 bg-gradient-hero rounded-md">
-                <Leaf className="h-4 w-4 text-primary-foreground" />
-              </div>
+
               <span className="font-serif font-semibold text-lg text-primary">
                 Herbario Amazónico
               </span>
@@ -70,7 +68,7 @@ export function Footer() {
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <span>info@herbarioamazonico.org</span>
+                <span>espinozanicky20@gmail.com</span>
 
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -78,7 +76,7 @@ export function Footer() {
                 <span>+51 927 459 843 </span>
               </div>
               <p className="text-xs text-muted-foreground">
-                Para sugerencias, correcciones o colaboraciones académicas
+                Para sugerencias, correcciones o colaboraciones académicas.
               </p>
             </div>
           </div>

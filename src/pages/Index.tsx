@@ -3,7 +3,7 @@ import { PlantCard } from "@/components/PlantCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Leaf, Search, BookOpen, Shield, ArrowRight, Users, Award, MessageCircle } from "lucide-react";
+import { Leaf, Search, BookOpen, Shield, ArrowRight, Users, Award, MessageCircle, Heart, Brain, Activity, Zap, Sparkles, Apple, Waves, Cpu, Palette, Pill } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/parque_0.jpg";
 
@@ -16,12 +16,12 @@ const WhatsAppIcon = () => (
 const Index = () => {
   // Mock data for demonstration
   const ailmentCategories = [
-    { name: "Digestivo", count: 45, icon: "🌿" },
-    { name: "Respiratorio", count: 32, icon: "🫁" },
-    { name: "Cardiovascular", count: 28, icon: "❤️" },
-    { name: "Nervioso", count: 23, icon: "🧠" },
-    { name: "Inmunológico", count: 19, icon: "🛡️" },
-    { name: "Dermatológico", count: 15, icon: "🫸" }
+    { name: "Digestivo", count: 45, icon: Apple, color: "text-orange-600", bgColor: "bg-orange-100" },
+    { name: "Respiratorio", count: 32, icon: Waves, color: "text-blue-600", bgColor: "bg-blue-100" },
+    { name: "Cardiovascular", count: 28, icon: Heart, color: "text-red-600", bgColor: "bg-red-100" },
+    { name: "Nervioso", count: 23, icon: Brain, color: "text-purple-600", bgColor: "bg-purple-100" },
+    { name: "Inmunológico", count: 19, icon: Shield, color: "text-emerald-600", bgColor: "bg-emerald-100" },
+    { name: "Dermatológico", count: 15, icon: Sparkles, color: "text-pink-600", bgColor: "bg-pink-100" }
   ];
 
   const featuredPlants = [
@@ -70,7 +70,7 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section
-        className="relative py-24 lg:py-32 bg-gradient-hero overflow-hidden"
+        className="relative py-32 lg:py-48 bg-gradient-hero overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(135deg, rgba(20, 20, 20, 0.7), rgba(40, 40, 40, 0.6)), url(${heroImage})`,
           backgroundSize: 'cover',
@@ -79,11 +79,7 @@ const Index = () => {
       >
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center text-primary-foreground">
-            <div className="flex justify-center mb-6">
-              <div className="p-4 bg-primary-foreground/10 rounded-full backdrop-blur-sm">
-                <Leaf className="h-12 w-12 animate-leaf" />
-              </div>
-            </div>
+
 
             <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
               Herbario Amazónico
@@ -122,11 +118,25 @@ const Index = () => {
 
         {/* Decorative elements */}
         <div className="absolute top-10 left-10 opacity-20">
+          {/* Hoja grande - vértice superior del triángulo */}
           <Leaf className="h-20 w-20 text-primary-foreground animate-leaf" />
+
+          {/* Hoja pequeña - vértice inferior izquierdo */}
+          <Leaf
+            className="h-10 w-10 text-primary-foreground animate-leaf absolute top-18 -left-6"
+            style={{ animationDelay: "0.5s" }}
+          />
+
+          {/* Hoja pequeña - vértice inferior derecho */}
+          <Leaf
+            className="h-12 w-12 text-primary-foreground animate-leaf absolute top-16 left-12"
+            style={{ animationDelay: "1s" }}
+          />
         </div>
-        <div className="absolute bottom-10 right-10 opacity-20">
-          <Leaf className="h-16 w-16 text-primary-foreground animate-leaf" style={{ animationDelay: "1s" }} />
-        </div>
+
+
+        {/* Fade out gradient at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent pointer-events-none"></div>
       </section>
 
       {/* Categories Section */}
@@ -142,26 +152,31 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ailmentCategories.map((category, index) => (
-              <Link key={category.name} to={`/buscar?dolencia=${encodeURIComponent(category.name.toLowerCase())}`}>
-                <Card className="p-6 hover:shadow-botanical transition-all duration-300 hover:-translate-y-1 bg-gradient-subtle border-border/50">
-                  <CardContent className="p-0">
-                    <div className="flex items-center gap-4">
-                      <div className="text-3xl">{category.icon}</div>
-                      <div className="flex-1">
-                        <h3 className="font-serif font-semibold text-lg text-foreground">
-                          {category.name}
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {category.count} plantas
-                        </p>
+            {ailmentCategories.map((category, index) => {
+              const IconComponent = category.icon;
+              return (
+                <Link key={category.name} to={`/buscar?dolencia=${encodeURIComponent(category.name.toLowerCase())}`}>
+                  <Card className="p-6 hover:shadow-botanical transition-all duration-300 hover:-translate-y-1 bg-gradient-subtle border-border/50">
+                    <CardContent className="p-0">
+                      <div className="flex items-center gap-4">
+                        <div className={`p-2 ${category.bgColor} rounded-lg`}>
+                          <IconComponent className={`h-8 w-8 ${category.color}`} />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="font-serif font-semibold text-lg text-foreground">
+                            {category.name}
+                          </h3>
+                          <p className="text-sm text-muted-foreground">
+                            {category.count} plantas
+                          </p>
+                        </div>
+                        <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                       </div>
-                      <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
