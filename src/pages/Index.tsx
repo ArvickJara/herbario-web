@@ -3,9 +3,102 @@ import { PlantCard } from "@/components/PlantCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Leaf, Search, BookOpen, Shield, ArrowRight, Users, Award, MessageCircle, Heart, Brain, Activity, Zap, Sparkles, Apple, Waves, Cpu, Palette, Pill } from "lucide-react";
+import { Leaf, Search, BookOpen, Shield, ArrowRight, Users, Award, MessageCircle, Heart, Brain, Activity, Zap, Sparkles, Apple, Waves, Cpu, Palette, Pill, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import heroImage from "@/assets/parque_0.jpg";
+
+// Importaciones para la base de datos
+import { drizzle } from "drizzle-orm/libsql";
+import { createClient } from "@libsql/client";
+import { text, sqliteTable } from "drizzle-orm/sqlite-core";
+import { desc } from "drizzle-orm";
+
+// Definición de esquemas de base de datos
+const plantsTable = sqliteTable("plants", {
+  id: text("id").primaryKey(),
+  commonName: text("commonName").notNull(),
+  scientificName: text("scientificName"),
+  description: text("description"),
+  imageUrl: text("image_url"),
+});
+
+const benefitsTable = sqliteTable("benefits", {
+  id: text("id").primaryKey(),
+  tipo: text("tipo").notNull(),
+  description: text("description").notNull(),
+  plantId: text("plant_id").notNull(),
+});
+
+// Tipos para las plantas
+type DatabasePlant = {
+  id: string;
+  commonName: string;
+  scientificName: string | null;
+  description: string | null;
+  imageUrl: string | null;
+};
+
+type Benefit = {
+  id: string;
+  tipo: string;
+  description: string;
+  plantId: string;
+};
+
+type PlantWithBenefits = DatabasePlant & {
+  benefits: Benefit[];
+};
+
+// Función para inicializar la base de datos
+let db: ReturnType<typeof drizzle> | null = null;
+
+function initDatabase() {
+  const dbUrl = import.meta.env.VITE_TURSO_DATABASE_URL;
+  const authToken = import.meta.env.VITE_TURSO_AUTH_TOKEN;
+
+  if (!dbUrl || !authToken) {
+    console.error('Faltan variables de entorno para la base de datos');
+    return null;
+  }
+
+  const client = createClient({
+    url: dbUrl,
+    authToken: authToken,
+  });
+
+  return drizzle(client);
+}
+
+// Función para obtener las últimas plantas
+const getLatestPlants = async (): Promise<PlantWithBenefits[]> => {
+  try {
+    if (!db) {
+      db = initDatabase();
+    }
+
+    if (!db) {
+      throw new Error('No se pudo conectar a la base de datos');
+    }
+
+    // Obtener las últimas 3 plantas
+    const plants = await db.select().from(plantsTable).orderBy(desc(plantsTable.id)).limit(3);
+
+    // Obtener beneficios para estas plantas
+    const benefits = await db.select().from(benefitsTable);
+
+    // Combinar datos
+    const plantsWithBenefits = plants.map(plant => ({
+      ...plant,
+      benefits: benefits.filter(b => b.plantId === plant.id)
+    }));
+
+    return plantsWithBenefits;
+  } catch (error) {
+    console.error('Error al obtener plantas:', error);
+    return [];
+  }
+};
 
 const WhatsAppIcon = () => (
   <svg className="mr-2 h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
@@ -14,7 +107,31 @@ const WhatsAppIcon = () => (
 );
 
 const Index = () => {
-  // Mock data for demonstration
+  // Estados para plantas reales de la base de datos
+  const [featuredPlants, setFeaturedPlants] = useState<PlantWithBenefits[]>([]);
+  const [plantsLoading, setPlantsLoading] = useState(true);
+  const [plantsError, setPlantsError] = useState<string | null>(null);
+
+  // Cargar plantas al montar el componente
+  useEffect(() => {
+    const loadPlants = async () => {
+      try {
+        setPlantsLoading(true);
+        setPlantsError(null);
+        const plants = await getLatestPlants();
+        setFeaturedPlants(plants);
+      } catch (error) {
+        console.error('Error cargando plantas:', error);
+        setPlantsError('Error al cargar las plantas destacadas');
+      } finally {
+        setPlantsLoading(false);
+      }
+    };
+
+    loadPlants();
+  }, []);
+
+  // Mock data para categorías (esto se puede mantener estático por ahora)
   const ailmentCategories = [
     { name: "Digestivo", count: 45, icon: Apple, color: "text-orange-600", bgColor: "bg-orange-100" },
     { name: "Respiratorio", count: 32, icon: Waves, color: "text-blue-600", bgColor: "bg-blue-100" },
@@ -24,46 +141,26 @@ const Index = () => {
     { name: "Dermatológico", count: 15, icon: Sparkles, color: "text-pink-600", bgColor: "bg-pink-100" }
   ];
 
-  const featuredPlants = [
-    {
-      id: "1",
-      slug: "uña-de-gato",
-      commonName: "Uña de Gato",
-      scientificName: "Uncaria tomentosa",
-      family: "Rubiaceae",
-      summary: "Planta trepadora reconocida por sus propiedades inmunomoduladoras y antiinflamatorias, utilizada tradicionalmente para fortalecer el sistema inmune.",
-      evidenceLevel: "alta" as const,
-      hasInteractions: true,
-      traditionalUses: ["Inmunidad", "Artritis", "Digestivo"]
-    },
-    {
-      id: "2",
-      slug: "sangre-de-drago",
-      commonName: "Sangre de Drago",
-      scientificName: "Croton lechleri",
-      family: "Euphorbiaceae",
-      summary: "Árbol que produce una resina rojiza con propiedades cicatrizantes y antimicrobianas, tradicionalmente usada para heridas y problemas digestivos.",
-      evidenceLevel: "moderada" as const,
-      hasInteractions: false,
-      traditionalUses: ["Cicatrización", "Diarrea", "Heridas"]
-    },
-    {
-      id: "3",
-      slug: "cat-s-claw",
-      commonName: "Copaiba",
-      scientificName: "Copaifera officinalis",
-      family: "Fabaceae",
-      summary: "Árbol productor de oleorresina con propiedades antiinflamatorias y analgésicas, usado en medicina tradicional para dolores y inflamaciones.",
-      evidenceLevel: "baja" as const,
-      hasInteractions: false,
-      traditionalUses: ["Antiinflamatorio", "Dolor", "Heridas"]
-    }
-  ];
-
   const handleSearch = (query: string) => {
     if (query.trim()) {
       window.location.href = `/buscar?q=${encodeURIComponent(query)}`;
     }
+  };
+
+  // Función para transformar plantas de la BD al formato esperado por PlantCard
+  const transformPlantForCard = (plant: PlantWithBenefits) => {
+    return {
+      id: plant.id,
+      slug: plant.commonName.toLowerCase().replace(/\s+/g, '-'),
+      commonName: plant.commonName,
+      scientificName: plant.scientificName || 'No especificado',
+      family: 'Amazónica', // Por defecto ya que no tenemos este campo en la BD
+      summary: plant.description || 'Planta medicinal amazónica con propiedades terapéuticas tradicionales.',
+      evidenceLevel: 'moderada' as const, // Por defecto, se puede mejorar basándose en respaldo científico
+      hasInteractions: false, // Por defecto
+      traditionalUses: plant.benefits.slice(0, 3).map(b => b.tipo), // Primeros 3 tipos de beneficios
+      imageUrl: plant.imageUrl // ¡Agregamos la imagen!
+    };
   };
 
   return (
@@ -189,24 +286,65 @@ const Index = () => {
               Plantas Destacadas
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Plantas medicinales con mayor respaldo científico y documentación completa
+              Últimas plantas añadidas al herbario amazónico
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {featuredPlants.map((plant) => (
-              <PlantCard key={plant.id} {...plant} />
-            ))}
-          </div>
+          {/* Estado de carga */}
+          {plantsLoading && (
+            <div className="flex justify-center items-center py-12">
+              <Loader2 className="h-8 w-8 animate-spin text-primary mr-2" />
+              <span className="text-muted-foreground">Cargando plantas destacadas...</span>
+            </div>
+          )}
 
-          <div className="text-center">
-            <Button asChild variant="botanical" size="lg">
-              <Link to="/buscar">
-                Ver Todas las Plantas
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
+          {/* Estado de error */}
+          {plantsError && (
+            <div className="text-center py-12">
+              <p className="text-destructive mb-4">{plantsError}</p>
+              <Button
+                onClick={() => window.location.reload()}
+                variant="outline"
+              >
+                Reintentar
+              </Button>
+            </div>
+          )}
+
+          {/* Plantas cargadas */}
+          {!plantsLoading && !plantsError && (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                {featuredPlants.length > 0 ? (
+                  featuredPlants.map((plant) => (
+                    <PlantCard key={plant.id} {...transformPlantForCard(plant)} />
+                  ))
+                ) : (
+                  <div className="col-span-full text-center py-12">
+                    <p className="text-muted-foreground mb-4">
+                      Aún no hay plantas registradas en el herbario
+                    </p>
+                    <Button asChild variant="outline">
+                      <Link to="/admin">
+                        Agregar Primera Planta
+                      </Link>
+                    </Button>
+                  </div>
+                )}
+              </div>
+
+              {featuredPlants.length > 0 && (
+                <div className="text-center">
+                  <Button asChild variant="botanical" size="lg">
+                    <Link to="/buscar">
+                      Ver Todas las Plantas
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </section>
 

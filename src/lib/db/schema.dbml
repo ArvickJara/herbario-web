@@ -1,0 +1,38 @@
+Table plants {
+  id varchar [pk]
+  commonName varchar [not null, note: 'Nombre común de la planta']
+  scientificName varchar [note: 'Nombre científico de la planta']
+  description text [note: 'Descripción detallada de la planta']
+  image_url varchar [note: 'URL de la imagen de la planta']
+}
+
+Table benefits {
+  id varchar [pk]
+  tipo varchar [not null, note: 'Tipo de beneficio medicinal']
+  description text [not null, note: 'Descripción del beneficio medicinal']
+  plant_id varchar [not null, ref: > plants.id]
+}
+
+Table usage_methods {
+  id varchar [pk]
+  tipo varchar [not null, note: 'Tipo de método de uso']
+  description text [not null, note: 'Método de uso o preparación']
+  plant_id varchar [not null, ref: > plants.id]
+}
+
+Table respaldo_cientifico {
+id varchar [pk]
+  plant_id varchar [not null, ref: > plants.id] // Clave foránea a la planta
+  hallazgo_cientifico text [not null, note: 'Resumen del hallazgo científico']
+  idioma varchar
+  anio integer [note: 'Año de publicación de la fuente']
+  url_fuente varchar [note: 'URL o DOI para acceso al estudio']
+}
+
+// Las relaciones se definen implícitamente en las columnas 'plant_id'.
+// Si deseas definirlas explícitamente (redundante pero válido):
+// Ref: benefits.plant_id > plants.id
+// Ref: usage_methods.plant_id > plants.id
+
+// Se eliminaron las definiciones de 'indexes' y los nombres auto-generados de SQLite,
+// ya que 'pk', 'unique', y 'ref' son suficientes para la visualización.

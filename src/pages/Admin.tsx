@@ -28,7 +28,6 @@ function generateUUID(): string {
 // --- DEFINICIÓN DE ESQUEMAS (directamente en el frontend) ---
 export const plantsTable = sqliteTable("plants", {
     id: text("id").primaryKey(),
-    slug: text("slug").notNull().unique(),
     commonName: text("commonName").notNull(),
     scientificName: text("scientificName"),
     description: text("description"),
@@ -37,19 +36,31 @@ export const plantsTable = sqliteTable("plants", {
 
 export const benefitsTable = sqliteTable("benefits", {
     id: text("id").primaryKey(),
+    tipo: text("tipo").notNull(),
     description: text("description").notNull(),
     plantId: text("plant_id").notNull().references(() => plantsTable.id, { onDelete: "cascade" }),
 });
 
 export const usageMethodsTable = sqliteTable("usage_methods", {
     id: text("id").primaryKey(),
+    tipo: text("tipo").notNull(),
     description: text("description").notNull(),
     plantId: text("plant_id").notNull().references(() => plantsTable.id, { onDelete: "cascade" }),
+});
+
+export const respaldoCientificoTable = sqliteTable("respaldo_cientifico", {
+    id: text("id").primaryKey(),
+    plantId: text("plant_id").notNull().references(() => plantsTable.id, { onDelete: "cascade" }),
+    hallazgoCientifico: text("hallazgo_cientifico").notNull(),
+    idioma: text("idioma"),
+    anio: text("anio"),
+    urlFuente: text("url_fuente"),
 });
 
 export const plantsRelations = relations(plantsTable, ({ many }) => ({
     benefits: many(benefitsTable),
     usageMethods: many(usageMethodsTable),
+    respaldoCientifico: many(respaldoCientificoTable),
 }));
 
 export const benefitsRelations = relations(benefitsTable, ({ one }) => ({
@@ -62,6 +73,13 @@ export const benefitsRelations = relations(benefitsTable, ({ one }) => ({
 export const usageMethodsRelations = relations(usageMethodsTable, ({ one }) => ({
     plant: one(plantsTable, {
         fields: [usageMethodsTable.plantId],
+        references: [plantsTable.id],
+    }),
+}));
+
+export const respaldoCientificoRelations = relations(respaldoCientificoTable, ({ one }) => ({
+    plant: one(plantsTable, {
+        fields: [respaldoCientificoTable.plantId],
         references: [plantsTable.id],
     }),
 }));
@@ -97,23 +115,36 @@ function initDatabase() {
             plants: plantsTable,
             benefits: benefitsTable,
             usageMethods: usageMethodsTable,
+            respaldoCientifico: respaldoCientificoTable,
             // Relaciones
             plantsRelations,
             benefitsRelations,
             usageMethodsRelations,
+            respaldoCientificoRelations,
         },
     });
 }
 
 // --- TIPOS DE DATOS ---
-type Benefit = { id: string; description: string; };
-type UsageMethod = { id: string; description: string; };
-type Plant = { id: string; slug: string; commonName: string; scientificName: string | null; description: string | null; imageUrl: string | null; benefits: Benefit[]; usageMethods: UsageMethod[]; };
+type Benefit = { id: string; tipo: string; description: string; };
+type UsageMethod = { id: string; tipo: string; description: string; };
+type RespaldoCientifico = { id: string; hallazgoCientifico: string; idioma: string | null; anio: string | null; urlFuente: string | null; };
+type Plant = {
+    id: string;
+    commonName: string;
+    scientificName: string | null;
+    description: string | null;
+    imageUrl: string | null;
+    benefits: Benefit[];
+    usageMethods: UsageMethod[];
+    respaldoCientifico: RespaldoCientifico[];
+};
 
 // --- TIPO PARA EL FORMULARIO (incluye el archivo de imagen) ---
-type FormValues = Omit<Plant, 'benefits' | 'usageMethods'> & {
-    benefits: { description: string }[];
-    usageMethods: { description: string }[];
+type FormValues = Omit<Plant, 'benefits' | 'usageMethods' | 'respaldoCientifico'> & {
+    benefits: { tipo: string; description: string }[];
+    usageMethods: { tipo: string; description: string }[];
+    respaldoCientifico: { hallazgoCientifico: string; idioma: string; anio: string; urlFuente: string }[];
     imageFile?: FileList;
 };
 
@@ -152,11 +183,17 @@ function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; 
     const [imagePreview, setImagePreview] = useState<string | null>(plant?.imageUrl || null);
 
     const { register, handleSubmit, control, formState: { isSubmitting } } = useForm<FormValues>({
-        defaultValues: { ...plant, benefits: plant?.benefits?.length ? plant.benefits : [{ description: "" }], usageMethods: plant?.usageMethods?.length ? plant.usageMethods : [{ description: "" }] },
+        defaultValues: {
+            ...plant,
+            benefits: plant?.benefits?.length ? plant.benefits : [{ tipo: "", description: "" }],
+            usageMethods: plant?.usageMethods?.length ? plant.usageMethods : [{ tipo: "", description: "" }],
+            respaldoCientifico: plant?.respaldoCientifico?.length ? plant.respaldoCientifico : [{ hallazgoCientifico: "", idioma: "", anio: "", urlFuente: "" }]
+        },
     });
 
     const { fields: benefitFields, append: appendBenefit, remove: removeBenefit } = useFieldArray({ control, name: "benefits" });
     const { fields: usageMethodFields, append: appendUsageMethod, remove: removeUsageMethod } = useFieldArray({ control, name: "usageMethods" });
+    const { fields: respaldoCientificoFields, append: appendRespaldoCientifico, remove: removeRespaldoCientifico } = useFieldArray({ control, name: "respaldoCientifico" });
 
     const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
@@ -180,7 +217,6 @@ function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; 
 
             const plantData = {
                 id: plant?.id || generateUUID(),
-                slug: data.slug,
                 commonName: data.commonName,
                 scientificName: data.scientificName || null,
                 description: data.description || null,
@@ -192,26 +228,42 @@ function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; 
                 await db.transaction(async (tx) => {
                     await tx.update(plantsTable).set(plantData).where(eq(plantsTable.id, plant!.id!));
 
-                    // Eliminar beneficios y métodos de uso existentes
+                    // Eliminar registros existentes
                     await tx.delete(benefitsTable).where(eq(benefitsTable.plantId, plant!.id!));
                     await tx.delete(usageMethodsTable).where(eq(usageMethodsTable.plantId, plant!.id!));
+                    await tx.delete(respaldoCientificoTable).where(eq(respaldoCientificoTable.plantId, plant!.id!));
 
                     // Insertar nuevos beneficios
-                    const benefits = data.benefits.map(b => b.description).filter(Boolean);
-                    for (const desc of benefits) {
+                    const benefits = data.benefits.filter(b => b.tipo && b.description);
+                    for (const benefit of benefits) {
                         await tx.insert(benefitsTable).values({
                             id: generateUUID(),
-                            description: desc,
+                            tipo: benefit.tipo,
+                            description: benefit.description,
                             plantId: plant!.id!
                         });
                     }
 
                     // Insertar nuevos métodos de uso
-                    const usageMethods = data.usageMethods.map(u => u.description).filter(Boolean);
-                    for (const desc of usageMethods) {
+                    const usageMethods = data.usageMethods.filter(u => u.tipo && u.description);
+                    for (const method of usageMethods) {
                         await tx.insert(usageMethodsTable).values({
                             id: generateUUID(),
-                            description: desc,
+                            tipo: method.tipo,
+                            description: method.description,
+                            plantId: plant!.id!
+                        });
+                    }
+
+                    // Insertar nuevo respaldo científico
+                    const respaldos = data.respaldoCientifico.filter(r => r.hallazgoCientifico);
+                    for (const respaldo of respaldos) {
+                        await tx.insert(respaldoCientificoTable).values({
+                            id: generateUUID(),
+                            hallazgoCientifico: respaldo.hallazgoCientifico,
+                            idioma: respaldo.idioma || null,
+                            anio: respaldo.anio || null,
+                            urlFuente: respaldo.urlFuente || null,
                             plantId: plant!.id!
                         });
                     }
@@ -222,21 +274,36 @@ function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; 
                     await tx.insert(plantsTable).values(plantData);
 
                     // Insertar beneficios
-                    const benefits = data.benefits.map(b => b.description).filter(Boolean);
-                    for (const desc of benefits) {
+                    const benefits = data.benefits.filter(b => b.tipo && b.description);
+                    for (const benefit of benefits) {
                         await tx.insert(benefitsTable).values({
                             id: generateUUID(),
-                            description: desc,
+                            tipo: benefit.tipo,
+                            description: benefit.description,
                             plantId: plantData.id
                         });
                     }
 
                     // Insertar métodos de uso
-                    const usageMethods = data.usageMethods.map(u => u.description).filter(Boolean);
-                    for (const desc of usageMethods) {
+                    const usageMethods = data.usageMethods.filter(u => u.tipo && u.description);
+                    for (const method of usageMethods) {
                         await tx.insert(usageMethodsTable).values({
                             id: generateUUID(),
-                            description: desc,
+                            tipo: method.tipo,
+                            description: method.description,
+                            plantId: plantData.id
+                        });
+                    }
+
+                    // Insertar respaldo científico
+                    const respaldos = data.respaldoCientifico.filter(r => r.hallazgoCientifico);
+                    for (const respaldo of respaldos) {
+                        await tx.insert(respaldoCientificoTable).values({
+                            id: generateUUID(),
+                            hallazgoCientifico: respaldo.hallazgoCientifico,
+                            idioma: respaldo.idioma || null,
+                            anio: respaldo.anio || null,
+                            urlFuente: respaldo.urlFuente || null,
                             plantId: plantData.id
                         });
                     }
@@ -262,23 +329,47 @@ function PlantForm({ plant, onSave, onCancel }: { plant: Partial<Plant> | null; 
                             <Input id="imageFile" type="file" {...register("imageFile")} onChange={handleImageChange} />
                         </div>
                     </div>
-                    <div><Label htmlFor="commonName">Nombre Común</Label><Input id="commonName" {...register("commonName", { required: true })} /></div>
-                    <div><Label htmlFor="slug">Slug</Label><Input id="slug" {...register("slug", { required: true })} placeholder="ej: uña-de-gato" /></div>
-                    <div><Label htmlFor="scientificName">Nombre Científico</Label><Input id="scientificName" {...register("scientificName")} /></div>
-                    <div><Label htmlFor="description">Descripción</Label><Textarea id="description" {...register("description")} /></div>
+                    <div><Label htmlFor="commonName">Nombre Común de la planta</Label><Input id="commonName" {...register("commonName", { required: true })} /></div>
+                    <div><Label htmlFor="scientificName">Nombre Científico de la planta</Label><Input id="scientificName" {...register("scientificName")} /></div>
+                    <div><Label htmlFor="description">Descripción detallada de la planta</Label><Textarea id="description" {...register("description")} /></div>
                     <div className="space-y-2 p-3 border rounded-md">
                         <Label>Beneficios</Label>
                         {benefitFields.map((field, index) => (
-                            <div key={field.id} className="flex items-center gap-2"><Input {...register(`benefits.${index}.description`)} placeholder={`Beneficio #${index + 1}`} /><Button type="button" variant="destructive" size="icon" onClick={() => removeBenefit(index)}><Trash2 className="h-4 w-4" /></Button></div>
+                            <div key={field.id} className="flex items-center gap-2">
+                                <Input {...register(`benefits.${index}.tipo`)} placeholder="Tipo de beneficio" className="w-1/3" />
+                                <Input {...register(`benefits.${index}.description`)} placeholder="Descripción del beneficio" className="flex-1" />
+                                <Button type="button" variant="destructive" size="icon" onClick={() => removeBenefit(index)}><Trash2 className="h-4 w-4" /></Button>
+                            </div>
                         ))}
-                        <Button type="button" variant="outline" size="sm" onClick={() => appendBenefit({ description: "" })}><PlusCircle className="mr-2 h-4 w-4" /> Añadir Beneficio</Button>
+                        <Button type="button" variant="outline" size="sm" onClick={() => appendBenefit({ tipo: "", description: "" })}><PlusCircle className="mr-2 h-4 w-4" /> Añadir Beneficio</Button>
                     </div>
                     <div className="space-y-2 p-3 border rounded-md">
-                        <Label>Modos de Uso</Label>
+                        <Label>Métodos de Uso</Label>
                         {usageMethodFields.map((field, index) => (
-                            <div key={field.id} className="flex items-center gap-2"><Input {...register(`usageMethods.${index}.description`)} placeholder={`Modo de Uso #${index + 1}`} /><Button type="button" variant="destructive" size="icon" onClick={() => removeUsageMethod(index)}><Trash2 className="h-4 w-4" /></Button></div>
+                            <div key={field.id} className="flex items-center gap-2">
+                                <Input {...register(`usageMethods.${index}.tipo`)} placeholder="Tipo de método" className="w-1/3" />
+                                <Input {...register(`usageMethods.${index}.description`)} placeholder="Descripción del método" className="flex-1" />
+                                <Button type="button" variant="destructive" size="icon" onClick={() => removeUsageMethod(index)}><Trash2 className="h-4 w-4" /></Button>
+                            </div>
                         ))}
-                        <Button type="button" variant="outline" size="sm" onClick={() => appendUsageMethod({ description: "" })}><PlusCircle className="mr-2 h-4 w-4" /> Añadir Modo de Uso</Button>
+                        <Button type="button" variant="outline" size="sm" onClick={() => appendUsageMethod({ tipo: "", description: "" })}><PlusCircle className="mr-2 h-4 w-4" /> Añadir Método de Uso</Button>
+                    </div>
+                    <div className="space-y-2 p-3 border rounded-md">
+                        <Label>Respaldo Científico</Label>
+                        {respaldoCientificoFields.map((field, index) => (
+                            <div key={field.id} className="space-y-2 p-2 border rounded">
+                                <div className="flex items-center gap-2">
+                                    <Textarea {...register(`respaldoCientifico.${index}.hallazgoCientifico`)} placeholder="Hallazgo científico" className="flex-1" />
+                                    <Button type="button" variant="destructive" size="icon" onClick={() => removeRespaldoCientifico(index)}><Trash2 className="h-4 w-4" /></Button>
+                                </div>
+                                <div className="grid grid-cols-3 gap-2">
+                                    <Input {...register(`respaldoCientifico.${index}.idioma`)} placeholder="Idioma" />
+                                    <Input {...register(`respaldoCientifico.${index}.anio`)} placeholder="Año" />
+                                    <Input {...register(`respaldoCientifico.${index}.urlFuente`)} placeholder="URL/DOI" />
+                                </div>
+                            </div>
+                        ))}
+                        <Button type="button" variant="outline" size="sm" onClick={() => appendRespaldoCientifico({ hallazgoCientifico: "", idioma: "", anio: "", urlFuente: "" })}><PlusCircle className="mr-2 h-4 w-4" /> Añadir Respaldo Científico</Button>
                     </div>
                     <DialogFooter>
                         <Button type="button" variant="secondary" onClick={onCancel}>Cancelar</Button>
@@ -311,12 +402,14 @@ const Admin = () => {
             const plantsResult = await db.select().from(plantsTable);
             const benefitsResult = await db.select().from(benefitsTable);
             const usageMethodsResult = await db.select().from(usageMethodsTable);
+            const respaldoCientificoResult = await db.select().from(respaldoCientificoTable);
 
             // Combinar los datos manualmente
             const result = plantsResult.map(plant => ({
                 ...plant,
                 benefits: benefitsResult.filter(b => b.plantId === plant.id),
                 usageMethods: usageMethodsResult.filter(u => u.plantId === plant.id),
+                respaldoCientifico: respaldoCientificoResult.filter(r => r.plantId === plant.id),
             }));
 
             setPlants(result);
