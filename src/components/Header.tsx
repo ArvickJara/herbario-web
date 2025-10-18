@@ -21,7 +21,8 @@ export function Header() {
   const navigation = [
     { name: "Inicio", href: "/" },
     { name: "Explorar", href: "/buscar" },
-    { name: "Acerca", href: "/acerca" }
+    { name: "Acerca", href: "/acerca" },
+    { name: "Administrar", href: "/admin" }
   ];
 
   const isActive = (href: string) => {
@@ -50,8 +51,8 @@ export function Header() {
                 key={item.href}
                 to={item.href}
                 className={`font-medium transition-colors ${isActive(item.href)
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
                   }`}
               >
                 {item.name}
@@ -83,8 +84,8 @@ export function Header() {
                   to={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`font-medium transition-colors ${isActive(item.href)
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-foreground"
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
                     }`}
                 >
                   {item.name}
